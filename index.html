@@ -2393,7 +2393,7 @@ async function portalLogin() {
 
   try {
     // Try live Google Sheet first
-    if (SHEET_URL && SHEET_URL !== 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTvGjJQFmYuMGa7SpQmkohZK2Bty6nBBidS1SFgIbuNCJS7IkNldw_zYWGD_jE4dTLuszxPaxO8TrZe/pub?gid=0&single=true&output=csv') {
+    if (SHEET_URL && SHEET_URL !== 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRlXzbE7nBE78eAu87E5pRsINze5WIygAmu-_JJ6UnWZglYtS3STWwLcX2tqfM7NIIB-NaoYM4lI5Wl/pub?gid=2018695790&single=true&output=csv') {
       const res  = await fetch(SHEET_URL + '?t=' + Date.now());
       const text = await res.text();
       const rows = csvToObjects(text);
