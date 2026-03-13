@@ -1007,6 +1007,114 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
   .portal-panels { grid-template-columns: 1fr; }
   .portal-card-body { padding: 20px 18px 24px; }
 }
+
+/* ============================================================
+   ANIMATED PARTICLE CANVAS
+   ============================================================ */
+#heroCanvas { opacity: 0.55; }
+
+/* ============================================================
+   SECTION ANIMATED GRADIENT MESHES
+   ============================================================ */
+.animated-mesh {
+  position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0;
+}
+.mesh-orb {
+  position: absolute; border-radius: 50%; filter: blur(80px);
+  animation: meshFloat 10s ease-in-out infinite;
+}
+@keyframes meshFloat {
+  0%,100% { transform: translate(0,0) scale(1); }
+  33%  { transform: translate(30px,-20px) scale(1.08); }
+  66%  { transform: translate(-20px,15px) scale(0.95); }
+}
+
+/* ============================================================
+   PORTAL ENHANCEMENTS — Quick Actions, Tips, Status
+   ============================================================ */
+.portal-quick-actions {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 22px;
+}
+.qa-btn {
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  padding: 16px 10px; border-radius: var(--radius);
+  background: var(--surface); border: 1px solid var(--border);
+  cursor: pointer; transition: all 0.22s; text-align: center;
+  text-decoration: none; color: inherit;
+}
+.qa-btn:hover { border-color: var(--border-h); transform: translateY(-3px); box-shadow: var(--shadow-g); }
+.qa-btn:hover .qa-icon { transform: scale(1.15); }
+.qa-icon { font-size: 22px; transition: transform 0.2s; line-height: 1; }
+.qa-label { font-size: 11px; font-weight: 700; color: var(--text-muted); line-height: 1.3; }
+.qa-btn.qa-call   { border-color: rgba(0,200,130,0.2);  }
+.qa-btn.qa-wa     { border-color: rgba(37,211,102,0.2); }
+.qa-btn.qa-report { border-color: rgba(232,25,44,0.2);  }
+.qa-btn.qa-speed  { border-color: rgba(255,204,0,0.2);  }
+
+/* Internet tip cards */
+.portal-tips {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); overflow: hidden; margin-top: 18px;
+}
+.tips-head {
+  padding: 13px 18px; border-bottom: 1px solid var(--border);
+  font-family: var(--font-head); font-size: 13px; font-weight: 700;
+  color: rgba(255,255,255,0.8); display: flex; align-items: center; gap: 8px;
+}
+.tip-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 13px 18px; border-bottom: 1px solid rgba(255,255,255,0.04);
+  font-size: 13px; cursor: pointer; transition: background 0.2s;
+}
+.tip-item:last-child { border-bottom: none; }
+.tip-item:hover { background: rgba(255,255,255,0.02); }
+.tip-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+.tip-text strong { display: block; font-weight: 700; font-size: 13px; margin-bottom: 3px; }
+.tip-text span { color: var(--text-muted); font-size: 12px; line-height: 1.5; }
+
+/* Network status bar */
+.net-status-bar {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 18px; background: rgba(0,200,130,0.07);
+  border: 1px solid rgba(0,200,130,0.18); border-radius: 10px;
+  margin-bottom: 22px; font-size: 13px;
+}
+.net-status-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--green-glow); flex-shrink: 0;
+  box-shadow: 0 0 0 3px rgba(0,200,130,0.2);
+  animation: netPulse 2s ease-in-out infinite;
+}
+.net-status-dot.offline { background: #FF6677; box-shadow: 0 0 0 3px rgba(232,25,44,0.2); animation: none; }
+@keyframes netPulse {
+  0%,100% { box-shadow: 0 0 0 3px rgba(0,200,130,0.2); }
+  50%      { box-shadow: 0 0 0 6px rgba(0,200,130,0.05); }
+}
+.net-status-text { flex: 1; }
+.net-status-text strong { color: var(--green-glow); }
+.net-status-text.offline strong { color: #FF6677; }
+
+/* Complaint quick panel */
+.complaint-quick {
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+  padding: 16px 18px; background: rgba(232,25,44,0.06); border: 1px solid rgba(232,25,44,0.18);
+  border-radius: 10px; margin-top: 18px;
+}
+.complaint-quick-text strong { display: block; font-size: 14px; font-weight: 700; }
+.complaint-quick-text span { font-size: 12px; color: var(--text-muted); }
+.complaint-quick-btns { display: flex; gap: 8px; flex-wrap: wrap; }
+.cq-btn {
+  padding: 8px 16px; border-radius: 99px; font-size: 12px; font-weight: 700;
+  cursor: pointer; border: none; transition: all 0.2s; display: flex; align-items: center; gap: 6px;
+}
+.cq-btn-call { background: var(--green); color: #fff; }
+.cq-btn-call:hover { background: var(--green-l); }
+.cq-btn-wa { background: #25D366; color: #fff; }
+.cq-btn-wa:hover { background: #20b858; }
+
+@media(max-width:640px) {
+  .portal-quick-actions { grid-template-columns: repeat(2,1fr); }
+}
 </style>
 </head>
 <body class="banner-on">
@@ -1091,6 +1199,7 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
 <section class="hero" id="home">
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
+  <canvas id="heroCanvas" style="position:absolute;inset:0;z-index:1;pointer-events:none;width:100%;height:100%;"></canvas>
   <div class="hero-orb hero-orb-1"></div>
   <div class="hero-orb hero-orb-2"></div>
   <div class="hero-orb hero-orb-3"></div>
@@ -1802,31 +1911,32 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
      CUSTOMER PORTAL
      ============================================================ -->
 <section class="portal-section section" id="portal">
-  <div class="container">
+  <!-- Animated mesh background -->
+  <div class="animated-mesh" aria-hidden="true">
+    <div class="mesh-orb" style="width:400px;height:400px;top:-100px;left:-80px;background:rgba(0,106,78,0.12);animation-delay:0s;"></div>
+    <div class="mesh-orb" style="width:300px;height:300px;bottom:-80px;right:-60px;background:rgba(232,25,44,0.07);animation-delay:4s;"></div>
+    <div class="mesh-orb" style="width:220px;height:220px;top:40%;right:20%;background:rgba(255,204,0,0.05);animation-delay:7s;"></div>
+  </div>
 
-    <!-- Section heading -->
-    <div style="text-align:center;margin-bottom:36px;" class="fade-in">
+  <div class="container" style="position:relative;z-index:1;">
+
+    <!-- Heading -->
+    <div style="text-align:center;margin-bottom:40px;" class="fade-in">
       <div class="section-label" style="justify-content:center;">Self-Service</div>
       <h2 class="section-title">Customer <span class="highlight">Portal</span></h2>
       <p class="section-sub" style="margin:0 auto;">
-        Log in with your username and PIN to check your bill and package details.
+        Log in with your username and PIN to manage your account, view bills, and get help instantly.
       </p>
     </div>
 
-    <!-- ── ADMIN SETUP BOX ──────────────────────────────────────
-         Delete this yellow box once your sheet is connected.
-         ─────────────────────────────────────────────────────── -->
-    
-    <!-- ── LOGIN VIEW ─────────────────────────────────────────── -->
+    <!-- ── LOGIN VIEW ─── -->
     <div class="portal-login-wrap fade-in" id="portalLoginWrap">
       <div class="portal-card">
-
         <div class="portal-card-header">
           <div class="portal-header-icon">🔐</div>
           <div class="portal-header-title">Customer Login</div>
           <div class="portal-header-sub">Enter the username &amp; PIN given by Satellite Vision</div>
         </div>
-
         <div class="portal-card-body">
           <label class="portal-input-label">Username</label>
           <input class="portal-input" id="portalUser" type="text"
@@ -1849,31 +1959,33 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
           <div class="portal-loading" id="portalLoading">
             <span class="portal-spinner"></span>Checking your account…
           </div>
-
           <div class="portal-error" id="portalError"></div>
-
-          <!-- Demo hint (remove after going live) -->
-          <div class="portal-demo-hint">
-            💡 <strong style="color:var(--gold)">Demo:</strong>
-            Username: <code style="color:var(--green-glow)">demo</code> &nbsp; PIN: <code style="color:var(--green-glow)">1234</code>
-          </div>
         </div>
       </div>
-
       <p style="text-align:center;font-size:12px;color:var(--text-dim);margin-top:12px;">
         Don't have a username? Call <a href="tel:01842292646" style="color:var(--green-glow)">01842-292646</a> to get one.
       </p>
     </div>
 
-    <!-- ── DASHBOARD VIEW (shown after login) ─────────────────── -->
+    <!-- ── DASHBOARD VIEW ─── -->
     <div class="portal-dashboard" id="portalDashboard">
 
+      <!-- Header row -->
       <div class="portal-dash-top">
         <div class="portal-welcome">Welcome back, <span id="dashName">—</span> 👋</div>
         <button class="portal-logout-btn" onclick="portalLogout()">← Logout</button>
       </div>
 
-      <!-- Summary row -->
+      <!-- Network status -->
+      <div class="net-status-bar" id="netStatusBar">
+        <div class="net-status-dot" id="netStatusDot"></div>
+        <div class="net-status-text" id="netStatusText">
+          <strong>Network Online</strong> — All systems operational
+        </div>
+        <span style="font-size:11px;color:var(--text-muted);" id="netStatusTime"></span>
+      </div>
+
+      <!-- Summary cards -->
       <div class="portal-summary">
         <div class="summary-card s-bill">
           <div class="s-icon">💳</div>
@@ -1883,7 +1995,7 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
         </div>
         <div class="summary-card s-speed">
           <div class="s-icon">⚡</div>
-          <div class="s-label">Speed</div>
+          <div class="s-label">Your Speed</div>
           <div class="s-val green" id="dashSpeed">—</div>
           <div class="s-sub" id="dashPkg">—</div>
         </div>
@@ -1901,7 +2013,27 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
         </div>
       </div>
 
-      <!-- Two panels -->
+      <!-- Quick Action Buttons -->
+      <div class="portal-quick-actions">
+        <a class="qa-btn qa-call" href="tel:01842292646">
+          <div class="qa-icon">📞</div>
+          <div class="qa-label">Call Support</div>
+        </a>
+        <a class="qa-btn qa-wa" href="https://wa.me/8801634348602" target="_blank">
+          <div class="qa-icon">💬</div>
+          <div class="qa-label">WhatsApp Us</div>
+        </a>
+        <button class="qa-btn qa-report" onclick="portalComplaint()">
+          <div class="qa-icon">🚨</div>
+          <div class="qa-label">Report Issue</div>
+        </button>
+        <a class="qa-btn qa-speed" href="https://www.speedtest.net" target="_blank">
+          <div class="qa-icon">🚀</div>
+          <div class="qa-label">Speed Test</div>
+        </a>
+      </div>
+
+      <!-- Main panels row -->
       <div class="portal-panels">
 
         <!-- Payment History -->
@@ -1911,12 +2043,24 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
             <div id="dashHistory">
               <div style="text-align:center;color:var(--text-muted);font-size:13px;padding:20px 0;">No history available.</div>
             </div>
-            <button class="portal-action-btn btn-wa" onclick="portalPayWA()">
+            <button class="portal-action-btn btn-wa" onclick="portalPayWA()" style="background:#25D366;">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/>
               </svg>
               Confirm Payment via WhatsApp
             </button>
+
+            <!-- Complaint quick bar -->
+            <div class="complaint-quick">
+              <div class="complaint-quick-text">
+                <strong>🚨 Issue with your connection?</strong>
+                <span>We resolve complaints in 45–80 minutes</span>
+              </div>
+              <div class="complaint-quick-btns">
+                <button class="cq-btn cq-btn-call" onclick="window.location.href='tel:01842292646'">📞 Call</button>
+                <button class="cq-btn cq-btn-wa" onclick="portalComplaint()">💬 WhatsApp</button>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1927,7 +2071,7 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
             <div id="dashPkgDetails">
               <div style="text-align:center;color:var(--text-muted);font-size:13px;padding:20px 0;">Loading…</div>
             </div>
-            <button class="portal-action-btn btn-upg" onclick="portalUpgrade()">
+            <button class="portal-action-btn btn-upg" onclick="portalUpgrade()" style="background:var(--green);box-shadow:var(--shadow-green);">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                 <path d="M5 12h14M12 5l7 7-7 7"/>
               </svg>
@@ -1936,8 +2080,63 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
           </div>
         </div>
 
-      </div>
-    </div><!-- end dashboard -->
+      </div><!-- end portal-panels -->
+
+      <!-- Tips & Help Section -->
+      <div class="portal-tips">
+        <div class="tips-head">💡 Tips &amp; Help for Customers</div>
+
+        <div class="tip-item">
+          <div class="tip-icon">🔄</div>
+          <div class="tip-text">
+            <strong>Internet slow? Try restarting your router</strong>
+            <span>Turn the router off, wait 30 seconds, then turn it back on. This fixes most speed issues instantly.</span>
+          </div>
+        </div>
+
+        <div class="tip-item">
+          <div class="tip-icon">📍</div>
+          <div class="tip-text">
+            <strong>Best router placement for strong WiFi</strong>
+            <span>Place your router in the center of your home, off the floor, away from thick walls and microwaves for best coverage.</span>
+          </div>
+        </div>
+
+        <div class="tip-item">
+          <div class="tip-icon">📅</div>
+          <div class="tip-text">
+            <strong>When is my bill due?</strong>
+            <span>Your bill is due on the same date each month as your connection start date. Check your "Amount Due" card above.</span>
+          </div>
+        </div>
+
+        <div class="tip-item">
+          <div class="tip-icon">💳</div>
+          <div class="tip-text">
+            <strong>How to pay your bill</strong>
+            <span>Pay in cash to our collection agent, or click "Confirm Payment via WhatsApp" above to notify us of bKash/Nagad payments.</span>
+          </div>
+        </div>
+
+        <div class="tip-item">
+          <div class="tip-icon">📶</div>
+          <div class="tip-text">
+            <strong>How to check your actual speed</strong>
+            <span>Click the "Speed Test 🚀" button above — connect your phone directly to the router via cable or sit right next to it for the most accurate result.</span>
+          </div>
+        </div>
+
+        <div class="tip-item">
+          <div class="tip-icon">🛠️</div>
+          <div class="tip-text">
+            <strong>Complaint response time: 45–80 minutes</strong>
+            <span>We guarantee on-site resolution within 80 minutes of your complaint during service hours. Use the Report Issue button to contact us instantly.</span>
+          </div>
+        </div>
+
+      </div><!-- end tips -->
+
+    </div><!-- end portal-dashboard -->
   </div>
 </section>
 
@@ -2351,206 +2550,249 @@ if ('IntersectionObserver' in window) {
 // CUSTOMER PORTAL
 // ============================================================
 
-// ── STEP 1: Paste your Google Sheet ID here ─────────────────
-// From your sheet URL: docs.google.com/spreadsheets/d/THIS_PART/edit
 const SHEET_ID = '1T4Cqx6JSq0y_BpZPC3UoR8oH6l300V8edeh_KmjEza0';
-// ────────────────────────────────────────────────────────────
 
-// Demo account shown when no sheet is connected yet
 const DEMO = {
-  username: 'demo', pin: '1234',
-  name: 'Rahim Uddin', package: 'Pro Plan', speed: '40 Mbps',
-  monthly_bill: '৳800', due_amount: '৳800', due_date: 'Due: 1 Apr 2025',
-  status: 'Active', member_since: 'Jan 2023',
-  history: 'Jan 2025:800:Paid|Feb 2025:800:Paid|Mar 2025:800:Due'
+  username:'demo', pin:'1234',
+  name:'Rahim Uddin', package:'Pro Plan', speed:'40 Mbps',
+  monthly_bill:'৳800', due_amount:'৳800', due_date:'Due: 1 Apr 2025',
+  status:'Active', member_since:'Jan 2023',
+  history:'Jan 2025:800:Paid|Feb 2025:800:Paid|Mar 2025:800:Due'
 };
 
-// Build the Google Sheets URL (uses gviz endpoint — works with "Anyone with link" sharing, no publishing needed)
 function sheetURL() {
-  if (!SHEET_ID || SHEET_ID === '1T4Cqx6JSq0y_BpZPC3UoR8oH6l300V8edeh_KmjEza0') return null;
+  if (!SHEET_ID || SHEET_ID === 'PASTE_SHEET_ID_HERE') return null;
   return 'https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?tqx=out:csv&sheet=Sheet1';
 }
 
-// Parse simple CSV into array of objects
 function parseCSV(text) {
   const lines = text.trim().split('\n');
-  const headers = lines[0].split(',').map(h => h.replace(/"/g, '').trim());
+  const headers = lines[0].split(',').map(h => h.replace(/"/g,'').trim());
   return lines.slice(1).map(line => {
-    const vals = line.split(',').map(v => v.replace(/"/g, '').trim());
+    const vals = line.split(',').map(v => v.replace(/"/g,'').trim());
     const obj = {};
-    headers.forEach((h, i) => { obj[h] = vals[i] || ''; });
+    headers.forEach((h,i) => { obj[h] = vals[i] || ''; });
     return obj;
   });
 }
 
-// Main login function
 async function portalLogin() {
-  const username = (document.getElementById('portalUser').value || '').trim().toLowerCase();
-  const pin      = (document.getElementById('portalPin').value  || '').trim();
+  const username = (document.getElementById('portalUser').value||'').trim().toLowerCase();
+  const pin      = (document.getElementById('portalPin').value ||'').trim();
+  if (!username||!pin) { showPortalError('Please enter your username and PIN.'); return; }
 
-  if (!username || !pin) {
-    showPortalError('Please enter your username and PIN.');
-    return;
-  }
-
-  const btn     = document.getElementById('loginBtn');
-  const loading = document.getElementById('portalLoading');
+  const btn=document.getElementById('loginBtn');
+  const loading=document.getElementById('portalLoading');
   hidePortalError();
-  btn.disabled = true;
-  loading.style.display = 'block';
+  btn.disabled=true; loading.style.display='block';
 
-  let customer = null;
-
+  let customer=null;
   try {
-    const url = sheetURL();
-
+    const url=sheetURL();
     if (url) {
-      // Try to fetch from Google Sheet
-      const resp = await fetch(url);
-      if (!resp.ok) throw new Error('Sheet fetch failed: ' + resp.status);
-      const text = await resp.text();
-      const rows = parseCSV(text);
-      // Find matching row (username + pin, both case-insensitive)
-      customer = rows.find(r =>
-        r.username && r.username.toLowerCase() === username &&
-        r.pin      && r.pin === pin
-      ) || null;
+      const resp=await fetch(url);
+      if (!resp.ok) throw new Error('HTTP '+resp.status);
+      const text=await resp.text();
+      const rows=parseCSV(text);
+      customer=rows.find(r=>
+        r.username && r.username.toLowerCase()===username && r.pin===pin
+      )||null;
     }
+    if (!customer && DEMO.username===username && DEMO.pin===pin) customer=DEMO;
 
-    // If no sheet, fall back to demo account
-    if (!customer && DEMO.username === username && DEMO.pin === pin) {
-      customer = DEMO;
-    }
-
-    if (customer) {
-      showDashboard(customer);
-    } else {
-      showPortalError('Username or PIN not found. Please check and try again, or call 01842-292646.');
-    }
-
-  } catch (err) {
-    console.error('Portal error:', err);
-    // On network error, still allow demo login
-    if (DEMO.username === username && DEMO.pin === pin) {
-      showDashboard(DEMO);
-    } else {
-      showPortalError('Could not connect. Check your internet and try again.');
-    }
+    if (customer) showDashboard(customer);
+    else showPortalError('Username or PIN not found. Please check and try again, or call 01842-292646.');
+  } catch(err) {
+    console.error('Portal fetch error:', err);
+    if (DEMO.username===username && DEMO.pin===pin) showDashboard(DEMO);
+    else showPortalError('Connection error. Please check your internet and try again.');
   } finally {
-    btn.disabled = false;
-    loading.style.display = 'none';
+    btn.disabled=false; loading.style.display='none';
   }
 }
 
-// Populate and show the dashboard
 function showDashboard(c) {
   sessionStorage.setItem('svcnCustomer', JSON.stringify(c));
 
-  document.getElementById('dashName').textContent  = c.name || c.username;
-  document.getElementById('dashDue').textContent   = c.due_amount   || '৳0';
-  document.getElementById('dashDueDate').textContent = c.due_date   || '';
-  document.getElementById('dashSpeed').textContent = c.speed        || '—';
-  document.getElementById('dashPkg').textContent   = c.package      || '—';
-  document.getElementById('dashBill').textContent  = 'Monthly: ' + (c.monthly_bill || '—');
-  document.getElementById('dashSince').textContent = c.member_since || '—';
+  document.getElementById('dashName').textContent   = c.name||c.username;
+  document.getElementById('dashDue').textContent    = c.due_amount  ||'৳0';
+  document.getElementById('dashDueDate').textContent= c.due_date    ||'';
+  document.getElementById('dashSpeed').textContent  = c.speed       ||'—';
+  document.getElementById('dashPkg').textContent    = c.package     ||'—';
+  document.getElementById('dashBill').textContent   = 'Monthly: '+(c.monthly_bill||'—');
+  document.getElementById('dashSince').textContent  = c.member_since||'—';
 
-  // Status colour
-  const statusEl = document.getElementById('dashStatus');
-  statusEl.textContent = c.status || 'Active';
-  const st = (c.status || '').toLowerCase();
-  statusEl.className = 's-val ' + (st === 'active' ? 'green' : st === 'suspended' ? 'red' : '');
+  const stEl=document.getElementById('dashStatus');
+  stEl.textContent=c.status||'Active';
+  const st=(c.status||'').toLowerCase();
+  stEl.className='s-val '+(st==='active'?'green':st==='suspended'?'red':'');
 
-  // Payment history rows
-  const histEl = document.getElementById('dashHistory');
+  // Network status bar
+  const now=new Date();
+  document.getElementById('netStatusTime').textContent=
+    'Checked '+now.getHours().toString().padStart(2,'0')+':'+now.getMinutes().toString().padStart(2,'0');
+
+  // Payment history
+  const histEl=document.getElementById('dashHistory');
   if (c.history) {
-    histEl.innerHTML = c.history.split('|').map(entry => {
-      const [month, amt, status] = entry.split(':');
-      const pillClass = status === 'Paid' ? 'pill-paid' : status === 'Due' ? 'pill-due' : 'pill-pending';
-      return '<div class="history-row">' +
-        '<span class="history-month">' + (month||'—') + '</span>' +
-        '<span class="history-amt">৳' + (amt||'—') + '</span>' +
-        '<span class="status-pill ' + pillClass + '">' + (status||'—') + '</span>' +
+    histEl.innerHTML=c.history.split('|').map(e=>{
+      const [month,amt,status]=e.split(':');
+      const cls=status==='Paid'?'pill-paid':status==='Due'?'pill-due':'pill-pending';
+      return '<div class="history-row">'+
+        '<span class="history-month">'+(month||'—')+'</span>'+
+        '<span class="history-amt">৳'+(amt||'—')+'</span>'+
+        '<span class="status-pill '+cls+'">'+(status||'—')+'</span>'+
         '</div>';
     }).join('');
   } else {
-    histEl.innerHTML = '<div style="text-align:center;color:var(--text-muted);font-size:13px;padding:20px 0;">No payment history found.</div>';
+    histEl.innerHTML='<div style="text-align:center;color:var(--text-muted);font-size:13px;padding:20px 0;">No payment history found.</div>';
   }
 
-  // Package detail rows
-  document.getElementById('dashPkgDetails').innerHTML =
-    row('Package',      c.package     || '—', '') +
-    row('Speed',        c.speed       || '—', 'color:var(--green-glow)') +
-    row('Monthly Bill', c.monthly_bill|| '—', '') +
-    row('Status',       c.status      || '—', '') +
-    row('Username',     c.username    || '—', 'color:var(--text-muted)');
+  // Package details
+  document.getElementById('dashPkgDetails').innerHTML=
+    pkgRow('Package',       c.package     ||'—', '')+
+    pkgRow('Speed',         c.speed       ||'—', 'color:var(--green-glow)')+
+    pkgRow('Monthly Bill',  c.monthly_bill||'—', '')+
+    pkgRow('Account Status',c.status      ||'—', '')+
+    pkgRow('Username',      c.username    ||'—', 'color:var(--text-muted)');
 
-  // Switch views
-  document.getElementById('portalLoginWrap').style.display = 'none';
-  document.getElementById('setupBox').style.display        = 'none';
-  document.getElementById('portalDashboard').style.display = 'block';
+  document.getElementById('portalLoginWrap').style.display='none';
+  document.getElementById('portalDashboard').style.display='block';
 }
 
-function row(key, val, style) {
-  return '<div class="pkg-row"><span class="pkg-row-key">' + key + '</span>' +
-         '<span class="pkg-row-val" style="' + style + '">' + val + '</span></div>';
+function pkgRow(key,val,style){
+  return '<div class="pkg-row"><span class="pkg-row-key">'+key+'</span>'+
+         '<span class="pkg-row-val" style="'+style+'">'+val+'</span></div>';
 }
 
-// Pay via WhatsApp
 function portalPayWA() {
-  const c = JSON.parse(sessionStorage.getItem('svcnCustomer') || '{}');
-  const msg = encodeURIComponent(
-    'Hello, I want to confirm my bill payment.\n\n' +
-    'Name: ' + (c.name||'—') + '\nUsername: ' + (c.username||'—') +
-    '\nAmount: ' + (c.due_amount||'—') + '\nPackage: ' + (c.package||'—')
+  const c=JSON.parse(sessionStorage.getItem('svcnCustomer')||'{}');
+  const msg=encodeURIComponent(
+    'Hello, I want to confirm my bill payment.\n\n'+
+    'Name: '+(c.name||'—')+'\nUsername: '+(c.username||'—')+
+    '\nAmount: '+(c.due_amount||'—')+'\nPackage: '+(c.package||'—')
   );
-  window.open('https://wa.me/8801634348602?text=' + msg, '_blank');
+  window.open('https://wa.me/8801634348602?text='+msg,'_blank');
 }
 
-// Upgrade via WhatsApp
 function portalUpgrade() {
-  const c = JSON.parse(sessionStorage.getItem('svcnCustomer') || '{}');
-  const msg = encodeURIComponent(
-    'Hello, I want to upgrade my package.\n\n' +
-    'Name: ' + (c.name||'—') + '\nUsername: ' + (c.username||'—') +
-    '\nCurrent Package: ' + (c.package||'—') + '\nRequested Upgrade: '
+  const c=JSON.parse(sessionStorage.getItem('svcnCustomer')||'{}');
+  const msg=encodeURIComponent(
+    'Hello, I want to upgrade my internet package.\n\n'+
+    'Name: '+(c.name||'—')+'\nUsername: '+(c.username||'—')+
+    '\nCurrent Package: '+(c.package||'—')+'\nRequested Upgrade: '
   );
-  window.open('https://wa.me/8801634348602?text=' + msg, '_blank');
+  window.open('https://wa.me/8801634348602?text='+msg,'_blank');
 }
 
-// Logout
+function portalComplaint() {
+  const c=JSON.parse(sessionStorage.getItem('svcnCustomer')||'{}');
+  const msg=encodeURIComponent(
+    'Hello, I have an issue with my connection.\n\n'+
+    'Name: '+(c.name||'—')+'\nUsername: '+(c.username||'—')+
+    '\nPackage: '+(c.package||'—')+'\nIssue Description: '
+  );
+  window.open('https://wa.me/8801634348602?text='+msg,'_blank');
+}
+
 function portalLogout() {
   sessionStorage.removeItem('svcnCustomer');
-  document.getElementById('portalLoginWrap').style.display  = 'block';
-  document.getElementById('setupBox').style.display         = 'block';
-  document.getElementById('portalDashboard').style.display  = 'none';
-  document.getElementById('portalUser').value = '';
-  document.getElementById('portalPin').value  = '';
+  document.getElementById('portalLoginWrap').style.display='block';
+  document.getElementById('portalDashboard').style.display='none';
+  document.getElementById('portalUser').value='';
+  document.getElementById('portalPin').value='';
   hidePortalError();
 }
 
-function showPortalError(msg) {
-  const el = document.getElementById('portalError');
-  el.textContent = msg; el.style.display = 'block';
+function showPortalError(msg){
+  const el=document.getElementById('portalError');
+  el.textContent=msg; el.style.display='block';
 }
-function hidePortalError() {
-  document.getElementById('portalError').style.display = 'none';
+function hidePortalError(){
+  document.getElementById('portalError').style.display='none';
 }
 
-// Restore session if page is reloaded
-(function() {
+// Restore session on page reload
+(function(){
   try {
-    const saved = sessionStorage.getItem('svcnCustomer');
+    const saved=sessionStorage.getItem('svcnCustomer');
     if (saved) showDashboard(JSON.parse(saved));
-  } catch(e) {}
+  } catch(e){}
+})();
+
+// ============================================================
+// ANIMATED PARTICLE CANVAS (HERO)
+// ============================================================
+(function(){
+  const canvas=document.getElementById('heroCanvas');
+  if (!canvas) return;
+  const ctx=canvas.getContext('2d');
+  let W,H,particles=[];
+
+  function resize(){
+    W=canvas.width=canvas.offsetWidth;
+    H=canvas.height=canvas.offsetHeight;
+  }
+  window.addEventListener('resize',resize,{passive:true});
+  resize();
+
+  // Create particles
+  for(let i=0;i<70;i++) particles.push({
+    x: Math.random()*W, y: Math.random()*H,
+    vx:(Math.random()-0.5)*0.4, vy:(Math.random()-0.5)*0.4,
+    r: Math.random()*2+0.5,
+    a: Math.random()*0.6+0.1,
+    hue: Math.random()>0.7?'0,200,130':'0,200,130'
+  });
+
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    // Draw connections
+    for(let i=0;i<particles.length;i++){
+      for(let j=i+1;j<particles.length;j++){
+        const dx=particles[i].x-particles[j].x;
+        const dy=particles[i].y-particles[j].y;
+        const dist=Math.sqrt(dx*dx+dy*dy);
+        if(dist<120){
+          ctx.beginPath();
+          ctx.strokeStyle='rgba(0,200,130,'+(0.15*(1-dist/120))+')';
+          ctx.lineWidth=0.8;
+          ctx.moveTo(particles[i].x,particles[i].y);
+          ctx.lineTo(particles[j].x,particles[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+    // Draw dots
+    particles.forEach(p=>{
+      ctx.beginPath();
+      ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fillStyle='rgba(0,200,130,'+p.a+')';
+      ctx.fill();
+      p.x+=p.vx; p.y+=p.vy;
+      if(p.x<0||p.x>W) p.vx*=-1;
+      if(p.y<0||p.y>H) p.vy*=-1;
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
 })();
 
 </script>
 
-<!-- ============================================================
-     TAWK.TO LIVE CHAT
-     ============================================================ -->
-<!--Start of Tawk.to Script-->
+
+<!-- Tawk.to Live Chat -->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
-var s1=document.createElement("script"),s0=d
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6996626a4c408f1c3a577be2/1jhpn0spb';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+
+</body>
+</html>
