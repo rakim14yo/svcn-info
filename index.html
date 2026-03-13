@@ -2423,6 +2423,68 @@ async function portalLogin() {
 
   let customer = null;
 
+  const SHEET_ID = '1k5npJAoPqdWF3HQ1WrN4_2IEfh5slbV59LHhQc6pLUU';
+  const API_KEY = 'AIzaSyCQpJgxnUe_7qONEC5A3k3tSGAzSgH90E8';
+  const sheetsUrl = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/Sheet1?key=${API_KEY}`;
+
+  try {
+    console.log('🔄 Fetching from Google Sheets API...');
+    const res = await fetch(sheetsUrl);
+    
+    if (!res.ok) {
+      throw new Error(`API Error: ${res.status}`);
+    }
+    
+    const data = await res.json();
+    console.log('✅ Data received:', data);
+    
+    if (!data.values || data.values.length < 2) {
+      throw new Error('No data in sheet');
+    }
+
+    const headers = (data.values[0] || []).map(h => (h || '').toLowerCase().trim());
+    const rows = data.values.slice(1).map(row => {
+      const obj = {};
+      headers.forEach((header, idx) => {
+        obj[header] = (row[idx] || '').trim();
+      });
+      return obj;
+    });
+
+    console.log(`📊 Parsed ${rows.length} customers`);
+    console.log('Checking credentials:', { username, pin });
+
+    customer = rows.find(r => {
+      const dbUser = (r.username || '').toLowerCase().trim();
+      const dbPin = (r.pin || '').trim();
+      console.log(`  Comparing: "${dbUser}" === "${username}" && "${dbPin}" === "${pin}"`);
+      return dbUser === username && dbPin === pin;
+    }) || null;
+
+    if (customer) {
+      console.log('✅ Login match found!', customer);
+    } else {
+      console.log('❌ No match found');
+    }
+    
+  } catch(e) {
+    console.error('⚠️ API Error:', e.message);
+  }
+
+  if (!customer && username === DEMO.username && pin === DEMO.pin) {
+    customer = DEMO;
+  }
+
+  btn.disabled = false;
+  loading.style.display = 'none';
+
+  if (!customer) {
+    showPError('Username or PIN not found. Please check and try again, or call 01842-292646.');
+    return;
+  }
+
+  buildDashboard(customer);
+}
   // Google Sheets API v4 configuration
   const SHEET_ID = '1k5npJAoPqdWF3HQ1WrN4_2IEfh5slbV59LHhQc6pLUU';
   const API_KEY = 'AIzaSyCQpJgxnUe_7qONEC5A3k3tSGAzSgH90E8';
