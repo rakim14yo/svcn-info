@@ -1080,7 +1080,6 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
     </div>
   </div>
 </div>
-     ============================================================ -->
 <section class="section packages-bg" id="packages">
   <div class="container">
     <div style="text-align:center;margin-bottom:40px;" class="fade-in">
@@ -1370,33 +1369,7 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
 <!-- ============================================================
      VIDEO SECTION
      ============================================================ -->
-<section class="video-section" id="video">
-  <div class="container">
-    <div style="text-align:center;margin-bottom:32px;" class="fade-in">
-      <div class="section-label" style="justify-content:center;">Our Story</div>
-      <h2 class="section-title"><span class="highlight">See It</span> in Action</h2>
-      <p class="section-sub" style="margin:0 auto;" data-en="A Bengali family enjoying high-speed WiFi + Dish TV because staying connected with SVCN is everything."
-         data-bn="একটি বাংলাদেশি পরিবার হাই-স্পিড WiFi + ডিশ TV উপভোগ করছে — কারণ সংযুক্ত থাকাটাই সবকিছু।">
-        A Bengali family enjoying high-speed WiFi + Dish TV — because staying connected is everything.
-      </p>
-    </div>
-    <div class="video-wrap fade-in" id="videoWrap">
-      <!-- Replace the src below with your actual YouTube embed URL -->
-      <!-- e.g. src="https://www.youtube.com/embed/YOUR_VIDEO_ID" -->
-      <div class="video-placeholder" id="videoPlaceholder">
-        <button class="video-play-btn" onclick="loadVideo()" aria-label="Play video">
-          <svg viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
-        </button>
-        <div style="font-family:var(--font-head);font-size:18px;font-weight:700;" data-en="Watch Our Story" data-bn="আমাদের গল্প দেখুন">Watch Our Story</div>
-        <div style="font-size:13px;" data-en="A Bengali family connected with Satellite Vision — WiFi + Dish TV joy." data-bn="Satellite Vision-এর সাথে সংযুক্ত একটি বাংলাদেশি পরিবার — WiFi + ডিশ TV-র আনন্দ।">A Bengali family connected with Satellite Vision — WiFi + Dish TV joy.</div>
-        <div style="font-size:11px;color:var(--text-dim);margin-top:6px;" data-en="Upload your video to YouTube and paste the embed link in the code." data-bn="আপনার ভিডিও YouTube-এ আপলোড করুন এবং কোডে embed লিঙ্ক দিন।">Upload your video to YouTube and paste the embed link in the code.</div>
-      </div>
-    </div>
-    <p style="text-align:center;font-size:12px;color:var(--text-dim);margin-top:14px;" data-en="💡 To add your video: Replace the YouTube URL in the code (search for 'YOUR_VIDEO_ID')" data-bn="💡 ভিডিও যোগ করতে: কোডে YouTube URL প্রতিস্থাপন করুন ('YOUR_VIDEO_ID' খুঁজুন)">
-      💡 To add your video: Replace the YouTube URL in the code (search for 'YOUR_VIDEO_ID')
-    </p>
-  </div>
-</section>
+
 
 <!-- ============================================================
      SPECIAL OFFERS
@@ -2014,22 +1987,6 @@ function showToast(msg) {
 }
 
 // ---- VIDEO LOAD ----
-function loadVideo() {
-  const wrap = document.getElementById('videoWrap');
-  const placeholder = document.getElementById('videoPlaceholder');
-  // Replace YOUR_VIDEO_ID with your actual YouTube video ID
-  const videoId = 'YOUR_VIDEO_ID';
-  if (videoId === 'YOUR_VIDEO_ID') {
-    showToast(currentLang === 'bn' ? 'ভিডিও লিঙ্ক এখনও যোগ করা হয়নি।' : 'Video not added yet. Replace YOUR_VIDEO_ID in the code.');
-    return;
-  }
-  const iframe = document.createElement('iframe');
-  iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1';
-  iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-  iframe.allowFullscreen = true;
-  if (placeholder) placeholder.style.display = 'none';
-  wrap.appendChild(iframe);
-}
 
 // ---- SCROLL ANIMATIONS ----
 if ('IntersectionObserver' in window) {
