@@ -2377,8 +2377,10 @@ if ('IntersectionObserver' in window) {
 // ── CONFIG ────────────────────────────────────────────────────
 // After publishing your Google Sheet as CSV, paste the URL below.
 // Leave as-is to use the built-in demo account.
-const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTvGjJQFmYuMGa7SpQmkohZK2Bty6nBBidS1SFgIbuNCJS7IkNldw_zYWGD_jE4dTLuszxPaxO8TrZe/pub?gid=0&single=true&output=csv';
-
+const SHEET_ID = '1k5npJAoPqdWF3HQ1WrN4_2IEfh5slbV59LHhQc6pLUU';
+const API_KEY = 'AIzaSyCQpJgxnUe_7qONEC5A3k3tSGAzSgH90E8';
+// Note: You can keep SHEET_URL for reference, but it's no longer used
+// const SHEET_URL = '...'; // Old CSV export (no longer used)
 // Demo account — shown when no real Sheet is connected yet
 const DEMO = {
   username:'demo', pin:'1234',
@@ -2421,20 +2423,67 @@ async function portalLogin() {
 
   let customer = null;
 
+  // Google Sheets API v4 configuration
+  const SHEET_ID = '1k5npJAoPqdWF3HQ1WrN4_2IEfh5slbV59LHhQc6pLUU';
+  const API_KEY = 'AIzaSyCQpJgxnUe_7qONEC5A3k3tSGAzSgH90E8';
+  const sheetsUrl = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/Sheet1?key=${API_KEY}`;
+
   try {
-    // Try live Google Sheet first
-    if (SHEET_URL) {
-      const res  = await fetch(SHEET_URL + '?t=' + Date.now());
-      const text = await res.text();
-      const rows = csvToObjects(text);
-      customer   = rows.find(r =>
-        (r.username||'').toLowerCase() === username && (r.pin||'') === pin
-      ) || null;
+    console.log('🔄 Fetching from Google Sheets API...');
+    
+    const res = await fetch(sheetsUrl);
+    
+    if (!res.ok) {
+      console.error(`❌ API Error: ${res.status} ${res.statusText}`);
+      throw new Error(`API Error: ${res.status}`);
     }
-  } catch(e) { /* network error — fall through to demo */ }
+    
+    const data = await res.json();
+    console.log('✅ Data received from Sheets');
+    
+    if (!data.values || data.values.length === 0) {
+      console.warn('⚠️ No data in sheet');
+      throw new Error('No data in sheet');
+    }
+
+    // Parse rows into objects using headers from first row
+    const headers = (data.values[0] || []).map(h => (h || '').toLowerCase().trim());
+    const rows = data.values.slice(1).map(row => {
+      const obj = {};
+      headers.forEach((header, idx) => {
+        obj[header] = (row[idx] || '').trim();
+      });
+      return obj;
+    });
+
+    console.log(`📊 Parsed ${rows.length} customers from sheet`);
+    
+    if (rows.length > 0) {
+      console.log('Sample row keys:', Object.keys(rows[0]));
+      console.log('Sample row data:', rows[0]);
+    }
+
+    // Find matching customer
+    customer = rows.find(r =>
+      (r.username || '').toLowerCase() === username && 
+      (r.pin || '') === pin
+    ) || null;
+
+    if (customer) {
+      console.log('✅ Customer found in Sheet:', customer.username);
+    } else {
+      console.log(`❌ No customer found matching username="${username}" and pin="${pin}"`);
+      console.log('Available usernames:', rows.map(r => r.username).join(', '));
+    }
+    
+  } catch(sheetError) {
+    console.error('⚠️ Sheet API error:', sheetError.message);
+    console.log('Falling back to demo account...');
+  }
 
   // Fall back to demo
   if (!customer && username === DEMO.username && pin === DEMO.pin) {
+    console.log('✅ Using DEMO account');
     customer = DEMO;
   }
 
@@ -2443,12 +2492,12 @@ async function portalLogin() {
 
   if (!customer) {
     showPError('Username or PIN not found. Please check and try again, or call 01842-292646.');
+    console.error('❌ Login failed - no matching customer found');
     return;
   }
 
   buildDashboard(customer);
 }
-
 // ── Build dashboard ───────────────────────────────────────────
 function buildDashboard(c) {
   sessionStorage.setItem('svcnPortal', JSON.stringify(c));
