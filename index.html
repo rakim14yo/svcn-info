@@ -1799,42 +1799,7 @@ code.ac { background:rgba(0,0,0,.4); border:1px solid rgba(255,255,255,.1); bord
     </div>
 
     <!-- ══ ADMIN GUIDE (delete this block after setup) ══════════ -->
-    <div class="admin-guide fade-in" id="adminGuide">
-      <div class="ag-title">⚙️ Admin Setup Guide — read once, then delete this box</div>
-      <div class="ag-steps">
-        <div class="ag-step">
-          <div class="ag-num">1</div>
-          <div>Create a <strong style="color:#fff;">Google Sheet</strong> with these exact column headers in Row 1 (copy exactly):
-            <br><code class="ac">username</code> <code class="ac">pin</code> <code class="ac">name</code> <code class="ac">package</code>
-            <code class="ac">speed</code> <code class="ac">monthly_bill</code> <code class="ac">due_amount</code>
-            <code class="ac">due_date</code> <code class="ac">status</code> <code class="ac">member_since</code> <code class="ac">history</code>
-          </div>
-        </div>
-        <div class="ag-step">
-          <div class="ag-num">2</div>
-          <div>Add each customer as one row. For the <code class="ac">history</code> column write payment records like this:
-            <br><code class="ac">Jan 2025:800:Paid|Feb 2025:800:Paid|Mar 2025:800:Due</code>
-            <br><span style="font-size:12px;">(months separated by <code class="ac">|</code>, each entry is Month:Amount:Status)</span>
-          </div>
-        </div>
-        <div class="ag-step">
-          <div class="ag-num">3</div>
-          <div>In the Sheet click <strong style="color:#fff;">File → Share → Publish to web</strong> → select <code class="ac">Sheet1</code> → format <code class="ac">CSV</code> → click <strong style="color:#fff;">Publish</strong> → copy the long URL you get.</div>
-        </div>
-        <div class="ag-step">
-          <div class="ag-num">4</div>
-          <div>Open this HTML file and find <code class="ac">PASTE_SHEET_CSV_URL_HERE</code> — replace it with the URL you just copied.</div>
-        </div>
-        <div class="ag-step">
-          <div class="ag-num">5</div>
-          <div>Delete the entire <code class="ac">adminGuide</code> div from the code so customers don't see these instructions.</div>
-        </div>
-        <div class="ag-step">
-          <div class="ag-num">🔑</div>
-          <div><strong style="color:#fff;">Right now</strong> — test with demo account: username <code class="ac">demo</code> / PIN <code class="ac">1234</code> to see how the dashboard looks.</div>
-        </div>
-      </div>
-    </div>
+    
     <!-- ══ END ADMIN GUIDE ══════════════════════════════════════ -->
 
     <!-- LOGIN FORM -->
@@ -2377,7 +2342,7 @@ if ('IntersectionObserver' in window) {
 // ── CONFIG ────────────────────────────────────────────────────
 // After publishing your Google Sheet as CSV, paste the URL below.
 // Leave as-is to use the built-in demo account.
-const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTvGjJQFmYuMGa7SpQmkohZK2Bty6nBBidS1SFgIbuNCJS7IkNldw_zYWGD_jE4dTLuszxPaxO8TrZe/pub?gid=0&single=true&output=csv';
+const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTvGjJQFmYuMGa7SpQmkohZK2Bty6nBBidS1SFgIbuNCJS7IkNldw_zYWGD_jE4dTLuszxPaxO8TrZe/pub?output=csv';
 
 // Demo account — shown when no real Sheet is connected yet
 const DEMO = {
@@ -2423,7 +2388,7 @@ async function portalLogin() {
 
   try {
     // Try live Google Sheet first
-    if (SHEET_URL && SHEET_URL !== 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTvGjJQFmYuMGa7SpQmkohZK2Bty6nBBidS1SFgIbuNCJS7IkNldw_zYWGD_jE4dTLuszxPaxO8TrZe/pub?gid=0&single=true&output=csv') {
+    if (SHEET_URL && SHEET_URL !== 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTvGjJQFmYuMGa7SpQmkohZK2Bty6nBBidS1SFgIbuNCJS7IkNldw_zYWGD_jE4dTLuszxPaxO8TrZe/pub?output=csv') {
       const res  = await fetch(SHEET_URL + '?t=' + Date.now());
       const text = await res.text();
       const rows = csvToObjects(text);
