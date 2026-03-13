@@ -807,191 +807,206 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
 .popup-item svg { width: 16px; height: 16px; color: var(--green-glow); flex-shrink: 0; }
 
 /* ============================================================
-   CUSTOMER PORTAL  — easy-to-read styles
+   CUSTOMER PORTAL
    ============================================================ */
 .portal-section {
   padding: 90px 0;
-  background: linear-gradient(180deg, var(--dark) 0%, var(--dark-2) 100%);
+  background: radial-gradient(ellipse 60% 50% at 20% 50%, rgba(0,106,78,0.1), transparent 55%),
+              radial-gradient(ellipse 50% 40% at 80% 50%, rgba(232,25,44,0.06), transparent 55%),
+              var(--dark-2);
   position: relative; overflow: hidden;
 }
-/* faint grid lines in background */
 .portal-section::before {
-  content:''; position:absolute; inset:0; pointer-events:none;
-  background-image: linear-gradient(rgba(0,180,110,.03) 1px,transparent 1px),
-                    linear-gradient(90deg,rgba(0,180,110,.03) 1px,transparent 1px);
-  background-size: 44px 44px;
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background-image: linear-gradient(rgba(0,180,110,0.03) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0,180,110,0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
 }
 
-/* ── Login card ─────────────────────────────────────── */
-.portal-wrap { max-width:480px; margin:0 auto; }
+/* --- Login Card --- */
+.portal-login-wrap { max-width: 460px; margin: 0 auto; }
 .portal-card {
-  background:var(--surface); border:1px solid var(--border);
-  border-radius:var(--radius-lg); overflow:hidden;
-  box-shadow:0 24px 64px rgba(0,0,0,.55);
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
 }
-.portal-card-head {
-  background:linear-gradient(135deg,var(--green-d),var(--green));
-  padding:28px 32px 22px; text-align:center;
+.portal-card-header {
+  background: linear-gradient(135deg, var(--green-d), var(--green));
+  padding: 28px 32px 24px; text-align: center;
 }
-.portal-head-icon {
-  width:56px; height:56px; border-radius:16px;
-  background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.2);
-  display:flex; align-items:center; justify-content:center;
-  margin:0 auto 12px; font-size:26px;
+.portal-header-icon {
+  width: 56px; height: 56px; border-radius: 16px;
+  background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 12px; font-size: 26px;
 }
-.portal-head-title { font-family:var(--font-head); font-size:20px; font-weight:800; color:#fff; }
-.portal-head-sub   { font-size:13px; color:rgba(255,255,255,.6); margin-top:4px; }
-.portal-card-body  { padding:28px 32px 32px; }
-
-/* fields */
-.p-field { display:flex; flex-direction:column; gap:5px; margin-bottom:15px; }
-.p-label { font-size:11px; font-weight:700; color:var(--text-muted); letter-spacing:1px; text-transform:uppercase; }
-.p-input {
-  width:100%; padding:13px 16px;
-  background:rgba(255,255,255,.04); border:1.5px solid var(--border);
-  border-radius:10px; color:#fff; font-size:15px; font-family:var(--font-body);
-  outline:none; transition:border .2s, background .2s;
+.portal-header-title { font-family: var(--font-head); font-size: 20px; font-weight: 800; color: #fff; }
+.portal-header-sub { font-size: 13px; color: rgba(255,255,255,0.65); margin-top: 4px; }
+.portal-card-body { padding: 28px 32px 32px; }
+.portal-input-label {
+  display: block; font-size: 11px; font-weight: 700; color: var(--text-muted);
+  letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px;
 }
-.p-input:focus { border-color:var(--green); background:rgba(0,200,130,.04); }
-.p-input::placeholder { color:var(--text-dim); }
-
-/* login button */
-.p-login-btn {
-  width:100%; padding:14px; border-radius:10px;
-  background:var(--green); color:#fff; border:none;
-  font-family:var(--font-head); font-weight:800; font-size:15px;
-  cursor:pointer; transition:all .25s; box-shadow:var(--shadow-green);
-  display:flex; align-items:center; justify-content:center; gap:8px;
+.portal-input {
+  width: 100%; padding: 13px 16px;
+  background: rgba(255,255,255,0.04); border: 1.5px solid var(--border);
+  border-radius: 10px; color: #fff; font-family: var(--font-body); font-size: 15px;
+  outline: none; transition: border-color 0.2s, background 0.2s; margin-bottom: 14px;
 }
-.p-login-btn:hover  { background:var(--green-l); transform:translateY(-2px); }
-.p-login-btn:disabled { opacity:.55; cursor:not-allowed; transform:none; }
-
-/* spinner */
-.p-spinner {
-  display:inline-block; width:16px; height:16px;
-  border:2px solid rgba(0,200,130,.2); border-top-color:var(--green-glow);
-  border-radius:50%; animation:pspin .7s linear infinite; vertical-align:middle;
+.portal-input:focus { border-color: var(--green); background: rgba(0,200,130,0.04); }
+.portal-input::placeholder { color: var(--text-dim); }
+.portal-login-btn {
+  width: 100%; padding: 14px; border-radius: 10px; background: var(--green);
+  color: #fff; font-family: var(--font-head); font-weight: 800; font-size: 15px;
+  border: none; cursor: pointer; transition: all 0.25s; box-shadow: var(--shadow-green);
+  display: flex; align-items: center; justify-content: center; gap: 8px;
 }
-@keyframes pspin { to { transform:rotate(360deg); } }
-.p-loading { display:none; text-align:center; padding:14px; font-size:13px; color:var(--text-muted); }
-
-/* error / hint */
-.p-error {
-  display:none; margin-top:11px; padding:10px 14px;
-  background:rgba(232,25,44,.1); border:1px solid rgba(232,25,44,.3);
-  border-radius:8px; font-size:13px; color:#FF6677; text-align:center;
+.portal-login-btn:hover { background: var(--green-l); transform: translateY(-2px); }
+.portal-login-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+.portal-error {
+  background: rgba(232,25,44,0.1); border: 1px solid rgba(232,25,44,0.3);
+  border-radius: 8px; padding: 10px 14px; font-size: 13px; color: #FF6677;
+  margin-top: 12px; display: none; text-align: center;
 }
-.p-hint {
-  margin-top:13px; padding:10px 14px; text-align:center;
-  background:rgba(255,204,0,.05); border:1px solid rgba(255,204,0,.12);
-  border-radius:8px; font-size:12px; color:var(--text-dim);
+.portal-loading {
+  display: none; text-align: center; padding: 12px;
+  font-size: 13px; color: var(--text-muted);
+}
+.portal-spinner {
+  display: inline-block; width: 16px; height: 16px;
+  border: 2px solid rgba(0,200,130,0.2); border-top-color: var(--green-glow);
+  border-radius: 50%; animation: spin 0.7s linear infinite;
+  vertical-align: middle; margin-right: 7px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.portal-demo-hint {
+  text-align: center; margin-top: 14px; font-size: 12px; color: var(--text-dim);
+  padding: 10px 14px; background: rgba(255,204,0,0.05);
+  border: 1px solid rgba(255,204,0,0.12); border-radius: 8px;
 }
 
-/* ── Dashboard ──────────────────────────────────────── */
-.portal-dash { display:none; }
-.dash-topbar {
-  display:flex; align-items:center; justify-content:space-between;
-  flex-wrap:wrap; gap:12px; margin-bottom:26px;
+/* --- Setup Instructions (admin only) --- */
+.portal-setup-box {
+  background: rgba(255,204,0,0.05); border: 1px solid rgba(255,204,0,0.2);
+  border-radius: var(--radius); padding: 20px 22px; margin-bottom: 28px;
 }
-.dash-welcome { font-family:var(--font-head); font-size:22px; font-weight:800; }
-.dash-welcome em { color:var(--green-glow); font-style:normal; }
-.dash-logout {
-  padding:7px 16px; border-radius:99px; font-size:12px; font-weight:700;
-  background:rgba(255,255,255,.05); border:1px solid var(--border);
-  color:var(--text-muted); cursor:pointer; transition:all .2s;
+.portal-setup-title {
+  font-family: var(--font-head); font-size: 14px; font-weight: 800;
+  color: var(--gold); margin-bottom: 10px;
 }
-.dash-logout:hover { border-color:var(--red); color:#FF6677; }
+.portal-setup-step {
+  display: flex; gap: 10px; font-size: 12px; color: var(--text-muted); margin-bottom: 8px;
+}
+.portal-setup-num {
+  width: 20px; height: 20px; border-radius: 50%;
+  background: rgba(255,204,0,0.15); color: var(--gold);
+  font-size: 10px; font-weight: 800; display: flex; align-items: center;
+  justify-content: center; flex-shrink: 0; margin-top: 1px;
+}
+.portal-setup-step code {
+  background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 3px; padding: 1px 5px; font-size: 11px;
+  color: var(--green-glow); font-family: monospace;
+}
 
-/* summary cards */
-.dash-cards {
-  display:grid; grid-template-columns:repeat(auto-fit,minmax(175px,1fr));
-  gap:13px; margin-bottom:24px;
+/* --- Dashboard --- */
+.portal-dashboard { display: none; }
+.portal-dash-top {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 14px; margin-bottom: 28px;
 }
-.dash-card {
-  background:var(--surface); border:1px solid var(--border);
-  border-radius:var(--radius); padding:20px 18px; position:relative; overflow:hidden;
+.portal-welcome {
+  font-family: var(--font-head); font-size: 22px; font-weight: 800;
 }
-.dash-card::before {
-  content:''; position:absolute; top:0; left:0; right:0;
-  height:3px; border-radius:14px 14px 0 0;
+.portal-welcome span { color: var(--green-glow); }
+.portal-logout-btn {
+  padding: 8px 18px; border-radius: 99px; font-size: 12px; font-weight: 700;
+  background: rgba(255,255,255,0.06); border: 1px solid var(--border);
+  color: var(--text-muted); cursor: pointer; transition: all 0.2s;
 }
-.dash-card.c-bill::before    { background:linear-gradient(90deg,var(--red),#FF6677); }
-.dash-card.c-pkg::before     { background:linear-gradient(90deg,var(--green),var(--green-glow)); }
-.dash-card.c-status::before  { background:linear-gradient(90deg,var(--gold),#FFE066); }
-.dash-card.c-since::before   { background:linear-gradient(90deg,#7B8CDE,#A9B4FF); }
-.dc-icon   { font-size:22px; margin-bottom:8px; }
-.dc-label  { font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--text-muted); margin-bottom:3px; }
-.dc-value  { font-family:var(--font-head); font-size:21px; font-weight:900; color:#fff; line-height:1.1; }
-.dc-value.red  { color:#FF6677; }
-.dc-value.green{ color:var(--green-glow); }
-.dc-sub    { font-size:11px; color:var(--text-muted); margin-top:2px; }
+.portal-logout-btn:hover { border-color: var(--red); color: var(--red-l); }
 
-/* two-panel grid */
-.dash-panels { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-@media(max-width:700px){ .dash-panels { grid-template-columns:1fr; } }
-
-.dash-panel { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; }
-.dp-head {
-  padding:13px 18px; border-bottom:1px solid var(--border);
-  font-family:var(--font-head); font-size:13px; font-weight:700;
-  color:rgba(255,255,255,.8); display:flex; align-items:center; gap:7px;
+/* Summary cards */
+.portal-summary {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 14px; margin-bottom: 24px;
 }
-.dp-body { padding:18px; }
-
-/* history rows */
-.hist-row {
-  display:flex; align-items:center; justify-content:space-between;
-  padding:9px 0; border-bottom:1px solid rgba(255,255,255,.05); font-size:13px;
+.summary-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 20px 18px; position: relative; overflow: hidden;
 }
-.hist-row:last-child { border-bottom:none; }
-.hist-month { color:var(--text-muted); }
-.hist-amt   { font-family:var(--font-head); font-weight:700; }
-.hist-badge {
-  padding:2px 9px; border-radius:99px; font-size:10px; font-weight:700; letter-spacing:.3px;
+.summary-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; border-radius: 14px 14px 0 0;
 }
-.hb-paid    { background:rgba(0,200,130,.12); color:var(--green-glow); border:1px solid rgba(0,200,130,.25); }
-.hb-due     { background:rgba(232,25,44,.12);  color:#FF6677;           border:1px solid rgba(232,25,44,.25); }
-.hb-pending { background:rgba(255,204,0,.1);   color:var(--gold);       border:1px solid rgba(255,204,0,.25); }
+.summary-card.s-bill::before   { background: linear-gradient(90deg, var(--red), #FF6677); }
+.summary-card.s-speed::before  { background: linear-gradient(90deg, var(--green), var(--green-glow)); }
+.summary-card.s-status::before { background: linear-gradient(90deg, var(--gold), #FFE066); }
+.summary-card.s-since::before  { background: linear-gradient(90deg, #7B8CDE, #A9B4FF); }
+.s-icon { font-size: 22px; margin-bottom: 8px; }
+.s-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--text-muted); margin-bottom: 3px;
+}
+.s-val {
+  font-family: var(--font-head); font-size: 22px; font-weight: 900; color: #fff; line-height: 1.1;
+}
+.s-val.red   { color: #FF6677; }
+.s-val.green { color: var(--green-glow); }
+.s-sub { font-size: 11px; color: var(--text-muted); margin-top: 3px; }
 
-/* package detail rows */
+/* Info panels */
+.portal-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.portal-panel {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); overflow: hidden;
+}
+.panel-head {
+  padding: 13px 18px; border-bottom: 1px solid var(--border);
+  font-family: var(--font-head); font-size: 13px; font-weight: 700;
+  color: rgba(255,255,255,0.8); display: flex; align-items: center; gap: 8px;
+}
+.panel-body { padding: 18px; }
+
+/* Payment history rows */
+.history-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 9px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 13px;
+}
+.history-row:last-child { border-bottom: none; }
+.history-month { color: var(--text-muted); }
+.history-amt { font-family: var(--font-head); font-weight: 700; }
+.status-pill {
+  padding: 2px 10px; border-radius: 99px; font-size: 10px; font-weight: 700;
+}
+.pill-paid    { background: rgba(0,200,130,0.12); color: var(--green-glow); border: 1px solid rgba(0,200,130,0.25); }
+.pill-due     { background: rgba(232,25,44,0.12); color: #FF6677; border: 1px solid rgba(232,25,44,0.25); }
+.pill-pending { background: rgba(255,204,0,0.1); color: var(--gold); border: 1px solid rgba(255,204,0,0.25); }
+
+/* Package detail rows */
 .pkg-row {
-  display:flex; justify-content:space-between; align-items:center;
-  padding:8px 0; border-bottom:1px solid rgba(255,255,255,.05); font-size:13px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 9px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 13px;
 }
-.pkg-row:last-child { border-bottom:none; }
-.pkg-row-key { color:var(--text-muted); }
-.pkg-row-val { font-weight:700; color:#fff; }
+.pkg-row:last-child { border-bottom: none; }
+.pkg-row-key { color: var(--text-muted); }
+.pkg-row-val { font-weight: 700; color: #fff; }
 
-/* action buttons */
-.dash-btn {
-  display:flex; align-items:center; justify-content:center; gap:7px;
-  width:100%; padding:12px; margin-top:13px; border-radius:10px;
-  background:var(--green); color:#fff; border:none;
-  font-family:var(--font-head); font-weight:700; font-size:13px;
-  cursor:pointer; transition:all .2s;
+/* Action buttons */
+.portal-action-btn {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  width: 100%; padding: 12px; margin-top: 14px; border-radius: 10px;
+  color: #fff; font-family: var(--font-head); font-weight: 700; font-size: 13px;
+  cursor: pointer; border: none; transition: all 0.2s;
 }
-.dash-btn:hover { background:var(--green-l); transform:translateY(-2px); }
-.dash-btn.wa-btn { background:#25D366; }
-.dash-btn.wa-btn:hover { background:#1fba58; }
+.btn-wa  { background: #25D366; }
+.btn-wa:hover  { background: #20b858; transform: translateY(-2px); }
+.btn-upg { background: var(--green); box-shadow: var(--shadow-green); }
+.btn-upg:hover { background: var(--green-l); transform: translateY(-2px); }
 
-/* admin guide box */
-.admin-guide {
-  background:rgba(255,204,0,.04); border:1px solid rgba(255,204,0,.2);
-  border-radius:var(--radius); padding:20px 24px; margin-bottom:30px;
+@media(max-width:768px) {
+  .portal-panels { grid-template-columns: 1fr; }
+  .portal-card-body { padding: 20px 18px 24px; }
 }
-.ag-title { font-family:var(--font-head); font-size:14px; font-weight:800; color:var(--gold); margin-bottom:12px; }
-.ag-steps { display:flex; flex-direction:column; gap:10px; }
-.ag-step  { display:flex; gap:10px; font-size:13px; color:var(--text-muted); line-height:1.5; }
-.ag-num   {
-  min-width:22px; height:22px; border-radius:50%;
-  background:rgba(255,204,0,.15); color:var(--gold);
-  font-size:11px; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px;
-}
-code.ac { background:rgba(0,0,0,.4); border:1px solid rgba(255,255,255,.1); border-radius:4px; padding:1px 6px; font-size:11px; color:var(--green-glow); font-family:monospace; }
-@media(max-width:500px){
-  .portal-card-body,.portal-card-head { padding:20px 18px; }
-}
-
 </style>
 </head>
 <body class="banner-on">
@@ -1045,8 +1060,8 @@ code.ac { background:rgba(0,0,0,.4); border:1px solid rgba(255,255,255,.1); bord
       <li><a href="#offers">Offers</a></li>
       <li><a href="#coverage">Coverage</a></li>
       <li><a href="#complaint">Support</a></li>
+      <li><a href="#portal">My Account</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><a href="#portal" style="color:var(--green-glow);font-weight:700;">My Account</a></li>
     </ul>
     <a href="#contact" class="btn btn-primary nav-cta" style="padding:10px 20px;font-size:13px;" data-en="Get Connected" data-bn="সংযোগ নিন">Get Connected</a>
     <div class="lang-toggle" style="margin-left:8px;">
@@ -1065,8 +1080,8 @@ code.ac { background:rgba(0,0,0,.4); border:1px solid rgba(255,255,255,.1); bord
   <a href="#offers" onclick="closeMobile()">Offers</a>
   <a href="#coverage" onclick="closeMobile()">Coverage</a>
   <a href="#complaint" onclick="closeMobile()">Support</a>
+  <a href="#portal" onclick="closeMobile()">My Account</a>
   <a href="#contact" onclick="closeMobile()">Contact</a>
-  <a href="#portal" onclick="closeMobile()" style="color:var(--green-glow);font-weight:700;">🔐 My Account</a>
   <a href="#contact" class="btn btn-primary" style="margin-top:8px;" onclick="closeMobile()">Get Connected</a>
 </div>
 
@@ -1792,114 +1807,111 @@ code.ac { background:rgba(0,0,0,.4); border:1px solid rgba(255,255,255,.1); bord
     <!-- Section heading -->
     <div style="text-align:center;margin-bottom:36px;" class="fade-in">
       <div class="section-label" style="justify-content:center;">Self-Service</div>
-      <h2 class="section-title">My <span class="highlight">Account</span></h2>
+      <h2 class="section-title">Customer <span class="highlight">Portal</span></h2>
       <p class="section-sub" style="margin:0 auto;">
-        Enter the username and PIN we gave you to see your bill, payment history and package details.
+        Log in with your username and PIN to check your bill and package details.
       </p>
     </div>
 
-    <!-- ══ ADMIN GUIDE (delete this block after setup) ══════════ -->
+    <!-- ── ADMIN SETUP BOX ──────────────────────────────────────
+         Delete this yellow box once your sheet is connected.
+         ─────────────────────────────────────────────────────── -->
     
-    <!-- ══ END ADMIN GUIDE ══════════════════════════════════════ -->
-
-    <!-- LOGIN FORM -->
-    <div class="portal-wrap fade-in" id="portalLoginWrap">
+    <!-- ── LOGIN VIEW ─────────────────────────────────────────── -->
+    <div class="portal-login-wrap fade-in" id="portalLoginWrap">
       <div class="portal-card">
 
-        <div class="portal-card-head">
-          <div class="portal-head-icon">🔐</div>
-          <div class="portal-head-title">Customer Login</div>
-          <div class="portal-head-sub">Enter your username &amp; PIN to view your account</div>
+        <div class="portal-card-header">
+          <div class="portal-header-icon">🔐</div>
+          <div class="portal-header-title">Customer Login</div>
+          <div class="portal-header-sub">Enter the username &amp; PIN given by Satellite Vision</div>
         </div>
 
         <div class="portal-card-body">
-          <div class="p-field">
-            <label class="p-label">Username</label>
-            <input class="p-input" id="pUsername" type="text"
-              placeholder="e.g.  SVCN-0042"
-              autocomplete="username"
-              onkeydown="if(event.key==='Enter')portalLogin()">
-          </div>
-          <div class="p-field">
-            <label class="p-label">PIN / Password</label>
-            <input class="p-input" id="pPin" type="password"
-              placeholder="Your 4-digit PIN"
-              autocomplete="current-password"
-              onkeydown="if(event.key==='Enter')portalLogin()">
-          </div>
+          <label class="portal-input-label">Username</label>
+          <input class="portal-input" id="portalUser" type="text"
+            placeholder="e.g. SVCN-0042"
+            onkeydown="if(event.key==='Enter')portalLogin()">
 
-          <button class="p-login-btn" id="pLoginBtn" onclick="portalLogin()">
+          <label class="portal-input-label">PIN</label>
+          <input class="portal-input" id="portalPin" type="password"
+            placeholder="Your 4-digit PIN"
+            onkeydown="if(event.key==='Enter')portalLogin()">
+
+          <button class="portal-login-btn" id="loginBtn" onclick="portalLogin()">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
-              <polyline points="10 17 15 12 10 7"/>
-              <line x1="15" y1="12" x2="3" y2="12"/>
+              <polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/>
             </svg>
             Login to My Account
           </button>
 
-          <div class="p-loading" id="pLoading">
-            <span class="p-spinner"></span>&nbsp; Fetching your account…
+          <div class="portal-loading" id="portalLoading">
+            <span class="portal-spinner"></span>Checking your account…
           </div>
-          <div class="p-error" id="pError"></div>
 
-          <div class="p-hint">
-            💡 <strong style="color:var(--gold);">Demo:</strong>
-            username <code style="color:var(--green-glow);">demo</code> &nbsp;·&nbsp;
-            PIN <code style="color:var(--green-glow);">1234</code>
+          <div class="portal-error" id="portalError"></div>
+
+          <!-- Demo hint (remove after going live) -->
+          <div class="portal-demo-hint">
+            💡 <strong style="color:var(--gold)">Demo:</strong>
+            Username: <code style="color:var(--green-glow)">demo</code> &nbsp; PIN: <code style="color:var(--green-glow)">1234</code>
           </div>
         </div>
       </div>
 
-      <p style="text-align:center;font-size:12px;color:var(--text-dim);margin-top:14px;">
-        Don't have a username? Call us on <strong style="color:#fff;">01842-292646</strong> to get one.
+      <p style="text-align:center;font-size:12px;color:var(--text-dim);margin-top:12px;">
+        Don't have a username? Call <a href="tel:01842292646" style="color:var(--green-glow)">01842-292646</a> to get one.
       </p>
-    </div><!-- /portal-wrap -->
+    </div>
 
-    <!-- DASHBOARD (hidden until login) -->
-    <div class="portal-dash" id="portalDash">
+    <!-- ── DASHBOARD VIEW (shown after login) ─────────────────── -->
+    <div class="portal-dashboard" id="portalDashboard">
 
-      <div class="dash-topbar">
-        <div class="dash-welcome">Welcome back, <em id="dName">—</em> 👋</div>
-        <button class="dash-logout" onclick="portalLogout()">← Logout</button>
+      <div class="portal-dash-top">
+        <div class="portal-welcome">Welcome back, <span id="dashName">—</span> 👋</div>
+        <button class="portal-logout-btn" onclick="portalLogout()">← Logout</button>
       </div>
 
-      <!-- 4 summary cards -->
-      <div class="dash-cards">
-        <div class="dash-card c-bill">
-          <div class="dc-icon">💳</div>
-          <div class="dc-label">Amount Due</div>
-          <div class="dc-value red" id="dDue">—</div>
-          <div class="dc-sub"    id="dDueDate">—</div>
+      <!-- Summary row -->
+      <div class="portal-summary">
+        <div class="summary-card s-bill">
+          <div class="s-icon">💳</div>
+          <div class="s-label">Amount Due</div>
+          <div class="s-val red" id="dashDue">—</div>
+          <div class="s-sub" id="dashDueDate">—</div>
         </div>
-        <div class="dash-card c-pkg">
-          <div class="dc-icon">⚡</div>
-          <div class="dc-label">Your Speed</div>
-          <div class="dc-value green" id="dSpeed">—</div>
-          <div class="dc-sub"        id="dPkgName">—</div>
+        <div class="summary-card s-speed">
+          <div class="s-icon">⚡</div>
+          <div class="s-label">Speed</div>
+          <div class="s-val green" id="dashSpeed">—</div>
+          <div class="s-sub" id="dashPkg">—</div>
         </div>
-        <div class="dash-card c-status">
-          <div class="dc-icon">📋</div>
-          <div class="dc-label">Account Status</div>
-          <div class="dc-value" id="dStatus">—</div>
-          <div class="dc-sub"   id="dBillSub">—</div>
+        <div class="summary-card s-status">
+          <div class="s-icon">📋</div>
+          <div class="s-label">Account Status</div>
+          <div class="s-val" id="dashStatus">—</div>
+          <div class="s-sub" id="dashBill">—</div>
         </div>
-        <div class="dash-card c-since">
-          <div class="dc-icon">🏅</div>
-          <div class="dc-label">Member Since</div>
-          <div class="dc-value" id="dSince">—</div>
-          <div class="dc-sub">Valued Customer</div>
+        <div class="summary-card s-since">
+          <div class="s-icon">🏅</div>
+          <div class="s-label">Member Since</div>
+          <div class="s-val" id="dashSince">—</div>
+          <div class="s-sub">Loyal Customer</div>
         </div>
       </div>
 
       <!-- Two panels -->
-      <div class="dash-panels">
+      <div class="portal-panels">
 
-        <!-- Payment history -->
-        <div class="dash-panel">
-          <div class="dp-head">💰 Payment History</div>
-          <div class="dp-body">
-            <div id="dHistory"></div>
-            <button class="dash-btn wa-btn" onclick="portalPayWA()">
+        <!-- Payment History -->
+        <div class="portal-panel">
+          <div class="panel-head">💰 Payment History</div>
+          <div class="panel-body">
+            <div id="dashHistory">
+              <div style="text-align:center;color:var(--text-muted);font-size:13px;padding:20px 0;">No history available.</div>
+            </div>
+            <button class="portal-action-btn btn-wa" onclick="portalPayWA()">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/>
               </svg>
@@ -1908,24 +1920,25 @@ code.ac { background:rgba(0,0,0,.4); border:1px solid rgba(255,255,255,.1); bord
           </div>
         </div>
 
-        <!-- Package details -->
-        <div class="dash-panel">
-          <div class="dp-head">📦 Package Details</div>
-          <div class="dp-body">
-            <div id="dPkgDetails"></div>
-            <button class="dash-btn" onclick="portalUpgrade()">
+        <!-- Package Details -->
+        <div class="portal-panel">
+          <div class="panel-head">📦 Package Details</div>
+          <div class="panel-body">
+            <div id="dashPkgDetails">
+              <div style="text-align:center;color:var(--text-muted);font-size:13px;padding:20px 0;">Loading…</div>
+            </div>
+            <button class="portal-action-btn btn-upg" onclick="portalUpgrade()">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                 <path d="M5 12h14M12 5l7 7-7 7"/>
               </svg>
-              Request Package Upgrade
+              Upgrade My Package
             </button>
           </div>
         </div>
 
-      </div><!-- /dash-panels -->
-    </div><!-- /portal-dash -->
-
-  </div><!-- /container -->
+      </div>
+    </div><!-- end dashboard -->
+  </div>
 </section>
 
 <!-- ============================================================
@@ -1962,7 +1975,7 @@ code.ac { background:rgba(0,0,0,.4); border:1px solid rgba(255,255,255,.1); bord
             <div class="contact-icon contact-icon-b">✉️</div>
             <div class="contact-detail">
               <span class="contact-detail-label">Email</span>
-              <span class="contact-detail-val" style="font-size:13px;word-break:break-all;"><span class="__cf_email__" data-cfemail="cebdafbaaba2a2a7baabb8a7bda7a1a0adafaca2aba0abbab9a1bca58ea9a3afa7a2e0ada1a3">[email&#160;protected]</span></span>
+              <span class="contact-detail-val" style="font-size:13px;word-break:break-all;">satellitevisioncablenetwork@gmail.com</span>
             </div>
           </a>
           <a href="https://facebook.com" target="_blank" class="contact-item">
@@ -2334,186 +2347,201 @@ if ('IntersectionObserver' in window) {
   document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
 }
 
+// ============================================================
+// CUSTOMER PORTAL
+// ============================================================
 
-// ══════════════════════════════════════════════════════════════
-//  CUSTOMER PORTAL
-// ══════════════════════════════════════════════════════════════
+// ── STEP 1: Paste your Google Sheet ID here ─────────────────
+// From your sheet URL: docs.google.com/spreadsheets/d/THIS_PART/edit
+const SHEET_ID = '1T4Cqx6JSq0y_BpZPC3UoR8oH6l300V8edeh_KmjEza0';
+// ────────────────────────────────────────────────────────────
 
-// ── CONFIG ────────────────────────────────────────────────────
-// After publishing your Google Sheet as CSV, paste the URL below.
-// Leave as-is to use the built-in demo account.
-const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTvGjJQFmYuMGa7SpQmkohZK2Bty6nBBidS1SFgIbuNCJS7IkNldw_zYWGD_jE4dTLuszxPaxO8TrZe/pub?output=csv';
-
-// Demo account — shown when no real Sheet is connected yet
+// Demo account shown when no sheet is connected yet
 const DEMO = {
-  username:'demo', pin:'1234',
-  name:'Rahim Uddin', package:'Pro Plan', speed:'40 Mbps',
-  monthly_bill:'৳800', due_amount:'৳800',
-  due_date:'Due: 1 April 2025', status:'Active',
-  member_since:'Jan 2023',
-  history:'Jan 2025:800:Paid|Feb 2025:800:Paid|Mar 2025:800:Due'
+  username: 'demo', pin: '1234',
+  name: 'Rahim Uddin', package: 'Pro Plan', speed: '40 Mbps',
+  monthly_bill: '৳800', due_amount: '৳800', due_date: 'Due: 1 Apr 2025',
+  status: 'Active', member_since: 'Jan 2023',
+  history: 'Jan 2025:800:Paid|Feb 2025:800:Paid|Mar 2025:800:Due'
 };
 
-// ── CSV parser ────────────────────────────────────────────────
-function csvToObjects(text) {
-  const rows  = text.trim().split(/\r?\n/);
-  const heads = rows[0].split(',').map(h => h.trim().replace(/"/g,''));
-  return rows.slice(1).map(row => {
-    const vals = row.split(',').map(v => v.trim().replace(/"/g,''));
-    const obj  = {};
-    heads.forEach((h,i) => obj[h] = vals[i] || '');
+// Build the Google Sheets URL (uses gviz endpoint — works with "Anyone with link" sharing, no publishing needed)
+function sheetURL() {
+  if (!SHEET_ID || SHEET_ID === '1T4Cqx6JSq0y_BpZPC3UoR8oH6l300V8edeh_KmjEza0') return null;
+  return 'https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?tqx=out:csv&sheet=Sheet1';
+}
+
+// Parse simple CSV into array of objects
+function parseCSV(text) {
+  const lines = text.trim().split('\n');
+  const headers = lines[0].split(',').map(h => h.replace(/"/g, '').trim());
+  return lines.slice(1).map(line => {
+    const vals = line.split(',').map(v => v.replace(/"/g, '').trim());
+    const obj = {};
+    headers.forEach((h, i) => { obj[h] = vals[i] || ''; });
     return obj;
   });
 }
 
-// ── Login handler ─────────────────────────────────────────────
+// Main login function
 async function portalLogin() {
-  const username = (document.getElementById('pUsername').value || '').trim().toLowerCase();
-  const pin      = (document.getElementById('pPin').value      || '').trim();
-  const btn      = document.getElementById('pLoginBtn');
-  const loading  = document.getElementById('pLoading');
-  const errBox   = document.getElementById('pError');
-
-  errBox.style.display = 'none';
+  const username = (document.getElementById('portalUser').value || '').trim().toLowerCase();
+  const pin      = (document.getElementById('portalPin').value  || '').trim();
 
   if (!username || !pin) {
-    showPError('Please enter your username and PIN.');
+    showPortalError('Please enter your username and PIN.');
     return;
   }
 
+  const btn     = document.getElementById('loginBtn');
+  const loading = document.getElementById('portalLoading');
+  hidePortalError();
   btn.disabled = true;
   loading.style.display = 'block';
 
   let customer = null;
 
   try {
-    // Try live Google Sheet first
-    if (SHEET_URL && SHEET_URL !== 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTvGjJQFmYuMGa7SpQmkohZK2Bty6nBBidS1SFgIbuNCJS7IkNldw_zYWGD_jE4dTLuszxPaxO8TrZe/pub?output=csv') {
-      const res  = await fetch(SHEET_URL + '?t=' + Date.now());
-      const text = await res.text();
-      const rows = csvToObjects(text);
-      customer   = rows.find(r =>
-        (r.username||'').toLowerCase() === username && (r.pin||'') === pin
+    const url = sheetURL();
+
+    if (url) {
+      // Try to fetch from Google Sheet
+      const resp = await fetch(url);
+      if (!resp.ok) throw new Error('Sheet fetch failed: ' + resp.status);
+      const text = await resp.text();
+      const rows = parseCSV(text);
+      // Find matching row (username + pin, both case-insensitive)
+      customer = rows.find(r =>
+        r.username && r.username.toLowerCase() === username &&
+        r.pin      && r.pin === pin
       ) || null;
     }
-  } catch(e) { /* network error — fall through to demo */ }
 
-  // Fall back to demo
-  if (!customer && username === DEMO.username && pin === DEMO.pin) {
-    customer = DEMO;
+    // If no sheet, fall back to demo account
+    if (!customer && DEMO.username === username && DEMO.pin === pin) {
+      customer = DEMO;
+    }
+
+    if (customer) {
+      showDashboard(customer);
+    } else {
+      showPortalError('Username or PIN not found. Please check and try again, or call 01842-292646.');
+    }
+
+  } catch (err) {
+    console.error('Portal error:', err);
+    // On network error, still allow demo login
+    if (DEMO.username === username && DEMO.pin === pin) {
+      showDashboard(DEMO);
+    } else {
+      showPortalError('Could not connect. Check your internet and try again.');
+    }
+  } finally {
+    btn.disabled = false;
+    loading.style.display = 'none';
   }
-
-  btn.disabled = false;
-  loading.style.display = 'none';
-
-  if (!customer) {
-    showPError('Username or PIN not found. Please check and try again, or call 01842-292646.');
-    return;
-  }
-
-  buildDashboard(customer);
 }
 
-// ── Build dashboard ───────────────────────────────────────────
-function buildDashboard(c) {
-  sessionStorage.setItem('svcnPortal', JSON.stringify(c));
+// Populate and show the dashboard
+function showDashboard(c) {
+  sessionStorage.setItem('svcnCustomer', JSON.stringify(c));
 
-  document.getElementById('dName').textContent    = c.name || c.username;
-  document.getElementById('dDue').textContent     = c.due_amount   || '৳0';
-  document.getElementById('dDueDate').textContent = c.due_date     || '';
-  document.getElementById('dSpeed').textContent   = c.speed        || '—';
-  document.getElementById('dPkgName').textContent = c.package      || '—';
-  document.getElementById('dBillSub').textContent = 'Monthly: ' + (c.monthly_bill || '—');
-  document.getElementById('dSince').textContent   = c.member_since || '—';
+  document.getElementById('dashName').textContent  = c.name || c.username;
+  document.getElementById('dashDue').textContent   = c.due_amount   || '৳0';
+  document.getElementById('dashDueDate').textContent = c.due_date   || '';
+  document.getElementById('dashSpeed').textContent = c.speed        || '—';
+  document.getElementById('dashPkg').textContent   = c.package      || '—';
+  document.getElementById('dashBill').textContent  = 'Monthly: ' + (c.monthly_bill || '—');
+  document.getElementById('dashSince').textContent = c.member_since || '—';
 
-  // Status with colour
-  const stEl = document.getElementById('dStatus');
-  stEl.textContent  = c.status || 'Active';
-  const s = (c.status || '').toLowerCase();
-  stEl.className = 'dc-value ' + (s === 'active' ? 'green' : s === 'suspended' ? 'red' : '');
+  // Status colour
+  const statusEl = document.getElementById('dashStatus');
+  statusEl.textContent = c.status || 'Active';
+  const st = (c.status || '').toLowerCase();
+  statusEl.className = 's-val ' + (st === 'active' ? 'green' : st === 'suspended' ? 'red' : '');
 
   // Payment history rows
-  const histEl = document.getElementById('dHistory');
+  const histEl = document.getElementById('dashHistory');
   if (c.history) {
     histEl.innerHTML = c.history.split('|').map(entry => {
-      const [month, amt, st] = entry.split(':');
-      const cls = st === 'Paid' ? 'hb-paid' : st === 'Due' ? 'hb-due' : 'hb-pending';
-      return '<div class="hist-row">'
-        + '<span class="hist-month">' + (month||'—') + '</span>'
-        + '<span class="hist-amt">৳' + (amt||'—') + '</span>'
-        + '<span class="hist-badge ' + cls + '">' + (st||'—') + '</span>'
-        + '</div>';
+      const [month, amt, status] = entry.split(':');
+      const pillClass = status === 'Paid' ? 'pill-paid' : status === 'Due' ? 'pill-due' : 'pill-pending';
+      return '<div class="history-row">' +
+        '<span class="history-month">' + (month||'—') + '</span>' +
+        '<span class="history-amt">৳' + (amt||'—') + '</span>' +
+        '<span class="status-pill ' + pillClass + '">' + (status||'—') + '</span>' +
+        '</div>';
     }).join('');
   } else {
-    histEl.innerHTML = '<p style="text-align:center;color:var(--text-muted);font-size:13px;padding:18px 0;">No history available.</p>';
+    histEl.innerHTML = '<div style="text-align:center;color:var(--text-muted);font-size:13px;padding:20px 0;">No payment history found.</div>';
   }
 
   // Package detail rows
-  document.getElementById('dPkgDetails').innerHTML = [
-    ['Package',       c.package      || '—'],
-    ['Speed',         c.speed        || '—'],
-    ['Monthly Bill',  c.monthly_bill || '—'],
-    ['Status',        c.status       || '—'],
-    ['Username',      c.username     || '—'],
-  ].map(([k,v]) =>
-    '<div class="pkg-row"><span class="pkg-row-key">' + k + '</span>'
-    + '<span class="pkg-row-val">' + v + '</span></div>'
-  ).join('');
+  document.getElementById('dashPkgDetails').innerHTML =
+    row('Package',      c.package     || '—', '') +
+    row('Speed',        c.speed       || '—', 'color:var(--green-glow)') +
+    row('Monthly Bill', c.monthly_bill|| '—', '') +
+    row('Status',       c.status      || '—', '') +
+    row('Username',     c.username    || '—', 'color:var(--text-muted)');
 
-  // Show dashboard, hide login
+  // Switch views
   document.getElementById('portalLoginWrap').style.display = 'none';
-  document.getElementById('adminGuide').style.display      = 'none';
-  document.getElementById('portalDash').style.display      = 'block';
+  document.getElementById('setupBox').style.display        = 'none';
+  document.getElementById('portalDashboard').style.display = 'block';
 }
 
-// ── WhatsApp pay ──────────────────────────────────────────────
+function row(key, val, style) {
+  return '<div class="pkg-row"><span class="pkg-row-key">' + key + '</span>' +
+         '<span class="pkg-row-val" style="' + style + '">' + val + '</span></div>';
+}
+
+// Pay via WhatsApp
 function portalPayWA() {
-  const c = JSON.parse(sessionStorage.getItem('svcnPortal') || '{}');
+  const c = JSON.parse(sessionStorage.getItem('svcnCustomer') || '{}');
   const msg = encodeURIComponent(
-    'Hello, I want to confirm my bill payment.\n\n'
-    + 'Name: '     + (c.name||'—')       + '\n'
-    + 'Username: ' + (c.username||'—')   + '\n'
-    + 'Amount: '   + (c.due_amount||'—') + '\n'
-    + 'Package: '  + (c.package||'—')
+    'Hello, I want to confirm my bill payment.\n\n' +
+    'Name: ' + (c.name||'—') + '\nUsername: ' + (c.username||'—') +
+    '\nAmount: ' + (c.due_amount||'—') + '\nPackage: ' + (c.package||'—')
   );
   window.open('https://wa.me/8801634348602?text=' + msg, '_blank');
 }
 
-// ── Upgrade package ───────────────────────────────────────────
+// Upgrade via WhatsApp
 function portalUpgrade() {
-  const c = JSON.parse(sessionStorage.getItem('svcnPortal') || '{}');
+  const c = JSON.parse(sessionStorage.getItem('svcnCustomer') || '{}');
   const msg = encodeURIComponent(
-    'Hello, I want to upgrade my package.\n\n'
-    + 'Name: '            + (c.name||'—')    + '\n'
-    + 'Username: '        + (c.username||'—') + '\n'
-    + 'Current Package: ' + (c.package||'—')  + '\n'
-    + 'Requested Upgrade: '
+    'Hello, I want to upgrade my package.\n\n' +
+    'Name: ' + (c.name||'—') + '\nUsername: ' + (c.username||'—') +
+    '\nCurrent Package: ' + (c.package||'—') + '\nRequested Upgrade: '
   );
   window.open('https://wa.me/8801634348602?text=' + msg, '_blank');
 }
 
-// ── Logout ─────────────────────────────────────────────────────
+// Logout
 function portalLogout() {
-  sessionStorage.removeItem('svcnPortal');
-  document.getElementById('portalLoginWrap').style.display = 'block';
-  document.getElementById('adminGuide').style.display      = 'block';
-  document.getElementById('portalDash').style.display      = 'none';
-  document.getElementById('pUsername').value = '';
-  document.getElementById('pPin').value      = '';
-  document.getElementById('pError').style.display = 'none';
+  sessionStorage.removeItem('svcnCustomer');
+  document.getElementById('portalLoginWrap').style.display  = 'block';
+  document.getElementById('setupBox').style.display         = 'block';
+  document.getElementById('portalDashboard').style.display  = 'none';
+  document.getElementById('portalUser').value = '';
+  document.getElementById('portalPin').value  = '';
+  hidePortalError();
 }
 
-// ── Error helper ───────────────────────────────────────────────
-function showPError(msg) {
-  const el = document.getElementById('pError');
-  el.textContent = msg;
-  el.style.display = 'block';
+function showPortalError(msg) {
+  const el = document.getElementById('portalError');
+  el.textContent = msg; el.style.display = 'block';
+}
+function hidePortalError() {
+  document.getElementById('portalError').style.display = 'none';
 }
 
-// ── Restore session on page reload ────────────────────────────
-(function(){
-  const saved = sessionStorage.getItem('svcnPortal');
-  if (saved) { try { buildDashboard(JSON.parse(saved)); } catch(e){} }
+// Restore session if page is reloaded
+(function() {
+  try {
+    const saved = sessionStorage.getItem('svcnCustomer');
+    if (saved) showDashboard(JSON.parse(saved));
+  } catch(e) {}
 })();
 
 </script>
@@ -2521,20 +2549,8 @@ function showPError(msg) {
 <!-- ============================================================
      TAWK.TO LIVE CHAT
      ============================================================ -->
-
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6996626a4c408f1c3a577be2/1jhpn0spb';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
-
-</body>
-</html>
+var s1=document.createElement("script"),s0=d
