@@ -805,6 +805,193 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
 .popup-highlights { display: flex; flex-direction: column; gap: 8px; margin-bottom: 22px; }
 .popup-item { display: flex; align-items: center; gap: 9px; font-size: 14px; }
 .popup-item svg { width: 16px; height: 16px; color: var(--green-glow); flex-shrink: 0; }
+
+/* ============================================================
+   CUSTOMER PORTAL  — easy-to-read styles
+   ============================================================ */
+.portal-section {
+  padding: 90px 0;
+  background: linear-gradient(180deg, var(--dark) 0%, var(--dark-2) 100%);
+  position: relative; overflow: hidden;
+}
+/* faint grid lines in background */
+.portal-section::before {
+  content:''; position:absolute; inset:0; pointer-events:none;
+  background-image: linear-gradient(rgba(0,180,110,.03) 1px,transparent 1px),
+                    linear-gradient(90deg,rgba(0,180,110,.03) 1px,transparent 1px);
+  background-size: 44px 44px;
+}
+
+/* ── Login card ─────────────────────────────────────── */
+.portal-wrap { max-width:480px; margin:0 auto; }
+.portal-card {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius-lg); overflow:hidden;
+  box-shadow:0 24px 64px rgba(0,0,0,.55);
+}
+.portal-card-head {
+  background:linear-gradient(135deg,var(--green-d),var(--green));
+  padding:28px 32px 22px; text-align:center;
+}
+.portal-head-icon {
+  width:56px; height:56px; border-radius:16px;
+  background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.2);
+  display:flex; align-items:center; justify-content:center;
+  margin:0 auto 12px; font-size:26px;
+}
+.portal-head-title { font-family:var(--font-head); font-size:20px; font-weight:800; color:#fff; }
+.portal-head-sub   { font-size:13px; color:rgba(255,255,255,.6); margin-top:4px; }
+.portal-card-body  { padding:28px 32px 32px; }
+
+/* fields */
+.p-field { display:flex; flex-direction:column; gap:5px; margin-bottom:15px; }
+.p-label { font-size:11px; font-weight:700; color:var(--text-muted); letter-spacing:1px; text-transform:uppercase; }
+.p-input {
+  width:100%; padding:13px 16px;
+  background:rgba(255,255,255,.04); border:1.5px solid var(--border);
+  border-radius:10px; color:#fff; font-size:15px; font-family:var(--font-body);
+  outline:none; transition:border .2s, background .2s;
+}
+.p-input:focus { border-color:var(--green); background:rgba(0,200,130,.04); }
+.p-input::placeholder { color:var(--text-dim); }
+
+/* login button */
+.p-login-btn {
+  width:100%; padding:14px; border-radius:10px;
+  background:var(--green); color:#fff; border:none;
+  font-family:var(--font-head); font-weight:800; font-size:15px;
+  cursor:pointer; transition:all .25s; box-shadow:var(--shadow-green);
+  display:flex; align-items:center; justify-content:center; gap:8px;
+}
+.p-login-btn:hover  { background:var(--green-l); transform:translateY(-2px); }
+.p-login-btn:disabled { opacity:.55; cursor:not-allowed; transform:none; }
+
+/* spinner */
+.p-spinner {
+  display:inline-block; width:16px; height:16px;
+  border:2px solid rgba(0,200,130,.2); border-top-color:var(--green-glow);
+  border-radius:50%; animation:pspin .7s linear infinite; vertical-align:middle;
+}
+@keyframes pspin { to { transform:rotate(360deg); } }
+.p-loading { display:none; text-align:center; padding:14px; font-size:13px; color:var(--text-muted); }
+
+/* error / hint */
+.p-error {
+  display:none; margin-top:11px; padding:10px 14px;
+  background:rgba(232,25,44,.1); border:1px solid rgba(232,25,44,.3);
+  border-radius:8px; font-size:13px; color:#FF6677; text-align:center;
+}
+.p-hint {
+  margin-top:13px; padding:10px 14px; text-align:center;
+  background:rgba(255,204,0,.05); border:1px solid rgba(255,204,0,.12);
+  border-radius:8px; font-size:12px; color:var(--text-dim);
+}
+
+/* ── Dashboard ──────────────────────────────────────── */
+.portal-dash { display:none; }
+.dash-topbar {
+  display:flex; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; gap:12px; margin-bottom:26px;
+}
+.dash-welcome { font-family:var(--font-head); font-size:22px; font-weight:800; }
+.dash-welcome em { color:var(--green-glow); font-style:normal; }
+.dash-logout {
+  padding:7px 16px; border-radius:99px; font-size:12px; font-weight:700;
+  background:rgba(255,255,255,.05); border:1px solid var(--border);
+  color:var(--text-muted); cursor:pointer; transition:all .2s;
+}
+.dash-logout:hover { border-color:var(--red); color:#FF6677; }
+
+/* summary cards */
+.dash-cards {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(175px,1fr));
+  gap:13px; margin-bottom:24px;
+}
+.dash-card {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius); padding:20px 18px; position:relative; overflow:hidden;
+}
+.dash-card::before {
+  content:''; position:absolute; top:0; left:0; right:0;
+  height:3px; border-radius:14px 14px 0 0;
+}
+.dash-card.c-bill::before    { background:linear-gradient(90deg,var(--red),#FF6677); }
+.dash-card.c-pkg::before     { background:linear-gradient(90deg,var(--green),var(--green-glow)); }
+.dash-card.c-status::before  { background:linear-gradient(90deg,var(--gold),#FFE066); }
+.dash-card.c-since::before   { background:linear-gradient(90deg,#7B8CDE,#A9B4FF); }
+.dc-icon   { font-size:22px; margin-bottom:8px; }
+.dc-label  { font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--text-muted); margin-bottom:3px; }
+.dc-value  { font-family:var(--font-head); font-size:21px; font-weight:900; color:#fff; line-height:1.1; }
+.dc-value.red  { color:#FF6677; }
+.dc-value.green{ color:var(--green-glow); }
+.dc-sub    { font-size:11px; color:var(--text-muted); margin-top:2px; }
+
+/* two-panel grid */
+.dash-panels { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+@media(max-width:700px){ .dash-panels { grid-template-columns:1fr; } }
+
+.dash-panel { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; }
+.dp-head {
+  padding:13px 18px; border-bottom:1px solid var(--border);
+  font-family:var(--font-head); font-size:13px; font-weight:700;
+  color:rgba(255,255,255,.8); display:flex; align-items:center; gap:7px;
+}
+.dp-body { padding:18px; }
+
+/* history rows */
+.hist-row {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:9px 0; border-bottom:1px solid rgba(255,255,255,.05); font-size:13px;
+}
+.hist-row:last-child { border-bottom:none; }
+.hist-month { color:var(--text-muted); }
+.hist-amt   { font-family:var(--font-head); font-weight:700; }
+.hist-badge {
+  padding:2px 9px; border-radius:99px; font-size:10px; font-weight:700; letter-spacing:.3px;
+}
+.hb-paid    { background:rgba(0,200,130,.12); color:var(--green-glow); border:1px solid rgba(0,200,130,.25); }
+.hb-due     { background:rgba(232,25,44,.12);  color:#FF6677;           border:1px solid rgba(232,25,44,.25); }
+.hb-pending { background:rgba(255,204,0,.1);   color:var(--gold);       border:1px solid rgba(255,204,0,.25); }
+
+/* package detail rows */
+.pkg-row {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:8px 0; border-bottom:1px solid rgba(255,255,255,.05); font-size:13px;
+}
+.pkg-row:last-child { border-bottom:none; }
+.pkg-row-key { color:var(--text-muted); }
+.pkg-row-val { font-weight:700; color:#fff; }
+
+/* action buttons */
+.dash-btn {
+  display:flex; align-items:center; justify-content:center; gap:7px;
+  width:100%; padding:12px; margin-top:13px; border-radius:10px;
+  background:var(--green); color:#fff; border:none;
+  font-family:var(--font-head); font-weight:700; font-size:13px;
+  cursor:pointer; transition:all .2s;
+}
+.dash-btn:hover { background:var(--green-l); transform:translateY(-2px); }
+.dash-btn.wa-btn { background:#25D366; }
+.dash-btn.wa-btn:hover { background:#1fba58; }
+
+/* admin guide box */
+.admin-guide {
+  background:rgba(255,204,0,.04); border:1px solid rgba(255,204,0,.2);
+  border-radius:var(--radius); padding:20px 24px; margin-bottom:30px;
+}
+.ag-title { font-family:var(--font-head); font-size:14px; font-weight:800; color:var(--gold); margin-bottom:12px; }
+.ag-steps { display:flex; flex-direction:column; gap:10px; }
+.ag-step  { display:flex; gap:10px; font-size:13px; color:var(--text-muted); line-height:1.5; }
+.ag-num   {
+  min-width:22px; height:22px; border-radius:50%;
+  background:rgba(255,204,0,.15); color:var(--gold);
+  font-size:11px; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px;
+}
+code.ac { background:rgba(0,0,0,.4); border:1px solid rgba(255,255,255,.1); border-radius:4px; padding:1px 6px; font-size:11px; color:var(--green-glow); font-family:monospace; }
+@media(max-width:500px){
+  .portal-card-body,.portal-card-head { padding:20px 18px; }
+}
+
 </style>
 </head>
 <body class="banner-on">
@@ -859,6 +1046,7 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
       <li><a href="#coverage">Coverage</a></li>
       <li><a href="#complaint">Support</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li><a href="#portal" style="color:var(--green-glow);font-weight:700;">My Account</a></li>
     </ul>
     <a href="#contact" class="btn btn-primary nav-cta" style="padding:10px 20px;font-size:13px;" data-en="Get Connected" data-bn="সংযোগ নিন">Get Connected</a>
     <div class="lang-toggle" style="margin-left:8px;">
@@ -878,6 +1066,7 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
   <a href="#coverage" onclick="closeMobile()">Coverage</a>
   <a href="#complaint" onclick="closeMobile()">Support</a>
   <a href="#contact" onclick="closeMobile()">Contact</a>
+  <a href="#portal" onclick="closeMobile()" style="color:var(--green-glow);font-weight:700;">🔐 My Account</a>
   <a href="#contact" class="btn btn-primary" style="margin-top:8px;" onclick="closeMobile()">Get Connected</a>
 </div>
 
@@ -1595,6 +1784,156 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
 </section>
 
 <!-- ============================================================
+     CUSTOMER PORTAL
+     ============================================================ -->
+<section class="portal-section section" id="portal">
+  <div class="container">
+
+    <!-- Section heading -->
+    <div style="text-align:center;margin-bottom:36px;" class="fade-in">
+      <div class="section-label" style="justify-content:center;">Self-Service</div>
+      <h2 class="section-title">My <span class="highlight">Account</span></h2>
+      <p class="section-sub" style="margin:0 auto;">
+        Enter the username and PIN we gave you to see your bill, payment history and package details.
+      </p>
+    </div>
+
+    <!-- ══ ADMIN GUIDE (delete this block after setup) ══════════ -->
+        <div class="ag-step">
+          <div class="ag-num">🔑</div>
+          <div><strong style="color:#fff;">Right now</strong> — test with demo account: username <code class="ac">demo</code> / PIN <code class="ac">1234</code> to see how the dashboard looks.</div>
+        </div>
+      </div>
+    </div>
+    <!-- ══ END ADMIN GUIDE ══════════════════════════════════════ -->
+
+    <!-- LOGIN FORM -->
+    <div class="portal-wrap fade-in" id="portalLoginWrap">
+      <div class="portal-card">
+
+        <div class="portal-card-head">
+          <div class="portal-head-icon">🔐</div>
+          <div class="portal-head-title">Customer Login</div>
+          <div class="portal-head-sub">Enter your username &amp; PIN to view your account</div>
+        </div>
+
+        <div class="portal-card-body">
+          <div class="p-field">
+            <label class="p-label">Username</label>
+            <input class="p-input" id="pUsername" type="text"
+              placeholder="e.g.  SVCN-0042"
+              autocomplete="username"
+              onkeydown="if(event.key==='Enter')portalLogin()">
+          </div>
+          <div class="p-field">
+            <label class="p-label">PIN / Password</label>
+            <input class="p-input" id="pPin" type="password"
+              placeholder="Your 4-digit PIN"
+              autocomplete="current-password"
+              onkeydown="if(event.key==='Enter')portalLogin()">
+          </div>
+
+          <button class="p-login-btn" id="pLoginBtn" onclick="portalLogin()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+              <polyline points="10 17 15 12 10 7"/>
+              <line x1="15" y1="12" x2="3" y2="12"/>
+            </svg>
+            Login to My Account
+          </button>
+
+          <div class="p-loading" id="pLoading">
+            <span class="p-spinner"></span>&nbsp; Fetching your account…
+          </div>
+          <div class="p-error" id="pError"></div>
+
+          <div class="p-hint">
+            💡 <strong style="color:var(--gold);">Demo:</strong>
+            username <code style="color:var(--green-glow);">demo</code> &nbsp;·&nbsp;
+            PIN <code style="color:var(--green-glow);">1234</code>
+          </div>
+        </div>
+      </div>
+
+      <p style="text-align:center;font-size:12px;color:var(--text-dim);margin-top:14px;">
+        Don't have a username? Call us on <strong style="color:#fff;">01842-292646</strong> to get one.
+      </p>
+    </div><!-- /portal-wrap -->
+
+    <!-- DASHBOARD (hidden until login) -->
+    <div class="portal-dash" id="portalDash">
+
+      <div class="dash-topbar">
+        <div class="dash-welcome">Welcome back, <em id="dName">—</em> 👋</div>
+        <button class="dash-logout" onclick="portalLogout()">← Logout</button>
+      </div>
+
+      <!-- 4 summary cards -->
+      <div class="dash-cards">
+        <div class="dash-card c-bill">
+          <div class="dc-icon">💳</div>
+          <div class="dc-label">Amount Due</div>
+          <div class="dc-value red" id="dDue">—</div>
+          <div class="dc-sub"    id="dDueDate">—</div>
+        </div>
+        <div class="dash-card c-pkg">
+          <div class="dc-icon">⚡</div>
+          <div class="dc-label">Your Speed</div>
+          <div class="dc-value green" id="dSpeed">—</div>
+          <div class="dc-sub"        id="dPkgName">—</div>
+        </div>
+        <div class="dash-card c-status">
+          <div class="dc-icon">📋</div>
+          <div class="dc-label">Account Status</div>
+          <div class="dc-value" id="dStatus">—</div>
+          <div class="dc-sub"   id="dBillSub">—</div>
+        </div>
+        <div class="dash-card c-since">
+          <div class="dc-icon">🏅</div>
+          <div class="dc-label">Member Since</div>
+          <div class="dc-value" id="dSince">—</div>
+          <div class="dc-sub">Valued Customer</div>
+        </div>
+      </div>
+
+      <!-- Two panels -->
+      <div class="dash-panels">
+
+        <!-- Payment history -->
+        <div class="dash-panel">
+          <div class="dp-head">💰 Payment History</div>
+          <div class="dp-body">
+            <div id="dHistory"></div>
+            <button class="dash-btn wa-btn" onclick="portalPayWA()">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/>
+              </svg>
+              Confirm Payment via WhatsApp
+            </button>
+          </div>
+        </div>
+
+        <!-- Package details -->
+        <div class="dash-panel">
+          <div class="dp-head">📦 Package Details</div>
+          <div class="dp-body">
+            <div id="dPkgDetails"></div>
+            <button class="dash-btn" onclick="portalUpgrade()">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+              Request Package Upgrade
+            </button>
+          </div>
+        </div>
+
+      </div><!-- /dash-panels -->
+    </div><!-- /portal-dash -->
+
+  </div><!-- /container -->
+</section>
+
+<!-- ============================================================
      CONTACT
      ============================================================ -->
 <section class="section contact-bg" id="contact">
@@ -1999,11 +2338,195 @@ if ('IntersectionObserver' in window) {
 } else {
   document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
 }
+
+
+// ══════════════════════════════════════════════════════════════
+//  CUSTOMER PORTAL
+// ══════════════════════════════════════════════════════════════
+
+// ── CONFIG ────────────────────────────────────────────────────
+// After publishing your Google Sheet as CSV, paste the URL below.
+// Leave as-is to use the built-in demo account.
+const SHEET_URL = 'PASTE_SHEET_CSV_URL_HERE';
+
+// Demo account — shown when no real Sheet is connected yet
+const DEMO = {
+  username:'demo', pin:'1234',
+  name:'Rahim Uddin', package:'Pro Plan', speed:'40 Mbps',
+  monthly_bill:'৳800', due_amount:'৳800',
+  due_date:'Due: 1 April 2025', status:'Active',
+  member_since:'Jan 2023',
+  history:'Jan 2025:800:Paid|Feb 2025:800:Paid|Mar 2025:800:Due'
+};
+
+// ── CSV parser ────────────────────────────────────────────────
+function csvToObjects(text) {
+  const rows  = text.trim().split(/\r?\n/);
+  const heads = rows[0].split(',').map(h => h.trim().replace(/"/g,''));
+  return rows.slice(1).map(row => {
+    const vals = row.split(',').map(v => v.trim().replace(/"/g,''));
+    const obj  = {};
+    heads.forEach((h,i) => obj[h] = vals[i] || '');
+    return obj;
+  });
+}
+
+// ── Login handler ─────────────────────────────────────────────
+async function portalLogin() {
+  const username = (document.getElementById('pUsername').value || '').trim().toLowerCase();
+  const pin      = (document.getElementById('pPin').value      || '').trim();
+  const btn      = document.getElementById('pLoginBtn');
+  const loading  = document.getElementById('pLoading');
+  const errBox   = document.getElementById('pError');
+
+  errBox.style.display = 'none';
+
+  if (!username || !pin) {
+    showPError('Please enter your username and PIN.');
+    return;
+  }
+
+  btn.disabled = true;
+  loading.style.display = 'block';
+
+  let customer = null;
+
+  try {
+    // Try live Google Sheet first
+    if (SHEET_URL && SHEET_URL !== 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTvGjJQFmYuMGa7SpQmkohZK2Bty6nBBidS1SFgIbuNCJS7IkNldw_zYWGD_jE4dTLuszxPaxO8TrZe/pub?gid=0&single=true&output=csv') {
+      const res  = await fetch(SHEET_URL + '?t=' + Date.now());
+      const text = await res.text();
+      const rows = csvToObjects(text);
+      customer   = rows.find(r =>
+        (r.username||'').toLowerCase() === username && (r.pin||'') === pin
+      ) || null;
+    }
+  } catch(e) { /* network error — fall through to demo */ }
+
+  // Fall back to demo
+  if (!customer && username === DEMO.username && pin === DEMO.pin) {
+    customer = DEMO;
+  }
+
+  btn.disabled = false;
+  loading.style.display = 'none';
+
+  if (!customer) {
+    showPError('Username or PIN not found. Please check and try again, or call 01842-292646.');
+    return;
+  }
+
+  buildDashboard(customer);
+}
+
+// ── Build dashboard ───────────────────────────────────────────
+function buildDashboard(c) {
+  sessionStorage.setItem('svcnPortal', JSON.stringify(c));
+
+  document.getElementById('dName').textContent    = c.name || c.username;
+  document.getElementById('dDue').textContent     = c.due_amount   || '৳0';
+  document.getElementById('dDueDate').textContent = c.due_date     || '';
+  document.getElementById('dSpeed').textContent   = c.speed        || '—';
+  document.getElementById('dPkgName').textContent = c.package      || '—';
+  document.getElementById('dBillSub').textContent = 'Monthly: ' + (c.monthly_bill || '—');
+  document.getElementById('dSince').textContent   = c.member_since || '—';
+
+  // Status with colour
+  const stEl = document.getElementById('dStatus');
+  stEl.textContent  = c.status || 'Active';
+  const s = (c.status || '').toLowerCase();
+  stEl.className = 'dc-value ' + (s === 'active' ? 'green' : s === 'suspended' ? 'red' : '');
+
+  // Payment history rows
+  const histEl = document.getElementById('dHistory');
+  if (c.history) {
+    histEl.innerHTML = c.history.split('|').map(entry => {
+      const [month, amt, st] = entry.split(':');
+      const cls = st === 'Paid' ? 'hb-paid' : st === 'Due' ? 'hb-due' : 'hb-pending';
+      return '<div class="hist-row">'
+        + '<span class="hist-month">' + (month||'—') + '</span>'
+        + '<span class="hist-amt">৳' + (amt||'—') + '</span>'
+        + '<span class="hist-badge ' + cls + '">' + (st||'—') + '</span>'
+        + '</div>';
+    }).join('');
+  } else {
+    histEl.innerHTML = '<p style="text-align:center;color:var(--text-muted);font-size:13px;padding:18px 0;">No history available.</p>';
+  }
+
+  // Package detail rows
+  document.getElementById('dPkgDetails').innerHTML = [
+    ['Package',       c.package      || '—'],
+    ['Speed',         c.speed        || '—'],
+    ['Monthly Bill',  c.monthly_bill || '—'],
+    ['Status',        c.status       || '—'],
+    ['Username',      c.username     || '—'],
+  ].map(([k,v]) =>
+    '<div class="pkg-row"><span class="pkg-row-key">' + k + '</span>'
+    + '<span class="pkg-row-val">' + v + '</span></div>'
+  ).join('');
+
+  // Show dashboard, hide login
+  document.getElementById('portalLoginWrap').style.display = 'none';
+  document.getElementById('adminGuide').style.display      = 'none';
+  document.getElementById('portalDash').style.display      = 'block';
+}
+
+// ── WhatsApp pay ──────────────────────────────────────────────
+function portalPayWA() {
+  const c = JSON.parse(sessionStorage.getItem('svcnPortal') || '{}');
+  const msg = encodeURIComponent(
+    'Hello, I want to confirm my bill payment.\n\n'
+    + 'Name: '     + (c.name||'—')       + '\n'
+    + 'Username: ' + (c.username||'—')   + '\n'
+    + 'Amount: '   + (c.due_amount||'—') + '\n'
+    + 'Package: '  + (c.package||'—')
+  );
+  window.open('https://wa.me/8801634348602?text=' + msg, '_blank');
+}
+
+// ── Upgrade package ───────────────────────────────────────────
+function portalUpgrade() {
+  const c = JSON.parse(sessionStorage.getItem('svcnPortal') || '{}');
+  const msg = encodeURIComponent(
+    'Hello, I want to upgrade my package.\n\n'
+    + 'Name: '            + (c.name||'—')    + '\n'
+    + 'Username: '        + (c.username||'—') + '\n'
+    + 'Current Package: ' + (c.package||'—')  + '\n'
+    + 'Requested Upgrade: '
+  );
+  window.open('https://wa.me/8801634348602?text=' + msg, '_blank');
+}
+
+// ── Logout ─────────────────────────────────────────────────────
+function portalLogout() {
+  sessionStorage.removeItem('svcnPortal');
+  document.getElementById('portalLoginWrap').style.display = 'block';
+  document.getElementById('adminGuide').style.display      = 'block';
+  document.getElementById('portalDash').style.display      = 'none';
+  document.getElementById('pUsername').value = '';
+  document.getElementById('pPin').value      = '';
+  document.getElementById('pError').style.display = 'none';
+}
+
+// ── Error helper ───────────────────────────────────────────────
+function showPError(msg) {
+  const el = document.getElementById('pError');
+  el.textContent = msg;
+  el.style.display = 'block';
+}
+
+// ── Restore session on page reload ────────────────────────────
+(function(){
+  const saved = sessionStorage.getItem('svcnPortal');
+  if (saved) { try { buildDashboard(JSON.parse(saved)); } catch(e){} }
+})();
+
 </script>
 
 <!-- ============================================================
      TAWK.TO LIVE CHAT
      ============================================================ -->
+
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
