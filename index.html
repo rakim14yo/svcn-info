@@ -14,7 +14,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700;800;900&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  /* Immediate fallback so page renders even if fonts fail to load */
   :root {
     --font-head-fallback: 'Exo 2', 'Segoe UI', 'Arial Black', Arial, sans-serif;
     --font-body-fallback: 'Nunito', 'Segoe UI', Tahoma, Geneva, sans-serif;
@@ -26,33 +25,33 @@
    ROOT & RESET
    ============================================================ */
 :root {
-  --green: #006A4E;
-  --green-l: #00875f;
-  --green-d: #004d38;
+  --green:      #006A4E;
+  --green-l:    #00875f;
+  --green-d:    #004d38;
   --green-glow: #00CC88;
-  --red: #E8192C;
-  --red-l: #FF3347;
-  --gold: #FFCC00;
-  --gold-l: #FFE066;
-  --white: #FFFFFF;
-  --off-white: #F8FBF9;
-  --dark: #040d09;
-  --dark-2: #071410;
-  --surface: #0d2018;
-  --surface-2: #142d1f;
-  --text-main: #FFFFFF;
+  --red:        #E8192C;
+  --red-l:      #FF3347;
+  --gold:       #FFCC00;
+  --gold-l:     #FFE066;
+  --white:      #FFFFFF;
+  --off-white:  #F8FBF9;
+  --dark:       #040d09;
+  --dark-2:     #071410;
+  --surface:    #0d2018;
+  --surface-2:  #142d1f;
+  --text-main:  #FFFFFF;
   --text-muted: rgba(255,255,255,0.62);
-  --text-dim: rgba(255,255,255,0.38);
-  --border: rgba(0,180,110,0.15);
-  --border-h: rgba(0,200,130,0.3);
-  --radius: 14px;
-  --radius-lg: 22px;
-  --shadow-g: 0 8px 40px rgba(0,0,0,0.55);
-  --shadow-r: 0 8px 30px rgba(232,25,44,0.28);
+  --text-dim:   rgba(255,255,255,0.38);
+  --border:     rgba(0,180,110,0.15);
+  --border-h:   rgba(0,200,130,0.3);
+  --radius:     14px;
+  --radius-lg:  22px;
+  --shadow-g:   0 8px 40px rgba(0,0,0,0.55);
+  --shadow-r:   0 8px 30px rgba(232,25,44,0.28);
   --shadow-green: 0 8px 30px rgba(0,106,78,0.35);
-  --font-head: 'Exo 2', 'Segoe UI', 'Arial Black', Arial, sans-serif;
-  --font-body: 'Nunito', 'Segoe UI', Tahoma, Geneva, sans-serif;
-  --nav-h: 68px;
+  --font-head:  'Exo 2', 'Segoe UI', 'Arial Black', Arial, sans-serif;
+  --font-body:  'Nunito', 'Segoe UI', Tahoma, Geneva, sans-serif;
+  --nav-h:      68px;
 }
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior: smooth; font-size: 16px; }
@@ -98,7 +97,7 @@ ul { list-style: none; }
 .section-sub {
   font-size: 16px; color: var(--text-muted); max-width: 560px; line-height: 1.7;
 }
-.highlight { color: var(--green-glow); }
+.highlight   { color: var(--green-glow); }
 .highlight-r { color: var(--red-l); }
 .highlight-g { color: var(--gold); }
 .btn {
@@ -107,34 +106,20 @@ ul { list-style: none; }
   font-weight: 700; font-size: 14px; letter-spacing: 0.5px;
   transition: all 0.25s ease; white-space: nowrap;
 }
-.btn-primary {
-  background: var(--red); color: #fff;
-  box-shadow: var(--shadow-r);
-}
+.btn-primary { background: var(--red); color: #fff; box-shadow: var(--shadow-r); }
 .btn-primary:hover { background: var(--red-l); transform: translateY(-2px); box-shadow: 0 12px 36px rgba(232,25,44,0.45); }
-.btn-outline {
-  border: 1.5px solid rgba(255,255,255,0.35); color: #fff; background: rgba(255,255,255,0.04);
-}
+.btn-outline { border: 1.5px solid rgba(255,255,255,0.35); color: #fff; background: rgba(255,255,255,0.04); }
 .btn-outline:hover { border-color: var(--green-glow); color: var(--green-glow); background: rgba(0,200,130,0.08); transform: translateY(-2px); }
-.btn-green {
-  background: var(--green); color: #fff; box-shadow: var(--shadow-green);
-}
+.btn-green { background: var(--green); color: #fff; box-shadow: var(--shadow-green); }
 .btn-green:hover { background: var(--green-l); transform: translateY(-2px); }
 .badge {
   display: inline-flex; align-items: center; gap: 5px;
   background: rgba(232,25,44,0.12); border: 1px solid rgba(232,25,44,0.35);
   color: #FF6677; border-radius: 99px; padding: 3px 11px; font-size: 11px; font-weight: 600;
 }
-.badge-green {
-  background: rgba(0,106,78,0.2); border-color: rgba(0,200,130,0.3); color: var(--green-glow);
-}
-.badge-gold {
-  background: rgba(255,204,0,0.12); border-color: rgba(255,204,0,0.35); color: var(--gold);
-}
-.divider {
-  height: 1px; background: linear-gradient(90deg, transparent, var(--border-h), transparent);
-  margin: 0 auto;
-}
+.badge-green { background: rgba(0,106,78,0.2); border-color: rgba(0,200,130,0.3); color: var(--green-glow); }
+.badge-gold  { background: rgba(255,204,0,0.12); border-color: rgba(255,204,0,0.35); color: var(--gold); }
+.divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border-h), transparent); margin: 0 auto; }
 .fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
 .fade-in.visible { opacity: 1; transform: none; }
 .fade-delay-1 { transition-delay: 0.1s; }
@@ -148,46 +133,48 @@ ul { list-style: none; }
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
   height: var(--nav-h);
-  background: rgba(4,13,9,0.85);
-  backdrop-filter: blur(16px);
+  background: rgba(4,13,9,0.88);
+  backdrop-filter: blur(20px) saturate(1.4);
   border-bottom: 1px solid var(--border);
   transition: background 0.3s;
+}
+nav::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,200,130,0.35), transparent);
+  pointer-events: none;
 }
 .nav-inner {
   display: flex; align-items: center; justify-content: space-between;
   height: 100%; max-width: 1180px; margin: 0 auto; padding: 0 20px;
 }
-.nav-logo {
-  display: flex; align-items: center; gap: 10px;
-}
+.nav-logo { display: flex; align-items: center; gap: 10px; }
 .nav-logo-icon {
   width: 38px; height: 38px; background: var(--green);
   border-radius: 10px; display: flex; align-items: center; justify-content: center;
   position: relative; overflow: hidden;
 }
 .nav-logo-icon svg { width: 22px; height: 22px; }
-.nav-logo-text {
-  font-family: var(--font-head); font-weight: 800; font-size: 15px;
-  line-height: 1.2;
-}
+.nav-logo-text { font-family: var(--font-head); font-weight: 800; font-size: 15px; line-height: 1.2; }
 .nav-logo-text span { display: block; font-size: 10px; font-weight: 500; color: var(--text-muted); letter-spacing: 1px; }
-.nav-links {
-  display: flex; align-items: center; gap: 6px;
-}
+.nav-links { display: flex; align-items: center; gap: 6px; }
 .nav-links a {
   padding: 7px 14px; border-radius: 8px; font-size: 13.5px; font-weight: 600;
   color: var(--text-muted); transition: all 0.2s;
 }
 .nav-links a:hover { color: #fff; background: rgba(255,255,255,0.07); }
+.nav-links a.nav-portal-link {
+  color: var(--green-glow);
+  background: rgba(0,200,130,0.08);
+  border: 1px solid rgba(0,200,130,0.2);
+}
+.nav-links a.nav-portal-link:hover {
+  background: rgba(0,200,130,0.15);
+  border-color: rgba(0,200,130,0.4);
+  color: #fff;
+}
 .nav-cta { margin-left: 6px; }
-.hamburger {
-  display: none; flex-direction: column; gap: 5px; padding: 8px;
-  border-radius: 8px; cursor: pointer;
-}
-.hamburger span {
-  display: block; width: 22px; height: 2px; background: #fff;
-  border-radius: 2px; transition: all 0.3s;
-}
+.hamburger { display: none; flex-direction: column; gap: 5px; padding: 8px; border-radius: 8px; cursor: pointer; }
+.hamburger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; transition: all 0.3s; }
 .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
 .hamburger.open span:nth-child(2) { opacity: 0; }
 .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
@@ -202,6 +189,10 @@ nav {
   border-radius: 12px; width: 240px; text-align: center; transition: all 0.2s;
 }
 .mobile-menu a:hover { background: rgba(0,106,78,0.2); color: var(--green-glow); }
+.mobile-menu .mobile-portal-link {
+  color: var(--green-glow); border: 1px solid rgba(0,200,130,0.25);
+  background: rgba(0,200,130,0.06);
+}
 
 /* ============================================================
    HERO
@@ -217,7 +208,6 @@ nav {
     radial-gradient(ellipse 60% 60% at 20% 80%, rgba(0,106,78,0.22) 0%, transparent 60%),
     linear-gradient(160deg, #040d09 0%, #071a12 40%, #091e15 70%, #040d09 100%);
 }
-/* Grid lines texture */
 .hero-grid {
   position: absolute; inset: 0; z-index: 1;
   background-image:
@@ -225,18 +215,11 @@ nav {
     linear-gradient(90deg, rgba(0,180,110,0.04) 1px, transparent 1px);
   background-size: 60px 60px;
 }
-/* Animated orbs */
-.hero-orb {
-  position: absolute; border-radius: 50%; filter: blur(90px); pointer-events: none;
-  animation: orbFloat 8s ease-in-out infinite;
-}
+.hero-orb { position: absolute; border-radius: 50%; filter: blur(90px); pointer-events: none; animation: orbFloat 8s ease-in-out infinite; }
 .hero-orb-1 { width: 450px; height: 450px; top: -80px; right: 5%; background: rgba(0,106,78,0.18); animation-delay: 0s; }
 .hero-orb-2 { width: 300px; height: 300px; bottom: 10%; left: 5%; background: rgba(232,25,44,0.1); animation-delay: 3s; }
 .hero-orb-3 { width: 200px; height: 200px; top: 40%; right: 15%; background: rgba(255,204,0,0.06); animation-delay: 5s; }
-@keyframes orbFloat {
-  0%,100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-24px) scale(1.04); }
-}
+@keyframes orbFloat { 0%,100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-24px) scale(1.04); } }
 .hero-content { position: relative; z-index: 3; max-width: 660px; }
 .hero-eyebrow {
   display: inline-flex; align-items: center; gap: 8px;
@@ -244,42 +227,18 @@ nav {
   color: var(--green-glow); padding: 6px 16px; border-radius: 99px;
   font-size: 12px; font-weight: 700; letter-spacing: 1.5px; margin-bottom: 22px;
 }
-.hero-eyebrow .dot {
-  width: 6px; height: 6px; background: var(--green-glow); border-radius: 50%;
-  animation: pulse 1.5s ease-in-out infinite;
-}
-@keyframes pulse {
-  0%,100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(0.7); }
-}
-.hero-title {
-  font-family: var(--font-head); font-size: clamp(36px, 6vw, 68px);
-  font-weight: 900; line-height: 1.05; margin-bottom: 18px;
-}
+.hero-eyebrow .dot { width: 6px; height: 6px; background: var(--green-glow); border-radius: 50%; animation: pulse 1.5s ease-in-out infinite; }
+@keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.7); } }
+.hero-title { font-family: var(--font-head); font-size: clamp(36px, 6vw, 68px); font-weight: 900; line-height: 1.05; margin-bottom: 18px; }
 .hero-title .line-red { color: var(--red-l); }
-.hero-sub {
-  font-size: clamp(15px, 2vw, 18px); color: var(--text-muted);
-  margin-bottom: 34px; line-height: 1.7; max-width: 520px;
-}
+.hero-sub { font-size: clamp(15px, 2vw, 18px); color: var(--text-muted); margin-bottom: 34px; line-height: 1.7; max-width: 520px; }
 .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 44px; }
-.hero-stats {
-  display: flex; gap: 32px; flex-wrap: wrap;
-}
-.stat {
-  display: flex; flex-direction: column;
-}
-.stat-num {
-  font-family: var(--font-head); font-size: 28px; font-weight: 800;
-  color: #fff; line-height: 1;
-}
+.hero-stats { display: flex; gap: 32px; flex-wrap: wrap; }
+.stat { display: flex; flex-direction: column; }
+.stat-num { font-family: var(--font-head); font-size: 28px; font-weight: 800; color: #fff; line-height: 1; }
 .stat-label { font-size: 12px; color: var(--text-muted); margin-top: 3px; }
 .stat-sep { width: 1px; background: var(--border-h); align-self: stretch; }
-/* Telecom illustration right side */
-.hero-illustration {
-  position: absolute; right: -2%; top: 50%; transform: translateY(-50%);
-  z-index: 2; width: 45%; max-width: 520px;
-  display: flex; align-items: center; justify-content: center;
-}
+.hero-illustration { position: absolute; right: -2%; top: 50%; transform: translateY(-50%); z-index: 2; width: 45%; max-width: 520px; display: flex; align-items: center; justify-content: center; }
 .hero-illustration svg { width: 100%; height: auto; }
 
 /* ============================================================
@@ -290,24 +249,19 @@ nav {
     radial-gradient(ellipse 80% 50% at 50% 0%, rgba(0,106,78,0.1) 0%, transparent 60%),
     var(--dark-2);
 }
-.packages-tabs {
-  display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 40px;
-}
+.packages-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 40px; }
 .tab-btn {
   padding: 9px 22px; border-radius: 99px; font-family: var(--font-head);
   font-weight: 700; font-size: 13px; color: var(--text-muted);
   border: 1.5px solid var(--border); transition: all 0.2s; background: transparent;
 }
-.tab-btn.active {
-  background: var(--green); color: #fff; border-color: var(--green);
-  box-shadow: var(--shadow-green);
-}
+.tab-btn.active { background: var(--green); color: #fff; border-color: var(--green); box-shadow: var(--shadow-green); }
 .tab-btn:hover:not(.active) { border-color: var(--border-h); color: #fff; }
 .tab-panel { display: none; }
 .tab-panel.active { display: grid; }
 .internet-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 18px; }
-.dish-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 18px; }
-.combo-grid { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 18px; }
+.dish-grid     { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 18px; }
+.combo-grid    { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 18px; }
 .pkg-card {
   background: var(--surface); border: 1px solid var(--border);
   border-radius: var(--radius-lg); padding: 26px 22px;
@@ -319,11 +273,9 @@ nav {
   background: linear-gradient(135deg, rgba(0,200,130,0.06) 0%, transparent 50%);
   opacity: 0; transition: opacity 0.3s;
 }
-.pkg-card:hover { border-color: var(--border-h); transform: translateY(-4px); box-shadow: var(--shadow-g); }
+.pkg-card:hover { border-color: var(--border-h); transform: translateY(-5px); box-shadow: var(--shadow-g), 0 0 0 1px rgba(0,200,130,0.08); }
 .pkg-card:hover::before { opacity: 1; }
-.pkg-card.featured {
-  border-color: var(--green); background: linear-gradient(145deg, var(--surface-2), var(--surface));
-}
+.pkg-card.featured { border-color: var(--green); background: linear-gradient(145deg, var(--surface-2), var(--surface)); }
 .pkg-card.featured::after {
   content: 'POPULAR'; position: absolute; top: 16px; right: -24px;
   background: var(--red); color: #fff; font-family: var(--font-head);
@@ -336,21 +288,13 @@ nav {
   display: flex; align-items: center; justify-content: center; margin-bottom: 16px;
 }
 .pkg-icon svg { width: 24px; height: 24px; }
-.pkg-speed {
-  font-family: var(--font-head); font-size: 32px; font-weight: 900;
-  color: #fff; line-height: 1;
-}
+.pkg-speed { font-family: var(--font-head); font-size: 32px; font-weight: 900; color: #fff; line-height: 1; }
 .pkg-speed span { font-size: 14px; font-weight: 600; color: var(--text-muted); }
 .pkg-name { font-size: 13px; color: var(--text-muted); margin-top: 3px; }
-.pkg-price {
-  font-family: var(--font-head); font-size: 28px; font-weight: 800; color: var(--green-glow);
-  margin: 14px 0 4px;
-}
+.pkg-price { font-family: var(--font-head); font-size: 28px; font-weight: 800; color: var(--green-glow); margin: 14px 0 4px; }
 .pkg-price small { font-size: 13px; color: var(--text-muted); font-weight: 400; }
 .pkg-features { margin: 14px 0 20px; display: flex; flex-direction: column; gap: 7px; flex: 1; }
-.pkg-feature {
-  display: flex; align-items: center; gap: 7px; font-size: 13px; color: var(--text-muted);
-}
+.pkg-feature { display: flex; align-items: center; gap: 7px; font-size: 13px; color: var(--text-muted); }
 .pkg-feature svg { width: 14px; height: 14px; color: var(--green-glow); flex-shrink: 0; }
 .order-btn {
   width: 100%; padding: 12px; border-radius: 10px; font-family: var(--font-head);
@@ -377,27 +321,18 @@ nav {
   transition: all 0.3s;
 }
 .offer-card:hover { border-color: var(--border-h); transform: translateY(-3px); box-shadow: var(--shadow-g); }
-.offer-bar {
-  position: absolute; top: 0; left: 0; right: 0; height: 3px; border-radius: 14px 14px 0 0;
-}
-.offer-bar-gold { background: linear-gradient(90deg, var(--gold), #FFE580); }
-.offer-bar-red { background: linear-gradient(90deg, var(--red), #FF6677); }
+.offer-bar { position: absolute; top: 0; left: 0; right: 0; height: 3px; border-radius: 14px 14px 0 0; }
+.offer-bar-gold  { background: linear-gradient(90deg, var(--gold), #FFE580); }
+.offer-bar-red   { background: linear-gradient(90deg, var(--red), #FF6677); }
 .offer-bar-green { background: linear-gradient(90deg, var(--green), var(--green-glow)); }
-.offer-icon {
-  width: 54px; height: 54px; border-radius: 14px;
-  display: flex; align-items: center; justify-content: center; margin-bottom: 18px; font-size: 26px;
-}
-.offer-icon-gold { background: rgba(255,204,0,0.1); border: 1px solid rgba(255,204,0,0.22); }
-.offer-icon-red { background: rgba(232,25,44,0.1); border: 1px solid rgba(232,25,44,0.22); }
+.offer-icon { width: 54px; height: 54px; border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; font-size: 26px; }
+.offer-icon-gold  { background: rgba(255,204,0,0.1); border: 1px solid rgba(255,204,0,0.22); }
+.offer-icon-red   { background: rgba(232,25,44,0.1); border: 1px solid rgba(232,25,44,0.22); }
 .offer-icon-green { background: rgba(0,106,78,0.18); border: 1px solid rgba(0,200,130,0.22); }
 .offer-title { font-family: var(--font-head); font-size: 20px; font-weight: 800; margin-bottom: 10px; }
 .offer-desc { font-size: 14px; color: var(--text-muted); line-height: 1.7; margin-bottom: 18px; }
-.offer-highlight {
-  display: flex; flex-direction: column; gap: 7px;
-}
-.offer-item {
-  display: flex; align-items: flex-start; gap: 8px; font-size: 13px; color: var(--text-muted);
-}
+.offer-highlight { display: flex; flex-direction: column; gap: 7px; }
+.offer-item { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; color: var(--text-muted); }
 .offer-item svg { width: 15px; height: 15px; flex-shrink: 0; margin-top: 2px; }
 
 /* ============================================================
@@ -421,10 +356,7 @@ nav {
   transition: all 0.2s;
 }
 .coverage-area:hover { border-color: var(--border-h); background: var(--surface-2); }
-.coverage-dot {
-  width: 10px; height: 10px; border-radius: 50%; background: var(--green-glow); flex-shrink: 0;
-  box-shadow: 0 0 0 3px rgba(0,200,130,0.2);
-}
+.coverage-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--green-glow); flex-shrink: 0; box-shadow: 0 0 0 3px rgba(0,200,130,0.2); }
 .coverage-dot.partial { background: var(--gold); box-shadow: 0 0 0 3px rgba(255,204,0,0.2); }
 .coverage-name { font-size: 14px; font-weight: 600; }
 .coverage-status { font-size: 11px; color: var(--text-muted); }
@@ -440,24 +372,17 @@ nav {
     linear-gradient(135deg, rgba(232,25,44,0.08) 0%, transparent 50%),
     var(--dark);
 }
-.complaint-inner {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
-}
+.complaint-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
 .complaint-card {
   background: var(--surface); border: 1px solid var(--border);
   border-radius: var(--radius-lg); padding: 36px 32px;
   border-top: 3px solid var(--red);
 }
-.complaint-time {
-  font-family: var(--font-head); font-size: 72px; font-weight: 900;
-  color: var(--red-l); line-height: 1; margin-bottom: 6px;
-}
+.complaint-time { font-family: var(--font-head); font-size: 72px; font-weight: 900; color: var(--red-l); line-height: 1; margin-bottom: 6px; }
 .complaint-time span { font-size: 28px; }
 .complaint-label { font-size: 16px; color: var(--text-muted); margin-bottom: 22px; }
 .complaint-steps { display: flex; flex-direction: column; gap: 14px; }
-.complaint-step {
-  display: flex; align-items: flex-start; gap: 13px; font-size: 14px;
-}
+.complaint-step { display: flex; align-items: flex-start; gap: 13px; font-size: 14px; }
 .step-num {
   width: 28px; height: 28px; border-radius: 50%; background: rgba(232,25,44,0.15);
   border: 1px solid rgba(232,25,44,0.3); color: var(--red-l); font-family: var(--font-head);
@@ -465,6 +390,127 @@ nav {
 }
 .step-text { color: var(--text-muted); line-height: 1.5; }
 .step-text strong { color: #fff; }
+
+/* ============================================================
+   MY ACCOUNT SECTION
+   ============================================================ */
+.my-account-section {
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 50%, rgba(0,106,78,0.09), transparent 65%),
+    var(--dark-2);
+  position: relative; overflow: hidden;
+}
+
+/* Big CTA card */
+.acct-cta-card {
+  display: grid; grid-template-columns: auto 1fr; gap: 52px;
+  align-items: center;
+  background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%);
+  border: 1.5px solid var(--border-h);
+  border-radius: 26px;
+  padding: 52px 60px;
+  position: relative; overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(0,200,130,0.04);
+  margin-bottom: 18px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.acct-cta-card:hover {
+  border-color: rgba(0,200,130,0.45);
+  box-shadow: 0 24px 72px rgba(0,0,0,0.45), 0 0 40px rgba(0,106,78,0.1);
+}
+.acct-cta-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,200,130,0.5), transparent);
+}
+.acct-cta-card::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 60% 80% at 85% 50%, rgba(0,106,78,0.07), transparent);
+}
+
+.acct-icon-wrap {
+  width: 110px; height: 110px; border-radius: 26px; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--green), var(--green-l));
+  border: 1.5px solid rgba(0,200,130,0.3);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 48px;
+  box-shadow: 0 8px 32px rgba(0,106,78,0.45), inset 0 1px 0 rgba(255,255,255,0.12);
+  animation: acctIconFloat 5s ease-in-out infinite;
+  position: relative; z-index: 1;
+}
+@keyframes acctIconFloat {
+  0%,100% { transform: translateY(0) rotate(-2deg); }
+  50%      { transform: translateY(-8px) rotate(2deg); }
+}
+
+.acct-cta-body { position: relative; z-index: 1; }
+.acct-live-badge {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: 10.5px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--green-glow); margin-bottom: 10px;
+}
+.acct-live-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--green-glow); box-shadow: 0 0 0 3px rgba(0,200,130,0.2);
+  animation: pulse 1.8s ease-in-out infinite;
+}
+.acct-cta-title {
+  font-family: var(--font-head); font-size: clamp(24px, 3vw, 34px);
+  font-weight: 900; color: #fff; margin-bottom: 12px;
+}
+.acct-cta-desc {
+  font-size: 15px; color: var(--text-muted); line-height: 1.75;
+  max-width: 480px; margin-bottom: 28px;
+}
+.acct-cta-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 36px; border-radius: 10px;
+  background: linear-gradient(135deg, var(--green), var(--green-l));
+  color: #fff; font-family: var(--font-head); font-size: 15px; font-weight: 800;
+  letter-spacing: 0.3px; text-decoration: none;
+  border: 1.5px solid rgba(0,200,130,0.35);
+  box-shadow: var(--shadow-green);
+  transition: all 0.25s; position: relative; overflow: hidden;
+}
+.acct-cta-btn::before {
+  content: ''; position: absolute; top: 0; left: -100%; width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  animation: btnShine 3.5s ease-in-out infinite;
+}
+@keyframes btnShine { 0%,30% { left:-100%; } 60%,100% { left:150%; } }
+.acct-cta-btn:hover { transform: translateY(-3px); box-shadow: 0 14px 36px rgba(0,106,78,0.55); }
+
+/* 4 feature mini-cards */
+.acct-features {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+}
+.acct-feat {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 18px;
+  display: flex; flex-direction: column; gap: 9px;
+  transition: all 0.25s;
+  position: relative; overflow: hidden;
+}
+.acct-feat::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--green), var(--green-glow));
+  opacity: 0; transition: opacity 0.25s;
+}
+.acct-feat:hover { border-color: var(--border-h); transform: translateY(-4px); box-shadow: var(--shadow-g); }
+.acct-feat:hover::before { opacity: 1; }
+.acct-feat-icon { font-size: 24px; line-height: 1; }
+.acct-feat-title { font-family: var(--font-head); font-size: 13.5px; font-weight: 700; color: #fff; }
+.acct-feat-desc  { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+
+@media(max-width:900px) {
+  .acct-cta-card { grid-template-columns: 1fr; gap: 28px; padding: 36px 28px; }
+  .acct-icon-wrap { width: 80px; height: 80px; font-size: 36px; border-radius: 20px; }
+  .acct-features { grid-template-columns: repeat(2, 1fr); }
+}
+@media(max-width:500px) {
+  .acct-features { grid-template-columns: 1fr 1fr; }
+}
 
 /* ============================================================
    CONTACT
@@ -482,9 +528,7 @@ nav {
   transition: all 0.2s;
 }
 .contact-item:hover { border-color: var(--border-h); }
-.contact-icon {
-  width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 20px;
-}
+.contact-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 20px; }
 .contact-icon-g { background: rgba(0,106,78,0.2); border: 1px solid rgba(0,200,130,0.2); }
 .contact-icon-r { background: rgba(232,25,44,0.1); border: 1px solid rgba(232,25,44,0.2); }
 .contact-icon-b { background: rgba(0,120,200,0.12); border: 1px solid rgba(0,120,200,0.25); }
@@ -492,7 +536,6 @@ nav {
 .contact-detail { display: flex; flex-direction: column; }
 .contact-detail-label { font-size: 11px; color: var(--text-muted); font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; }
 .contact-detail-val { font-size: 15px; font-weight: 600; margin-top: 1px; }
-/* Form */
 .contact-form {
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px;
 }
@@ -516,10 +559,7 @@ textarea.form-input { min-height: 100px; }
   box-shadow: var(--shadow-green);
 }
 .form-submit:hover { background: var(--green-l); transform: translateY(-2px); }
-.form-success {
-  display: none; text-align: center; padding: 20px; color: var(--green-glow);
-  font-family: var(--font-head); font-size: 16px; font-weight: 700;
-}
+.form-success { display: none; text-align: center; padding: 20px; color: var(--green-glow); font-family: var(--font-head); font-size: 16px; font-weight: 700; }
 
 /* ============================================================
    FLOATING WHATSAPP
@@ -540,23 +580,14 @@ textarea.form-input { min-height: 100px; }
   white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 0.2s;
 }
 .whatsapp-float:hover .whatsapp-tooltip { opacity: 1; }
-.whatsapp-pulse {
-  position: absolute; inset: -3px; border-radius: 50%;
-  background: rgba(37,211,102,0.3); animation: waPulse 2s ease-out infinite;
-}
-@keyframes waBounce {
-  0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)}
-}
-@keyframes waPulse {
-  0%{transform:scale(1);opacity:0.6} 100%{transform:scale(1.6);opacity:0}
-}
+.whatsapp-pulse { position: absolute; inset: -3px; border-radius: 50%; background: rgba(37,211,102,0.3); animation: waPulse 2s ease-out infinite; }
+@keyframes waBounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+@keyframes waPulse  { 0%{transform:scale(1);opacity:0.6} 100%{transform:scale(1.6);opacity:0} }
 
 /* ============================================================
    FOOTER
    ============================================================ */
-footer {
-  background: var(--dark-2); border-top: 1px solid var(--border); padding: 60px 0 0;
-}
+footer { background: var(--dark-2); border-top: 1px solid var(--border); padding: 60px 0 0; }
 .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 48px; }
 .footer-brand p { font-size: 14px; color: var(--text-muted); line-height: 1.7; margin: 14px 0 20px; }
 .footer-socials { display: flex; gap: 10px; }
@@ -580,19 +611,11 @@ footer {
 .flag-stripe { height: 14px; }
 
 /* ============================================================
-   SECTION-SPECIFIC ANIMATIONS
+   SECTION ANIMATIONS
    ============================================================ */
-@keyframes signalPulse {
-  0%,100% { r: 30; opacity: 0.5; }
-  50% { r: 48; opacity: 0; }
-}
-@keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-@keyframes dashMove {
-  to { stroke-dashoffset: -40; }
-}
+@keyframes signalPulse { 0%,100% { r: 30; opacity: 0.5; } 50% { r: 48; opacity: 0; } }
+@keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes dashMove { to { stroke-dashoffset: -40; } }
 
 /* ============================================================
    RESPONSIVE
@@ -617,6 +640,8 @@ footer {
   .footer-bottom { flex-direction: column; text-align: center; }
   .hero-stats { gap: 20px; }
   .complaint-time { font-size: 52px; }
+  .network-layout { grid-template-columns: 1fr; }
+  .network-canvas { height: 280px; }
 }
 @media (max-width: 480px) {
   .hero-btns { flex-direction: column; }
@@ -683,32 +708,26 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
   padding: 28px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
   background: rgba(0,106,78,0.05);
 }
-.trust-inner {
-  display: flex; align-items: center; justify-content: center;
-  gap: 0; flex-wrap: wrap;
-}
+.trust-inner { display: flex; align-items: center; justify-content: center; gap: 0; flex-wrap: wrap; }
 .trust-badge {
   display: flex; align-items: center; gap: 10px;
   padding: 10px 28px; border-right: 1px solid var(--border);
-  flex-shrink: 0;
+  flex-shrink: 0; transition: transform 0.25s;
 }
 .trust-badge:last-child { border-right: none; }
+.trust-badge:hover { transform: translateY(-2px); }
 .trust-icon { font-size: 26px; flex-shrink: 0; }
 .trust-text { display: flex; flex-direction: column; }
 .trust-num { font-family: var(--font-head); font-size: 20px; font-weight: 900; color: #fff; line-height: 1; }
 .trust-label { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
-@media(max-width:600px){
+@media(max-width:600px) {
   .trust-badge { border-right: none; border-bottom: 1px solid var(--border); width: 50%; justify-content: center; }
-  .trust-badge:nth-child(even) { border-right: none; }
 }
 
 /* ============================================================
-   ANIMATED NETWORK SECTION
+   NETWORK SECTION
    ============================================================ */
-.network-section {
-  padding: 80px 0; background: var(--dark);
-  overflow: hidden; position: relative;
-}
+.network-section { padding: 80px 0; background: var(--dark); overflow: hidden; position: relative; }
 .network-section::before {
   content: ''; position: absolute; inset: 0;
   background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(0,106,78,0.08), transparent);
@@ -716,7 +735,6 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
 .network-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
 .network-canvas { position: relative; height: 380px; }
 .network-canvas svg { width: 100%; height: 100%; }
-@media(max-width:768px){ .network-layout { grid-template-columns: 1fr; } .network-canvas { height: 280px; } }
 
 /* ============================================================
    VIDEO SECTION
@@ -732,46 +750,26 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
   display: flex; align-items: center; justify-content: center;
 }
 .video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
-.video-placeholder {
-  display: flex; flex-direction: column; align-items: center; gap: 16px;
-  color: var(--text-muted); text-align: center; padding: 40px;
-}
+.video-placeholder { display: flex; flex-direction: column; align-items: center; gap: 16px; color: var(--text-muted); text-align: center; padding: 40px; }
 .video-play-btn {
   width: 72px; height: 72px; border-radius: 50%;
   background: var(--red); display: flex; align-items: center; justify-content: center;
-  cursor: pointer; transition: all 0.25s; box-shadow: var(--shadow-r);
-  border: none;
+  cursor: pointer; transition: all 0.25s; box-shadow: var(--shadow-r); border: none;
 }
 .video-play-btn:hover { background: var(--red-l); transform: scale(1.08); }
 .video-play-btn svg { width: 28px; height: 28px; margin-left: 4px; }
 
 /* ============================================================
-   CINEMATIC PATENGA SECTION
+   CINEMATIC PATENGA
    ============================================================ */
-.patenga-section {
-  position: relative; height: 400px; overflow: hidden;
-  display: flex; align-items: flex-end;
-}
+.patenga-section { position: relative; height: 400px; overflow: hidden; display: flex; align-items: flex-end; }
 .patenga-bg {
   position: absolute; inset: 0;
-  background: linear-gradient(180deg,
-    #0d0500 0%, #2a0e06 10%, #6B2810 25%,
-    #8B3A15 38%, #5A2A20 52%,
-    #1A2A1E 68%, #0D1F16 82%, #061210 100%
-  );
+  background: linear-gradient(180deg, #0d0500 0%, #2a0e06 10%, #6B2810 25%, #8B3A15 38%, #5A2A20 52%, #1A2A1E 68%, #0D1F16 82%, #061210 100%);
 }
-.patenga-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(0deg, rgba(4,13,9,0.92) 0%, transparent 50%);
-}
-.patenga-content {
-  position: relative; z-index: 5; width: 100%; padding: 0 0 48px;
-  text-align: center;
-}
-.patenga-tagline {
-  font-family: var(--font-head); font-size: clamp(18px, 3vw, 30px);
-  font-weight: 800; color: #fff; margin-bottom: 8px;
-}
+.patenga-overlay { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(4,13,9,0.92) 0%, transparent 50%); }
+.patenga-content { position: relative; z-index: 5; width: 100%; padding: 0 0 48px; text-align: center; }
+.patenga-tagline { font-family: var(--font-head); font-size: clamp(18px, 3vw, 30px); font-weight: 800; color: #fff; margin-bottom: 8px; }
 .patenga-sub { font-size: 14px; color: rgba(255,255,255,0.55); }
 
 /* ============================================================
@@ -781,8 +779,7 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
   position: fixed; inset: 0; z-index: 9000;
   background: rgba(0,0,0,0.72); backdrop-filter: blur(6px);
   display: flex; align-items: center; justify-content: center;
-  padding: 20px; opacity: 0; pointer-events: none;
-  transition: opacity 0.35s ease;
+  padding: 20px; opacity: 0; pointer-events: none; transition: opacity 0.35s ease;
 }
 .popup-overlay.open { opacity: 1; pointer-events: all; }
 .popup-box {
@@ -799,226 +796,18 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
   display: flex; align-items: center; justify-content: center; transition: all 0.2s;
 }
 .popup-close:hover { background: var(--red); color: #fff; }
-.popup-emoji { font-size: 42px; text-align: center; margin-bottom: 14px; }
-.popup-title { font-family: var(--font-head); font-size: 24px; font-weight: 800; margin-bottom: 8px; text-align: center; }
-.popup-desc { font-size: 14px; color: var(--text-muted); text-align: center; line-height: 1.7; margin-bottom: 22px; }
+.popup-emoji  { font-size: 42px; text-align: center; margin-bottom: 14px; }
+.popup-title  { font-family: var(--font-head); font-size: 24px; font-weight: 800; margin-bottom: 8px; text-align: center; }
+.popup-desc   { font-size: 14px; color: var(--text-muted); text-align: center; line-height: 1.7; margin-bottom: 22px; }
 .popup-highlights { display: flex; flex-direction: column; gap: 8px; margin-bottom: 22px; }
-.popup-item { display: flex; align-items: center; gap: 9px; font-size: 14px; }
+.popup-item   { display: flex; align-items: center; gap: 9px; font-size: 14px; }
 .popup-item svg { width: 16px; height: 16px; color: var(--green-glow); flex-shrink: 0; }
 
 /* ============================================================
-   CUSTOMER PORTAL
-   ============================================================ */
-.portal-section {
-  padding: 90px 0;
-  background: radial-gradient(ellipse 60% 50% at 20% 50%, rgba(0,106,78,0.1), transparent 55%),
-              radial-gradient(ellipse 50% 40% at 80% 50%, rgba(232,25,44,0.06), transparent 55%),
-              var(--dark-2);
-  position: relative; overflow: hidden;
-}
-.portal-section::before {
-  content: ''; position: absolute; inset: 0; pointer-events: none;
-  background-image: linear-gradient(rgba(0,180,110,0.03) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(0,180,110,0.03) 1px, transparent 1px);
-  background-size: 48px 48px;
-}
-
-/* --- Login Card --- */
-.portal-login-wrap { max-width: 460px; margin: 0 auto; }
-.portal-card {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--radius-lg); overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-}
-.portal-card-header {
-  background: linear-gradient(135deg, var(--green-d), var(--green));
-  padding: 28px 32px 24px; text-align: center;
-}
-.portal-header-icon {
-  width: 56px; height: 56px; border-radius: 16px;
-  background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
-  display: flex; align-items: center; justify-content: center;
-  margin: 0 auto 12px; font-size: 26px;
-}
-.portal-header-title { font-family: var(--font-head); font-size: 20px; font-weight: 800; color: #fff; }
-.portal-header-sub { font-size: 13px; color: rgba(255,255,255,0.65); margin-top: 4px; }
-.portal-card-body { padding: 28px 32px 32px; }
-.portal-input-label {
-  display: block; font-size: 11px; font-weight: 700; color: var(--text-muted);
-  letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px;
-}
-.portal-input {
-  width: 100%; padding: 13px 16px;
-  background: rgba(255,255,255,0.04); border: 1.5px solid var(--border);
-  border-radius: 10px; color: #fff; font-family: var(--font-body); font-size: 15px;
-  outline: none; transition: border-color 0.2s, background 0.2s; margin-bottom: 14px;
-}
-.portal-input:focus { border-color: var(--green); background: rgba(0,200,130,0.04); }
-.portal-input::placeholder { color: var(--text-dim); }
-.portal-login-btn {
-  width: 100%; padding: 14px; border-radius: 10px; background: var(--green);
-  color: #fff; font-family: var(--font-head); font-weight: 800; font-size: 15px;
-  border: none; cursor: pointer; transition: all 0.25s; box-shadow: var(--shadow-green);
-  display: flex; align-items: center; justify-content: center; gap: 8px;
-}
-.portal-login-btn:hover { background: var(--green-l); transform: translateY(-2px); }
-.portal-login-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
-.portal-error {
-  background: rgba(232,25,44,0.1); border: 1px solid rgba(232,25,44,0.3);
-  border-radius: 8px; padding: 10px 14px; font-size: 13px; color: #FF6677;
-  margin-top: 12px; display: none; text-align: center;
-}
-.portal-loading {
-  display: none; text-align: center; padding: 12px;
-  font-size: 13px; color: var(--text-muted);
-}
-.portal-spinner {
-  display: inline-block; width: 16px; height: 16px;
-  border: 2px solid rgba(0,200,130,0.2); border-top-color: var(--green-glow);
-  border-radius: 50%; animation: spin 0.7s linear infinite;
-  vertical-align: middle; margin-right: 7px;
-}
-@keyframes spin { to { transform: rotate(360deg); } }
-.portal-demo-hint {
-  text-align: center; margin-top: 14px; font-size: 12px; color: var(--text-dim);
-  padding: 10px 14px; background: rgba(255,204,0,0.05);
-  border: 1px solid rgba(255,204,0,0.12); border-radius: 8px;
-}
-
-/* --- Setup Instructions (admin only) --- */
-.portal-setup-box {
-  background: rgba(255,204,0,0.05); border: 1px solid rgba(255,204,0,0.2);
-  border-radius: var(--radius); padding: 20px 22px; margin-bottom: 28px;
-}
-.portal-setup-title {
-  font-family: var(--font-head); font-size: 14px; font-weight: 800;
-  color: var(--gold); margin-bottom: 10px;
-}
-.portal-setup-step {
-  display: flex; gap: 10px; font-size: 12px; color: var(--text-muted); margin-bottom: 8px;
-}
-.portal-setup-num {
-  width: 20px; height: 20px; border-radius: 50%;
-  background: rgba(255,204,0,0.15); color: var(--gold);
-  font-size: 10px; font-weight: 800; display: flex; align-items: center;
-  justify-content: center; flex-shrink: 0; margin-top: 1px;
-}
-.portal-setup-step code {
-  background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 3px; padding: 1px 5px; font-size: 11px;
-  color: var(--green-glow); font-family: monospace;
-}
-
-/* --- Dashboard --- */
-.portal-dashboard { display: none; }
-.portal-dash-top {
-  display: flex; align-items: center; justify-content: space-between;
-  flex-wrap: wrap; gap: 14px; margin-bottom: 28px;
-}
-.portal-welcome {
-  font-family: var(--font-head); font-size: 22px; font-weight: 800;
-}
-.portal-welcome span { color: var(--green-glow); }
-.portal-logout-btn {
-  padding: 8px 18px; border-radius: 99px; font-size: 12px; font-weight: 700;
-  background: rgba(255,255,255,0.06); border: 1px solid var(--border);
-  color: var(--text-muted); cursor: pointer; transition: all 0.2s;
-}
-.portal-logout-btn:hover { border-color: var(--red); color: var(--red-l); }
-
-/* Summary cards */
-.portal-summary {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-  gap: 14px; margin-bottom: 24px;
-}
-.summary-card {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 20px 18px; position: relative; overflow: hidden;
-}
-.summary-card::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; border-radius: 14px 14px 0 0;
-}
-.summary-card.s-bill::before   { background: linear-gradient(90deg, var(--red), #FF6677); }
-.summary-card.s-speed::before  { background: linear-gradient(90deg, var(--green), var(--green-glow)); }
-.summary-card.s-status::before { background: linear-gradient(90deg, var(--gold), #FFE066); }
-.summary-card.s-since::before  { background: linear-gradient(90deg, #7B8CDE, #A9B4FF); }
-.s-icon { font-size: 22px; margin-bottom: 8px; }
-.s-label {
-  font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
-  text-transform: uppercase; color: var(--text-muted); margin-bottom: 3px;
-}
-.s-val {
-  font-family: var(--font-head); font-size: 22px; font-weight: 900; color: #fff; line-height: 1.1;
-}
-.s-val.red   { color: #FF6677; }
-.s-val.green { color: var(--green-glow); }
-.s-sub { font-size: 11px; color: var(--text-muted); margin-top: 3px; }
-
-/* Info panels */
-.portal-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-.portal-panel {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--radius); overflow: hidden;
-}
-.panel-head {
-  padding: 13px 18px; border-bottom: 1px solid var(--border);
-  font-family: var(--font-head); font-size: 13px; font-weight: 700;
-  color: rgba(255,255,255,0.8); display: flex; align-items: center; gap: 8px;
-}
-.panel-body { padding: 18px; }
-
-/* Payment history rows */
-.history-row {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 9px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 13px;
-}
-.history-row:last-child { border-bottom: none; }
-.history-month { color: var(--text-muted); }
-.history-amt { font-family: var(--font-head); font-weight: 700; }
-.status-pill {
-  padding: 2px 10px; border-radius: 99px; font-size: 10px; font-weight: 700;
-}
-.pill-paid    { background: rgba(0,200,130,0.12); color: var(--green-glow); border: 1px solid rgba(0,200,130,0.25); }
-.pill-due     { background: rgba(232,25,44,0.12); color: #FF6677; border: 1px solid rgba(232,25,44,0.25); }
-.pill-pending { background: rgba(255,204,0,0.1); color: var(--gold); border: 1px solid rgba(255,204,0,0.25); }
-
-/* Package detail rows */
-.pkg-row {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 9px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 13px;
-}
-.pkg-row:last-child { border-bottom: none; }
-.pkg-row-key { color: var(--text-muted); }
-.pkg-row-val { font-weight: 700; color: #fff; }
-
-/* Action buttons */
-.portal-action-btn {
-  display: flex; align-items: center; justify-content: center; gap: 8px;
-  width: 100%; padding: 12px; margin-top: 14px; border-radius: 10px;
-  color: #fff; font-family: var(--font-head); font-weight: 700; font-size: 13px;
-  cursor: pointer; border: none; transition: all 0.2s;
-}
-.btn-wa  { background: #25D366; }
-.btn-wa:hover  { background: #20b858; transform: translateY(-2px); }
-.btn-upg { background: var(--green); box-shadow: var(--shadow-green); }
-.btn-upg:hover { background: var(--green-l); transform: translateY(-2px); }
-
-@media(max-width:768px) {
-  .portal-panels { grid-template-columns: 1fr; }
-  .portal-card-body { padding: 20px 18px 24px; }
-}
-
-/* ============================================================
-   ANIMATED PARTICLE CANVAS
+   CANVAS + MESH
    ============================================================ */
 #heroCanvas { opacity: 0.55; }
-
-/* ============================================================
-   SECTION ANIMATED GRADIENT MESHES
-   ============================================================ */
-.animated-mesh {
-  position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0;
-}
+.animated-mesh { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
 .mesh-orb {
   position: absolute; border-radius: 50%; filter: blur(80px);
   animation: meshFloat 10s ease-in-out infinite;
@@ -1027,93 +816,6 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
   0%,100% { transform: translate(0,0) scale(1); }
   33%  { transform: translate(30px,-20px) scale(1.08); }
   66%  { transform: translate(-20px,15px) scale(0.95); }
-}
-
-/* ============================================================
-   PORTAL ENHANCEMENTS — Quick Actions, Tips, Status
-   ============================================================ */
-.portal-quick-actions {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 22px;
-}
-.qa-btn {
-  display: flex; flex-direction: column; align-items: center; gap: 8px;
-  padding: 16px 10px; border-radius: var(--radius);
-  background: var(--surface); border: 1px solid var(--border);
-  cursor: pointer; transition: all 0.22s; text-align: center;
-  text-decoration: none; color: inherit;
-}
-.qa-btn:hover { border-color: var(--border-h); transform: translateY(-3px); box-shadow: var(--shadow-g); }
-.qa-btn:hover .qa-icon { transform: scale(1.15); }
-.qa-icon { font-size: 22px; transition: transform 0.2s; line-height: 1; }
-.qa-label { font-size: 11px; font-weight: 700; color: var(--text-muted); line-height: 1.3; }
-.qa-btn.qa-call   { border-color: rgba(0,200,130,0.2);  }
-.qa-btn.qa-wa     { border-color: rgba(37,211,102,0.2); }
-.qa-btn.qa-report { border-color: rgba(232,25,44,0.2);  }
-.qa-btn.qa-speed  { border-color: rgba(255,204,0,0.2);  }
-
-/* Internet tip cards */
-.portal-tips {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--radius); overflow: hidden; margin-top: 18px;
-}
-.tips-head {
-  padding: 13px 18px; border-bottom: 1px solid var(--border);
-  font-family: var(--font-head); font-size: 13px; font-weight: 700;
-  color: rgba(255,255,255,0.8); display: flex; align-items: center; gap: 8px;
-}
-.tip-item {
-  display: flex; align-items: flex-start; gap: 12px;
-  padding: 13px 18px; border-bottom: 1px solid rgba(255,255,255,0.04);
-  font-size: 13px; cursor: pointer; transition: background 0.2s;
-}
-.tip-item:last-child { border-bottom: none; }
-.tip-item:hover { background: rgba(255,255,255,0.02); }
-.tip-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
-.tip-text strong { display: block; font-weight: 700; font-size: 13px; margin-bottom: 3px; }
-.tip-text span { color: var(--text-muted); font-size: 12px; line-height: 1.5; }
-
-/* Network status bar */
-.net-status-bar {
-  display: flex; align-items: center; gap: 10px;
-  padding: 12px 18px; background: rgba(0,200,130,0.07);
-  border: 1px solid rgba(0,200,130,0.18); border-radius: 10px;
-  margin-bottom: 22px; font-size: 13px;
-}
-.net-status-dot {
-  width: 10px; height: 10px; border-radius: 50%;
-  background: var(--green-glow); flex-shrink: 0;
-  box-shadow: 0 0 0 3px rgba(0,200,130,0.2);
-  animation: netPulse 2s ease-in-out infinite;
-}
-.net-status-dot.offline { background: #FF6677; box-shadow: 0 0 0 3px rgba(232,25,44,0.2); animation: none; }
-@keyframes netPulse {
-  0%,100% { box-shadow: 0 0 0 3px rgba(0,200,130,0.2); }
-  50%      { box-shadow: 0 0 0 6px rgba(0,200,130,0.05); }
-}
-.net-status-text { flex: 1; }
-.net-status-text strong { color: var(--green-glow); }
-.net-status-text.offline strong { color: #FF6677; }
-
-/* Complaint quick panel */
-.complaint-quick {
-  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
-  padding: 16px 18px; background: rgba(232,25,44,0.06); border: 1px solid rgba(232,25,44,0.18);
-  border-radius: 10px; margin-top: 18px;
-}
-.complaint-quick-text strong { display: block; font-size: 14px; font-weight: 700; }
-.complaint-quick-text span { font-size: 12px; color: var(--text-muted); }
-.complaint-quick-btns { display: flex; gap: 8px; flex-wrap: wrap; }
-.cq-btn {
-  padding: 8px 16px; border-radius: 99px; font-size: 12px; font-weight: 700;
-  cursor: pointer; border: none; transition: all 0.2s; display: flex; align-items: center; gap: 6px;
-}
-.cq-btn-call { background: var(--green); color: #fff; }
-.cq-btn-call:hover { background: var(--green-l); }
-.cq-btn-wa { background: #25D366; color: #fff; }
-.cq-btn-wa:hover { background: #20b858; }
-
-@media(max-width:640px) {
-  .portal-quick-actions { grid-template-columns: repeat(2,1fr); }
 }
 </style>
 </head>
@@ -1160,9 +862,9 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
 <nav id="navbar">
   <div class="nav-inner">
     <a class="nav-logo" href="#">
-  <img src="logo.png" alt="Satellite Vision Cable Network" 
-       style="height:42px; width:auto; object-fit:contain;">
-</a>
+      <img src="logo.png" alt="Satellite Vision Cable Network"
+           style="height:42px; width:auto; object-fit:contain;">
+    </a>
     <ul class="nav-links">
       <li><a href="#packages">Packages</a></li>
       <li><a href="#offers">Offers</a></li>
@@ -1254,7 +956,6 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
   <!-- Telecom Illustration -->
   <div class="hero-illustration" aria-hidden="true">
     <svg viewBox="0 0 500 460" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- City skyline silhouette -->
       <rect x="0" y="350" width="500" height="110" fill="rgba(0,30,18,0.8)"/>
       <rect x="20" y="290" width="45" height="70" rx="3" fill="rgba(0,40,25,0.7)"/>
       <rect x="30" y="280" width="25" height="15" rx="1" fill="rgba(0,50,30,0.7)"/>
@@ -1266,7 +967,6 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
       <rect x="336" y="295" width="45" height="65" rx="3" fill="rgba(0,40,25,0.65)"/>
       <rect x="393" y="270" width="55" height="90" rx="3" fill="rgba(0,40,25,0.7)"/>
       <rect x="452" y="310" width="48" height="50" rx="3" fill="rgba(0,40,25,0.6)"/>
-      <!-- Building windows (glowing) -->
       <rect x="33" y="296" width="8" height="6" rx="1" fill="rgba(255,220,100,0.5)"/>
       <rect x="47" y="296" width="8" height="6" rx="1" fill="rgba(255,220,100,0.3)"/>
       <rect x="33" y="308" width="8" height="6" rx="1" fill="rgba(255,220,100,0.4)"/>
@@ -1278,71 +978,39 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
       <rect x="267" y="306" width="10" height="8" rx="1" fill="rgba(255,220,100,0.4)"/>
       <rect x="397" y="282" width="10" height="8" rx="1" fill="rgba(255,220,100,0.55)"/>
       <rect x="412" y="282" width="10" height="8" rx="1" fill="rgba(255,220,100,0.35)"/>
-      <!-- Central WiFi router -->
       <rect x="195" y="165" width="110" height="72" rx="12" fill="rgba(0,106,78,0.25)" stroke="rgba(0,200,130,0.5)" stroke-width="1.5"/>
       <rect x="210" y="180" width="80" height="42" rx="6" fill="rgba(0,80,50,0.4)"/>
-      <!-- Router LEDs -->
-      <circle cx="307" cy="170" r="4" fill="#00FF88">
-        <animate attributeName="opacity" values="1;0.3;1" dur="1.8s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="295" cy="170" r="3" fill="rgba(0,255,136,0.4)">
-        <animate attributeName="opacity" values="0.4;1;0.4" dur="2.4s" repeatCount="indefinite"/>
-      </circle>
-      <!-- Antennas -->
+      <circle cx="307" cy="170" r="4" fill="#00FF88"><animate attributeName="opacity" values="1;0.3;1" dur="1.8s" repeatCount="indefinite"/></circle>
+      <circle cx="295" cy="170" r="3" fill="rgba(0,255,136,0.4)"><animate attributeName="opacity" values="0.4;1;0.4" dur="2.4s" repeatCount="indefinite"/></circle>
       <line x1="225" y1="165" x2="215" y2="138" stroke="rgba(0,200,130,0.7)" stroke-width="2" stroke-linecap="round"/>
       <line x1="250" y1="165" x2="250" y2="135" stroke="rgba(0,200,130,0.7)" stroke-width="2" stroke-linecap="round"/>
       <line x1="275" y1="165" x2="285" y2="138" stroke="rgba(0,200,130,0.7)" stroke-width="2" stroke-linecap="round"/>
-      <!-- WiFi signal arcs (animated) -->
-      <path d="M175,140 Q250,100 325,140" fill="none" stroke="rgba(0,255,136,0.55)" stroke-width="2" stroke-linecap="round">
-        <animate attributeName="opacity" values="0.55;0.1;0.55" dur="2s" repeatCount="indefinite"/>
-      </path>
-      <path d="M152,122 Q250,75 348,122" fill="none" stroke="rgba(0,255,136,0.35)" stroke-width="2" stroke-linecap="round">
-        <animate attributeName="opacity" values="0.35;0.05;0.35" dur="2s" begin="0.4s" repeatCount="indefinite"/>
-      </path>
-      <path d="M130,104 Q250,50 370,104" fill="none" stroke="rgba(0,255,136,0.2)" stroke-width="2" stroke-linecap="round">
-        <animate attributeName="opacity" values="0.2;0;0.2" dur="2s" begin="0.8s" repeatCount="indefinite"/>
-      </path>
-      <path d="M108,86 Q250,25 392,86" fill="none" stroke="rgba(0,255,136,0.1)" stroke-width="2" stroke-linecap="round">
-        <animate attributeName="opacity" values="0.1;0;0.1" dur="2s" begin="1.2s" repeatCount="indefinite"/>
-      </path>
-      <!-- Satellite dish -->
+      <path d="M175,140 Q250,100 325,140" fill="none" stroke="rgba(0,255,136,0.55)" stroke-width="2" stroke-linecap="round"><animate attributeName="opacity" values="0.55;0.1;0.55" dur="2s" repeatCount="indefinite"/></path>
+      <path d="M152,122 Q250,75 348,122" fill="none" stroke="rgba(0,255,136,0.35)" stroke-width="2" stroke-linecap="round"><animate attributeName="opacity" values="0.35;0.05;0.35" dur="2s" begin="0.4s" repeatCount="indefinite"/></path>
+      <path d="M130,104 Q250,50 370,104" fill="none" stroke="rgba(0,255,136,0.2)" stroke-width="2" stroke-linecap="round"><animate attributeName="opacity" values="0.2;0;0.2" dur="2s" begin="0.8s" repeatCount="indefinite"/></path>
+      <path d="M108,86 Q250,25 392,86" fill="none" stroke="rgba(0,255,136,0.1)" stroke-width="2" stroke-linecap="round"><animate attributeName="opacity" values="0.1;0;0.1" dur="2s" begin="1.2s" repeatCount="indefinite"/></path>
       <ellipse cx="390" cy="140" rx="28" ry="12" fill="rgba(0,80,50,0.5)" stroke="rgba(0,200,130,0.4)" stroke-width="1.5" transform="rotate(-18,390,140)"/>
       <line x1="390" y1="152" x2="390" y2="175" stroke="rgba(0,200,130,0.5)" stroke-width="2" stroke-linecap="round"/>
       <line x1="375" y1="175" x2="405" y2="175" stroke="rgba(0,200,130,0.5)" stroke-width="2.5" stroke-linecap="round"/>
-      <!-- Signal dot on dish -->
-      <circle cx="390" cy="133" r="4" fill="rgba(232,25,44,0.7)">
-        <animate attributeName="opacity" values="0.7;0.2;0.7" dur="1.5s" repeatCount="indefinite"/>
-      </circle>
-      <!-- Connection lines from router to houses -->
-      <line x1="250" y1="237" x2="165" y2="290" stroke="rgba(0,200,130,0.3)" stroke-width="1.5" stroke-dasharray="5,4">
-        <animate attributeName="stroke-dashoffset" values="0;-18" dur="1s" repeatCount="indefinite"/>
-      </line>
-      <line x1="250" y1="237" x2="290" y2="285" stroke="rgba(0,200,130,0.3)" stroke-width="1.5" stroke-dasharray="5,4">
-        <animate attributeName="stroke-dashoffset" values="0;-18" dur="1.2s" repeatCount="indefinite"/>
-      </line>
-      <line x1="250" y1="237" x2="415" y2="275" stroke="rgba(0,200,130,0.25)" stroke-width="1.5" stroke-dasharray="5,4">
-        <animate attributeName="stroke-dashoffset" values="0;-18" dur="0.9s" repeatCount="indefinite"/>
-      </line>
-      <!-- Speed badge -->
+      <circle cx="390" cy="133" r="4" fill="rgba(232,25,44,0.7)"><animate attributeName="opacity" values="0.7;0.2;0.7" dur="1.5s" repeatCount="indefinite"/></circle>
+      <line x1="250" y1="237" x2="165" y2="290" stroke="rgba(0,200,130,0.3)" stroke-width="1.5" stroke-dasharray="5,4"><animate attributeName="stroke-dashoffset" values="0;-18" dur="1s" repeatCount="indefinite"/></line>
+      <line x1="250" y1="237" x2="290" y2="285" stroke="rgba(0,200,130,0.3)" stroke-width="1.5" stroke-dasharray="5,4"><animate attributeName="stroke-dashoffset" values="0;-18" dur="1.2s" repeatCount="indefinite"/></line>
+      <line x1="250" y1="237" x2="415" y2="275" stroke="rgba(0,200,130,0.25)" stroke-width="1.5" stroke-dasharray="5,4"><animate attributeName="stroke-dashoffset" values="0;-18" dur="0.9s" repeatCount="indefinite"/></line>
       <rect x="330" y="190" width="90" height="40" rx="10" fill="rgba(232,25,44,0.18)" stroke="rgba(232,25,44,0.4)" stroke-width="1"/>
       <text x="375" y="208" text-anchor="middle" font-family="Exo 2,sans-serif" font-weight="800" font-size="13" fill="#FF6677">65 Mbps</text>
       <text x="375" y="223" text-anchor="middle" font-family="Exo 2,sans-serif" font-size="9" fill="rgba(255,102,119,0.6)">MAX SPEED</text>
-      <!-- Price badge -->
       <rect x="75" y="195" width="88" height="40" rx="10" fill="rgba(255,204,0,0.12)" stroke="rgba(255,204,0,0.35)" stroke-width="1"/>
       <text x="119" y="213" text-anchor="middle" font-family="Exo 2,sans-serif" font-weight="800" font-size="13" fill="#FFCC00">৳600/mo</text>
       <text x="119" y="228" text-anchor="middle" font-family="Exo 2,sans-serif" font-size="9" fill="rgba(255,204,0,0.6)">STARTING AT</text>
-      <!-- Palm trees for coastal vibe -->
       <line x1="460" y1="350" x2="468" y2="250" stroke="rgba(0,50,30,0.6)" stroke-width="5" stroke-linecap="round"/>
       <ellipse cx="468" cy="250" rx="26" ry="14" fill="rgba(0,60,35,0.6)" transform="rotate(-8,468,250)"/>
       <line x1="60" y1="350" x2="52" y2="258" stroke="rgba(0,50,30,0.55)" stroke-width="4" stroke-linecap="round"/>
       <ellipse cx="52" cy="258" rx="22" ry="12" fill="rgba(0,60,35,0.55)" transform="rotate(10,52,258)"/>
-      <!-- Coastal water hint -->
       <ellipse cx="250" cy="420" rx="260" ry="40" fill="rgba(0,60,40,0.3)"/>
       <path d="M0,400 Q62,390 125,400 Q187,410 250,400 Q312,390 375,400 Q437,410 500,400" fill="none" stroke="rgba(0,150,90,0.18)" stroke-width="1.5"/>
     </svg>
   </div>
 
-  <!-- Scroll hint -->
   <a href="#packages" style="position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:5;display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--text-dim);font-size:11px;letter-spacing:2px;text-transform:uppercase;">
     <span>Scroll</span>
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
@@ -1393,6 +1061,10 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
     </div>
   </div>
 </div>
+
+<!-- ============================================================
+     PACKAGES
+     ============================================================ -->
 <section class="section packages-bg" id="packages">
   <div class="container">
     <div style="text-align:center;margin-bottom:40px;" class="fade-in">
@@ -1400,16 +1072,13 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
       <h2 class="section-title">Choose Your <span class="highlight">Package</span></h2>
       <p class="section-sub" style="margin:0 auto;">Flexible internet and Dish TV plans designed for every home and budget in Chattogram.</p>
     </div>
-
     <div class="packages-tabs fade-in" style="justify-content:center;">
       <button class="tab-btn active" onclick="switchTab('internet')">🌐 Internet Plans</button>
       <button class="tab-btn" onclick="switchTab('dish')">📡 Dish TV</button>
       <button class="tab-btn" onclick="switchTab('combo')">⚡ Combo Offer</button>
     </div>
-
     <!-- Internet Tab -->
     <div class="tab-panel internet-grid active" id="tab-internet">
-      <!-- 20 Mbps -->
       <div class="pkg-card fade-in">
         <div class="pkg-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00CC88" stroke-width="2"><path d="M1.05 12A11 11 0 0 1 23 12"/><path d="M5 12a7 7 0 0 1 14 0"/><path d="M9 12a3 3 0 0 1 6 0"/><line x1="12" y1="12" x2="12" y2="12.01" stroke-width="3"/></svg></div>
         <div class="pkg-speed">20 <span>Mbps</span></div>
@@ -1422,7 +1091,6 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
         </div>
         <button class="order-btn" onclick="orderPackage('20 Mbps Internet – ৳600/month')">Order Now</button>
       </div>
-      <!-- 30 Mbps -->
       <div class="pkg-card fade-in fade-delay-1">
         <div class="pkg-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00CC88" stroke-width="2"><path d="M1.05 12A11 11 0 0 1 23 12"/><path d="M5 12a7 7 0 0 1 14 0"/><path d="M9 12a3 3 0 0 1 6 0"/><line x1="12" y1="12" x2="12" y2="12.01" stroke-width="3"/></svg></div>
         <div class="pkg-speed">30 <span>Mbps</span></div>
@@ -1435,7 +1103,6 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
         </div>
         <button class="order-btn" onclick="orderPackage('30 Mbps Internet – ৳700/month')">Order Now</button>
       </div>
-      <!-- 35 Mbps -->
       <div class="pkg-card fade-in fade-delay-2">
         <div class="pkg-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00CC88" stroke-width="2"><path d="M1.05 12A11 11 0 0 1 23 12"/><path d="M5 12a7 7 0 0 1 14 0"/><path d="M9 12a3 3 0 0 1 6 0"/><line x1="12" y1="12" x2="12" y2="12.01" stroke-width="3"/></svg></div>
         <div class="pkg-speed">35 <span>Mbps</span></div>
@@ -1445,11 +1112,10 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
           <div class="pkg-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Medium family</div>
           <div class="pkg-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>2–3 simultaneous HD streams</div>
           <div class="pkg-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Gaming (moderate)</div>
-           <div class="pkg-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Most popular “family package” type</div>
+          <div class="pkg-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Most popular "family package" type</div>
         </div>
         <button class="order-btn" onclick="orderPackage('35 Mbps Internet – ৳750/month')">Order Now</button>
       </div>
-      <!-- 40 Mbps POPULAR -->
       <div class="pkg-card featured fade-in">
         <div class="pkg-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00CC88" stroke-width="2"><path d="M1.05 12A11 11 0 0 1 23 12"/><path d="M5 12a7 7 0 0 1 14 0"/><path d="M9 12a3 3 0 0 1 6 0"/><line x1="12" y1="12" x2="12" y2="12.01" stroke-width="3"/></svg></div>
         <div class="pkg-speed">40 <span>Mbps</span></div>
@@ -1463,21 +1129,19 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
         </div>
         <button class="order-btn" onclick="orderPackage('40 Mbps Internet – ৳800/month')">Order Now</button>
       </div>
-      <!-- 50 Mbps -->
       <div class="pkg-card fade-in fade-delay-1">
         <div class="pkg-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00CC88" stroke-width="2"><path d="M1.05 12A11 11 0 0 1 23 12"/><path d="M5 12a7 7 0 0 1 14 0"/><path d="M9 12a3 3 0 0 1 6 0"/><line x1="12" y1="12" x2="12" y2="12.01" stroke-width="3"/></svg></div>
         <div class="pkg-speed">50 <span>Mbps</span></div>
         <div class="pkg-name">Ultra Plan</div>
         <div class="pkg-price">৳1000 <small>/ month</small></div>
         <div class="pkg-features">
-          <div class="pkg-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Shared apartments (6–10 people) </div>
+          <div class="pkg-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Shared apartments (6–10 people)</div>
           <div class="pkg-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Heavy work-from-home users</div>
-           <div class="pkg-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Heavy gaming</div>
+          <div class="pkg-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Heavy gaming</div>
           <div class="pkg-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>4K streaming on multiple TVs</div>
         </div>
         <button class="order-btn" onclick="orderPackage('50 Mbps Internet – ৳1000/month')">Order Now</button>
       </div>
-      <!-- 65 Mbps -->
       <div class="pkg-card fade-in fade-delay-2">
         <div class="pkg-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#00CC88" stroke-width="2"><path d="M1.05 12A11 11 0 0 1 23 12"/><path d="M5 12a7 7 0 0 1 14 0"/><path d="M9 12a3 3 0 0 1 6 0"/><line x1="12" y1="12" x2="12" y2="12.01" stroke-width="3"/></svg></div>
         <div class="pkg-speed">65 <span>Mbps</span></div>
@@ -1492,7 +1156,6 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
         <button class="order-btn" onclick="orderPackage('65 Mbps Internet – ৳1200/month')">Order Now</button>
       </div>
     </div>
-
     <!-- Dish Tab -->
     <div class="tab-panel dish-grid" id="tab-dish">
       <div class="pkg-card fade-in">
@@ -1517,15 +1180,14 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
         <div class="pkg-name">HD Dish TV</div>
         <div class="pkg-price" style="color:#FFD700;">৳500 <small>/ month</small></div>
         <div class="pkg-features">
-          <div class="pkg-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 400+ HD channels</div>
-          <div class="pkg-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>International & Local channels</div>
+          <div class="pkg-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>400+ HD channels</div>
+          <div class="pkg-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>International &amp; Local channels</div>
           <div class="pkg-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Set-top box included</div>
           <div class="pkg-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>USB Support</div>
         </div>
         <button class="order-btn" onclick="orderPackage('Set-Top Box Dish TV – ৳500/month')">Order Now</button>
       </div>
     </div>
-
     <!-- Combo Tab -->
     <div class="tab-panel combo-grid" id="tab-combo">
       <div class="pkg-card featured fade-in" style="border-color:var(--gold);background:linear-gradient(145deg,rgba(255,204,0,0.06),var(--surface));">
@@ -1596,95 +1258,42 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
             </radialGradient>
             <filter id="glow"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
           </defs>
-          <!-- Background circles -->
           <circle cx="200" cy="170" r="130" stroke="rgba(0,200,130,0.06)" stroke-width="1"/>
           <circle cx="200" cy="170" r="100" stroke="rgba(0,200,130,0.08)" stroke-width="1"/>
-          <circle cx="200" cy="170" r="70" stroke="rgba(0,200,130,0.1)" stroke-width="1"/>
-          <!-- Animated pulse rings -->
-          <circle cx="200" cy="170" r="48" fill="none" stroke="rgba(0,200,130,0.35)" stroke-width="1.5">
-            <animate attributeName="r" values="48;90;48" dur="3s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.5;0;0.5" dur="3s" repeatCount="indefinite"/>
-          </circle>
-          <circle cx="200" cy="170" r="48" fill="none" stroke="rgba(0,200,130,0.2)" stroke-width="1">
-            <animate attributeName="r" values="48;120;48" dur="3s" begin="1s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.4;0;0.4" dur="3s" begin="1s" repeatCount="indefinite"/>
-          </circle>
-          <!-- Connection lines with animated dashes -->
-          <line x1="200" y1="170" x2="68" y2="80" stroke="rgba(0,200,130,0.4)" stroke-width="1.5" stroke-dasharray="5,4"><animate attributeName="stroke-dashoffset" values="0;-18" dur="1.2s" repeatCount="indefinite"/></line>
-          <line x1="200" y1="170" x2="332" y2="80" stroke="rgba(0,200,130,0.4)" stroke-width="1.5" stroke-dasharray="5,4"><animate attributeName="stroke-dashoffset" values="0;-18" dur="1.0s" repeatCount="indefinite"/></line>
-          <line x1="200" y1="170" x2="55" y2="200" stroke="rgba(0,200,130,0.35)" stroke-width="1.5" stroke-dasharray="5,4"><animate attributeName="stroke-dashoffset" values="0;-18" dur="1.4s" repeatCount="indefinite"/></line>
+          <circle cx="200" cy="170" r="70"  stroke="rgba(0,200,130,0.1)"  stroke-width="1"/>
+          <circle cx="200" cy="170" r="48" fill="none" stroke="rgba(0,200,130,0.35)" stroke-width="1.5"><animate attributeName="r" values="48;90;48" dur="3s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.5;0;0.5" dur="3s" repeatCount="indefinite"/></circle>
+          <circle cx="200" cy="170" r="48" fill="none" stroke="rgba(0,200,130,0.2)" stroke-width="1"><animate attributeName="r" values="48;120;48" dur="3s" begin="1s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.4;0;0.4" dur="3s" begin="1s" repeatCount="indefinite"/></circle>
+          <line x1="200" y1="170" x2="68"  y2="80"  stroke="rgba(0,200,130,0.4)"  stroke-width="1.5" stroke-dasharray="5,4"><animate attributeName="stroke-dashoffset" values="0;-18" dur="1.2s" repeatCount="indefinite"/></line>
+          <line x1="200" y1="170" x2="332" y2="80"  stroke="rgba(0,200,130,0.4)"  stroke-width="1.5" stroke-dasharray="5,4"><animate attributeName="stroke-dashoffset" values="0;-18" dur="1.0s" repeatCount="indefinite"/></line>
+          <line x1="200" y1="170" x2="55"  y2="200" stroke="rgba(0,200,130,0.35)" stroke-width="1.5" stroke-dasharray="5,4"><animate attributeName="stroke-dashoffset" values="0;-18" dur="1.4s" repeatCount="indefinite"/></line>
           <line x1="200" y1="170" x2="345" y2="200" stroke="rgba(0,200,130,0.35)" stroke-width="1.5" stroke-dasharray="5,4"><animate attributeName="stroke-dashoffset" values="0;-18" dur="1.1s" repeatCount="indefinite"/></line>
-          <line x1="200" y1="170" x2="100" y2="295" stroke="rgba(0,200,130,0.3)" stroke-width="1.5" stroke-dasharray="5,4"><animate attributeName="stroke-dashoffset" values="0;-18" dur="1.3s" repeatCount="indefinite"/></line>
-          <line x1="200" y1="170" x2="300" y2="295" stroke="rgba(0,200,130,0.3)" stroke-width="1.5" stroke-dasharray="5,4"><animate attributeName="stroke-dashoffset" values="0;-18" dur="1.5s" repeatCount="indefinite"/></line>
-          <line x1="200" y1="170" x2="200" y2="310" stroke="rgba(232,25,44,0.4)" stroke-width="1.5" stroke-dasharray="5,4"><animate attributeName="stroke-dashoffset" values="0;-18" dur="1.6s" repeatCount="indefinite"/></line>
-          <!-- Central Hub -->
+          <line x1="200" y1="170" x2="100" y2="295" stroke="rgba(0,200,130,0.3)"  stroke-width="1.5" stroke-dasharray="5,4"><animate attributeName="stroke-dashoffset" values="0;-18" dur="1.3s" repeatCount="indefinite"/></line>
+          <line x1="200" y1="170" x2="300" y2="295" stroke="rgba(0,200,130,0.3)"  stroke-width="1.5" stroke-dasharray="5,4"><animate attributeName="stroke-dashoffset" values="0;-18" dur="1.5s" repeatCount="indefinite"/></line>
+          <line x1="200" y1="170" x2="200" y2="310" stroke="rgba(232,25,44,0.4)"  stroke-width="1.5" stroke-dasharray="5,4"><animate attributeName="stroke-dashoffset" values="0;-18" dur="1.6s" repeatCount="indefinite"/></line>
           <circle cx="200" cy="170" r="36" fill="url(#hubGrad)" filter="url(#glow)"/>
           <circle cx="200" cy="170" r="36" fill="none" stroke="rgba(0,255,136,0.6)" stroke-width="1.5"/>
           <text x="200" y="165" text-anchor="middle" font-family="Exo 2,sans-serif" font-weight="800" font-size="10" fill="white">SVCN</text>
           <text x="200" y="178" text-anchor="middle" font-family="Exo 2,sans-serif" font-size="8" fill="rgba(255,255,255,0.7)">HUB</text>
-          <!-- LED pulse on hub -->
           <circle cx="218" cy="155" r="3.5" fill="#00FF88"><animate attributeName="opacity" values="1;0.3;1" dur="1.8s" repeatCount="indefinite"/></circle>
-          <!-- NODE: Home 1 top-left -->
-          <circle cx="68" cy="80" r="20" fill="rgba(0,60,40,0.8)" stroke="rgba(0,200,130,0.5)" stroke-width="1.5"/>
-          <text x="68" y="75" text-anchor="middle" font-size="14">🏠</text>
-          <text x="68" y="88" text-anchor="middle" font-family="Exo 2,sans-serif" font-size="7" fill="rgba(255,255,255,0.55)">Home</text>
-          <!-- NODE: Home 2 top-right -->
-          <circle cx="332" cy="80" r="20" fill="rgba(0,60,40,0.8)" stroke="rgba(0,200,130,0.5)" stroke-width="1.5"/>
-          <text x="332" y="75" text-anchor="middle" font-size="14">🏠</text>
-          <text x="332" y="88" text-anchor="middle" font-family="Exo 2,sans-serif" font-size="7" fill="rgba(255,255,255,0.55)">Home</text>
-          <!-- NODE: Office left -->
-          <circle cx="55" cy="200" r="20" fill="rgba(0,40,60,0.8)" stroke="rgba(0,150,200,0.5)" stroke-width="1.5"/>
-          <text x="55" y="195" text-anchor="middle" font-size="14">🏢</text>
-          <text x="55" y="208" text-anchor="middle" font-family="Exo 2,sans-serif" font-size="7" fill="rgba(255,255,255,0.55)">Office</text>
-          <!-- NODE: Office right -->
-          <circle cx="345" cy="200" r="20" fill="rgba(0,40,60,0.8)" stroke="rgba(0,150,200,0.5)" stroke-width="1.5"/>
-          <text x="345" y="195" text-anchor="middle" font-size="14">🏢</text>
-          <text x="345" y="208" text-anchor="middle" font-family="Exo 2,sans-serif" font-size="7" fill="rgba(255,255,255,0.55)">Office</text>
-          <!-- NODE: Apartment bottom-left -->
-          <circle cx="100" cy="295" r="20" fill="rgba(50,20,0,0.8)" stroke="rgba(255,204,0,0.5)" stroke-width="1.5"/>
-          <text x="100" y="290" text-anchor="middle" font-size="14">🏗️</text>
-          <text x="100" y="303" text-anchor="middle" font-family="Exo 2,sans-serif" font-size="7" fill="rgba(255,255,255,0.55)">Flat</text>
-          <!-- NODE: Apartment bottom-right -->
-          <circle cx="300" cy="295" r="20" fill="rgba(50,20,0,0.8)" stroke="rgba(255,204,0,0.5)" stroke-width="1.5"/>
-          <text x="300" y="290" text-anchor="middle" font-size="14">🏗️</text>
-          <text x="300" y="303" text-anchor="middle" font-family="Exo 2,sans-serif" font-size="7" fill="rgba(255,255,255,0.55)">Flat</text>
-          <!-- NODE: Satellite dish bottom-center -->
-          <circle cx="200" cy="310" r="20" fill="rgba(60,0,20,0.8)" stroke="rgba(232,25,44,0.5)" stroke-width="1.5"/>
-          <text x="200" y="305" text-anchor="middle" font-size="14">📡</text>
-          <text x="200" y="318" text-anchor="middle" font-family="Exo 2,sans-serif" font-size="7" fill="rgba(255,255,255,0.55)">Dish TV</text>
-          <!-- Speed badges floating -->
-          <rect x="140" y="18" width="58" height="20" rx="10" fill="rgba(0,106,78,0.7)" stroke="rgba(0,200,130,0.4)" stroke-width="0.8"/>
-          <text x="169" y="32" text-anchor="middle" font-family="Exo 2,sans-serif" font-weight="700" font-size="9" fill="#00FF88">65 Mbps ⚡</text>
-          <rect x="210" y="340" width="50" height="20" rx="10" fill="rgba(232,25,44,0.6)" stroke="rgba(232,25,44,0.4)" stroke-width="0.8"/>
-          <text x="235" y="354" text-anchor="middle" font-family="Exo 2,sans-serif" font-weight="700" font-size="9" fill="#FF8899">Dish TV 📺</text>
-          <!-- Traveling data packet dots -->
-          <circle r="4" fill="#00FF88" opacity="0.9">
-            <animateMotion dur="2s" repeatCount="indefinite" path="M200,170 L68,80"/>
-            <animate attributeName="opacity" values="0.9;0.2;0.9" dur="2s" repeatCount="indefinite"/>
-          </circle>
-          <circle r="4" fill="#00FF88" opacity="0.9">
-            <animateMotion dur="1.8s" repeatCount="indefinite" begin="0.5s" path="M200,170 L332,80"/>
-            <animate attributeName="opacity" values="0.9;0.2;0.9" dur="1.8s" begin="0.5s" repeatCount="indefinite"/>
-          </circle>
-          <circle r="3.5" fill="#FFD700" opacity="0.8">
-            <animateMotion dur="2.2s" repeatCount="indefinite" begin="0.3s" path="M200,170 L55,200"/>
-          </circle>
-          <circle r="3.5" fill="#FFD700" opacity="0.8">
-            <animateMotion dur="1.9s" repeatCount="indefinite" begin="0.8s" path="M200,170 L345,200"/>
-          </circle>
-          <circle r="3" fill="#FF6677" opacity="0.85">
-            <animateMotion dur="2.4s" repeatCount="indefinite" begin="0.2s" path="M200,170 L200,310"/>
-          </circle>
+          <circle cx="68"  cy="80"  r="20" fill="rgba(0,60,40,0.8)"  stroke="rgba(0,200,130,0.5)"  stroke-width="1.5"/><text x="68"  y="75"  text-anchor="middle" font-size="14">🏠</text><text x="68"  y="88"  text-anchor="middle" font-family="Exo 2,sans-serif" font-size="7" fill="rgba(255,255,255,0.55)">Home</text>
+          <circle cx="332" cy="80"  r="20" fill="rgba(0,60,40,0.8)"  stroke="rgba(0,200,130,0.5)"  stroke-width="1.5"/><text x="332" y="75"  text-anchor="middle" font-size="14">🏠</text><text x="332" y="88"  text-anchor="middle" font-family="Exo 2,sans-serif" font-size="7" fill="rgba(255,255,255,0.55)">Home</text>
+          <circle cx="55"  cy="200" r="20" fill="rgba(0,40,60,0.8)"  stroke="rgba(0,150,200,0.5)" stroke-width="1.5"/><text x="55"  y="195" text-anchor="middle" font-size="14">🏢</text><text x="55"  y="208" text-anchor="middle" font-family="Exo 2,sans-serif" font-size="7" fill="rgba(255,255,255,0.55)">Office</text>
+          <circle cx="345" cy="200" r="20" fill="rgba(0,40,60,0.8)"  stroke="rgba(0,150,200,0.5)" stroke-width="1.5"/><text x="345" y="195" text-anchor="middle" font-size="14">🏢</text><text x="345" y="208" text-anchor="middle" font-family="Exo 2,sans-serif" font-size="7" fill="rgba(255,255,255,0.55)">Office</text>
+          <circle cx="100" cy="295" r="20" fill="rgba(50,20,0,0.8)"  stroke="rgba(255,204,0,0.5)"  stroke-width="1.5"/><text x="100" y="290" text-anchor="middle" font-size="14">🏗️</text><text x="100" y="303" text-anchor="middle" font-family="Exo 2,sans-serif" font-size="7" fill="rgba(255,255,255,0.55)">Flat</text>
+          <circle cx="300" cy="295" r="20" fill="rgba(50,20,0,0.8)"  stroke="rgba(255,204,0,0.5)"  stroke-width="1.5"/><text x="300" y="290" text-anchor="middle" font-size="14">🏗️</text><text x="300" y="303" text-anchor="middle" font-family="Exo 2,sans-serif" font-size="7" fill="rgba(255,255,255,0.55)">Flat</text>
+          <circle cx="200" cy="310" r="20" fill="rgba(60,0,20,0.8)"  stroke="rgba(232,25,44,0.5)"  stroke-width="1.5"/><text x="200" y="305" text-anchor="middle" font-size="14">📡</text><text x="200" y="318" text-anchor="middle" font-family="Exo 2,sans-serif" font-size="7" fill="rgba(255,255,255,0.55)">Dish TV</text>
+          <rect x="140" y="18" width="58" height="20" rx="10" fill="rgba(0,106,78,0.7)" stroke="rgba(0,200,130,0.4)" stroke-width="0.8"/><text x="169" y="32" text-anchor="middle" font-family="Exo 2,sans-serif" font-weight="700" font-size="9" fill="#00FF88">65 Mbps ⚡</text>
+          <rect x="210" y="340" width="50" height="20" rx="10" fill="rgba(232,25,44,0.6)" stroke="rgba(232,25,44,0.4)" stroke-width="0.8"/><text x="235" y="354" text-anchor="middle" font-family="Exo 2,sans-serif" font-weight="700" font-size="9" fill="#FF8899">Dish TV 📺</text>
+          <circle r="4" fill="#00FF88" opacity="0.9"><animateMotion dur="2s" repeatCount="indefinite" path="M200,170 L68,80"/><animate attributeName="opacity" values="0.9;0.2;0.9" dur="2s" repeatCount="indefinite"/></circle>
+          <circle r="4" fill="#00FF88" opacity="0.9"><animateMotion dur="1.8s" repeatCount="indefinite" begin="0.5s" path="M200,170 L332,80"/><animate attributeName="opacity" values="0.9;0.2;0.9" dur="1.8s" begin="0.5s" repeatCount="indefinite"/></circle>
+          <circle r="3.5" fill="#FFD700" opacity="0.8"><animateMotion dur="2.2s" repeatCount="indefinite" begin="0.3s" path="M200,170 L55,200"/></circle>
+          <circle r="3.5" fill="#FFD700" opacity="0.8"><animateMotion dur="1.9s" repeatCount="indefinite" begin="0.8s" path="M200,170 L345,200"/></circle>
+          <circle r="3"   fill="#FF6677" opacity="0.85"><animateMotion dur="2.4s" repeatCount="indefinite" begin="0.2s" path="M200,170 L200,310"/></circle>
         </svg>
       </div>
     </div>
   </div>
 </section>
-
-<!-- ============================================================
-     VIDEO SECTION
-     ============================================================ -->
-
 
 <!-- ============================================================
      SPECIAL OFFERS
@@ -1697,7 +1306,6 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
       <p class="section-sub" style="margin:0 auto;">Exclusive deals to help you save more on your internet and TV services.</p>
     </div>
     <div class="offers-grid">
-      <!-- Referral Offer -->
       <div class="offer-card fade-in">
         <div class="offer-bar offer-bar-gold"></div>
         <div class="offer-icon offer-icon-gold">🤝</div>
@@ -1705,26 +1313,13 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
         <h3 class="offer-title">Refer &amp; Get Rewarded</h3>
         <p class="offer-desc">Invite your friends, colleagues, or flatmates and enjoy special rewards when they get connected to our network.</p>
         <div class="offer-highlight">
-          <div class="offer-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#FFCC00" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span><strong style="color:#fff;">৳100 OFF</strong> for 2 consecutive months</span>
-          </div>
-          <div class="offer-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#FFCC00" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span><strong style="color:#fff;">FREE 10 Mbps</strong> speed upgrade</span>
-          </div>
-          <div class="offer-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#FFCC00" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>1 referral reward per 2 months per customer</span>
-          </div>
-          <div class="offer-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#FFCC00" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Valid for new connections only</span>
-          </div>
+          <div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="#FFCC00" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span><strong style="color:#fff;">৳100 OFF</strong> for 2 consecutive months</span></div>
+          <div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="#FFCC00" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span><strong style="color:#fff;">FREE 10 Mbps</strong> speed upgrade</span></div>
+          <div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="#FFCC00" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>1 referral reward per 2 months per customer</span></div>
+          <div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="#FFCC00" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Valid for new connections only</span></div>
         </div>
         <a href="#contact" class="btn btn-outline" style="margin-top:22px;border-radius:10px;width:100%;justify-content:center;">Refer a Friend</a>
       </div>
-      <!-- Switch ISP -->
       <div class="offer-card fade-in fade-delay-1">
         <div class="offer-bar offer-bar-red"></div>
         <div class="offer-icon offer-icon-red">🔄</div>
@@ -1732,26 +1327,13 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
         <h3 class="offer-title">Switch ISP — Get Rewarded</h3>
         <p class="offer-desc">Already with another provider? Switch to Satellite Vision and enjoy exclusive welcome discounts and priority installation.</p>
         <div class="offer-highlight">
-          <div class="offer-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#FF6677" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span><strong style="color:#fff;">Special discount</strong> on first month</span>
-          </div>
-          <div class="offer-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#FF6677" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span><strong style="color:#fff;">Free installation</strong> for switchers</span>
-          </div>
-          <div class="offer-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#FF6677" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Priority connection within 24 hours</span>
-          </div>
-          <div class="offer-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#FF6677" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Dedicated onboarding support</span>
-          </div>
+          <div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="#FF6677" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span><strong style="color:#fff;">Special discount</strong> on first month</span></div>
+          <div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="#FF6677" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span><strong style="color:#fff;">Free installation</strong> for switchers</span></div>
+          <div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="#FF6677" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Priority connection within 24 hours</span></div>
+          <div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="#FF6677" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Dedicated onboarding support</span></div>
         </div>
         <a href="#contact" class="btn btn-primary" style="margin-top:22px;border-radius:10px;width:100%;justify-content:center;">Switch Today</a>
       </div>
-      <!-- Building Offer -->
       <div class="offer-card fade-in fade-delay-2">
         <div class="offer-bar offer-bar-green"></div>
         <div class="offer-icon offer-icon-green">🏢</div>
@@ -1759,22 +1341,10 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
         <h3 class="offer-title">Building Group Discount</h3>
         <p class="offer-desc">Multiple connections from the same building? Everyone qualifies for exclusive group discount rates — the more connections, the bigger the savings.</p>
         <div class="offer-highlight">
-          <div class="offer-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#00CC88" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span><strong style="color:#fff;">Group discounts</strong> for all units</span>
-          </div>
-          <div class="offer-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#00CC88" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Minimum <strong style="color:#fff;">3 connections</strong> required</span>
-          </div>
-          <div class="offer-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#00CC88" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Single technician visit for all units</span>
-          </div>
-          <div class="offer-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#00CC88" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            <span>Dedicated building support line</span>
-          </div>
+          <div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="#00CC88" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span><strong style="color:#fff;">Group discounts</strong> for all units</span></div>
+          <div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="#00CC88" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Minimum <strong style="color:#fff;">3 connections</strong> required</span></div>
+          <div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="#00CC88" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Single technician visit for all units</span></div>
+          <div class="offer-item"><svg viewBox="0 0 24 24" fill="none" stroke="#00CC88" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg><span>Dedicated building support line</span></div>
         </div>
         <a href="#contact" class="btn btn-green" style="border-radius:10px;width:100%;margin-top:22px;justify-content:center;">Apply for Building Deal</a>
       </div>
@@ -1808,54 +1378,33 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
           </a>
         </div>
       </div>
-      <!-- Illustrative Map -->
       <div class="coverage-map-wrap fade-in fade-delay-2">
         <svg viewBox="0 0 420 360" fill="none" xmlns="http://www.w3.org/2000/svg" style="padding:20px;width:100%;height:100%;">
-          <!-- Grid -->
-          <defs>
-            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0,180,110,0.07)" stroke-width="1"/>
-            </pattern>
-          </defs>
+          <defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0,180,110,0.07)" stroke-width="1"/></pattern></defs>
           <rect width="420" height="360" fill="url(#grid)"/>
-          <!-- Roads -->
           <line x1="0" y1="180" x2="420" y2="180" stroke="rgba(255,255,255,0.06)" stroke-width="8"/>
           <line x1="210" y1="0" x2="210" y2="360" stroke="rgba(255,255,255,0.06)" stroke-width="8"/>
           <line x1="0" y1="120" x2="420" y2="120" stroke="rgba(255,255,255,0.04)" stroke-width="4"/>
           <line x1="140" y1="0" x2="140" y2="360" stroke="rgba(255,255,255,0.04)" stroke-width="4"/>
           <line x1="280" y1="0" x2="280" y2="360" stroke="rgba(255,255,255,0.04)" stroke-width="4"/>
-          <!-- Coverage zone (Nasirabad) -->
           <circle cx="210" cy="175" r="105" fill="rgba(0,106,78,0.12)" stroke="rgba(0,200,130,0.25)" stroke-width="1.5" stroke-dasharray="6,4"/>
-          <circle cx="210" cy="175" r="72" fill="rgba(0,106,78,0.18)" stroke="rgba(0,200,130,0.4)" stroke-width="1.5"/>
-          <circle cx="210" cy="175" r="42" fill="rgba(0,106,78,0.28)" stroke="rgba(0,200,130,0.6)" stroke-width="1.5"/>
-          <!-- Location pin - Nasirabad -->
+          <circle cx="210" cy="175" r="72"  fill="rgba(0,106,78,0.18)" stroke="rgba(0,200,130,0.4)"  stroke-width="1.5"/>
+          <circle cx="210" cy="175" r="42"  fill="rgba(0,106,78,0.28)" stroke="rgba(0,200,130,0.6)"  stroke-width="1.5"/>
           <circle cx="210" cy="175" r="10" fill="var(--green)"/>
-          <circle cx="210" cy="175" r="5" fill="#fff"/>
-          <!-- Animated pulse -->
-          <circle cx="210" cy="175" r="10" fill="none" stroke="rgba(0,200,130,0.5)" stroke-width="2">
-            <animate attributeName="r" values="10;28;10" dur="2.5s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.8;0;0.8" dur="2.5s" repeatCount="indefinite"/>
-          </circle>
-          <!-- Zone label -->
+          <circle cx="210" cy="175" r="5"  fill="#fff"/>
+          <circle cx="210" cy="175" r="10" fill="none" stroke="rgba(0,200,130,0.5)" stroke-width="2"><animate attributeName="r" values="10;28;10" dur="2.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.8;0;0.8" dur="2.5s" repeatCount="indefinite"/></circle>
           <rect x="148" y="198" width="124" height="22" rx="6" fill="rgba(0,0,0,0.6)" stroke="rgba(0,200,130,0.3)" stroke-width="0.8"/>
           <text x="210" y="213" text-anchor="middle" font-family="Exo 2,sans-serif" font-weight="700" font-size="10" fill="rgba(0,200,130,0.9)">Nasirabad Housing Society</text>
-          <!-- Secondary location pin 1 -->
           <circle cx="150" cy="130" r="7" fill="rgba(0,106,78,0.8)" stroke="rgba(0,200,130,0.5)" stroke-width="1"/>
           <circle cx="150" cy="130" r="3.5" fill="#fff"/>
           <rect x="98" y="116" width="88" height="18" rx="5" fill="rgba(0,0,0,0.55)" stroke="rgba(0,200,130,0.2)" stroke-width="0.8"/>
           <text x="142" y="128" text-anchor="middle" font-family="Exo 2,sans-serif" font-size="9" fill="rgba(255,255,255,0.7)">Nasirabad I/A</text>
-          <!-- Expanding marker -->
-          <circle cx="320" cy="100" r="7" fill="rgba(255,204,0,0.5)" stroke="rgba(255,204,0,0.6)" stroke-width="1.5" stroke-dasharray="3,2">
-            <animate attributeName="r" values="7;14;7" dur="3s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.8;0.2;0.8" dur="3s" repeatCount="indefinite"/>
-          </circle>
+          <circle cx="320" cy="100" r="7" fill="rgba(255,204,0,0.5)" stroke="rgba(255,204,0,0.6)" stroke-width="1.5" stroke-dasharray="3,2"><animate attributeName="r" values="7;14;7" dur="3s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.8;0.2;0.8" dur="3s" repeatCount="indefinite"/></circle>
           <text x="320" y="116" text-anchor="middle" font-family="Exo 2,sans-serif" font-size="8" fill="rgba(255,204,0,0.7)">Expanding</text>
-          <!-- Compass -->
           <circle cx="370" cy="40" r="16" fill="rgba(0,0,0,0.4)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
           <text x="370" y="31" text-anchor="middle" font-family="Exo 2,sans-serif" font-size="8" font-weight="700" fill="rgba(232,25,44,0.8)">N</text>
           <line x1="370" y1="34" x2="370" y2="48" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
           <line x1="363" y1="41" x2="377" y2="41" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
-          <!-- Scale label -->
           <text x="20" y="350" font-family="Exo 2,sans-serif" font-size="9" fill="rgba(255,255,255,0.3)">Coverage area · Chattogram, BD</text>
         </svg>
       </div>
@@ -1885,22 +1434,10 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
         <div class="complaint-time">45–80<span>min</span></div>
         <div class="complaint-label">Average Complaint Resolution Time</div>
         <div class="complaint-steps">
-          <div class="complaint-step">
-            <div class="step-num">1</div>
-            <div class="step-text"><strong>Report your issue</strong> via phone, WhatsApp, or our contact form</div>
-          </div>
-          <div class="complaint-step">
-            <div class="step-num">2</div>
-            <div class="step-text"><strong>Technician dispatch</strong> within minutes of receiving your complaint</div>
-          </div>
-          <div class="complaint-step">
-            <div class="step-num">3</div>
-            <div class="step-text"><strong>Issue resolved</strong> on-site within the guaranteed 45–80 minute window</div>
-          </div>
-          <div class="complaint-step">
-            <div class="step-num">4</div>
-            <div class="step-text"><strong>Follow-up call</strong> to confirm your satisfaction</div>
-          </div>
+          <div class="complaint-step"><div class="step-num">1</div><div class="step-text"><strong>Report your issue</strong> via phone, WhatsApp, or our contact form</div></div>
+          <div class="complaint-step"><div class="step-num">2</div><div class="step-text"><strong>Technician dispatch</strong> within minutes of receiving your complaint</div></div>
+          <div class="complaint-step"><div class="step-num">3</div><div class="step-text"><strong>Issue resolved</strong> on-site within the guaranteed 45–80 minute window</div></div>
+          <div class="complaint-step"><div class="step-num">4</div><div class="step-text"><strong>Follow-up call</strong> to confirm your satisfaction</div></div>
         </div>
       </div>
     </div>
@@ -1908,235 +1445,77 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
 </section>
 
 <!-- ============================================================
-     CUSTOMER PORTAL
+     MY ACCOUNT — Customer Portal Entry
      ============================================================ -->
-<section class="portal-section section" id="portal">
-  <!-- Animated mesh background -->
+<section class="section my-account-section" id="portal">
+  <!-- Animated mesh orbs -->
   <div class="animated-mesh" aria-hidden="true">
-    <div class="mesh-orb" style="width:400px;height:400px;top:-100px;left:-80px;background:rgba(0,106,78,0.12);animation-delay:0s;"></div>
-    <div class="mesh-orb" style="width:300px;height:300px;bottom:-80px;right:-60px;background:rgba(232,25,44,0.07);animation-delay:4s;"></div>
-    <div class="mesh-orb" style="width:220px;height:220px;top:40%;right:20%;background:rgba(255,204,0,0.05);animation-delay:7s;"></div>
+    <div class="mesh-orb" style="width:500px;height:500px;top:-120px;right:-80px;background:rgba(0,106,78,0.12);animation-delay:0s;"></div>
+    <div class="mesh-orb" style="width:380px;height:380px;bottom:-80px;left:-60px;background:rgba(232,25,44,0.06);animation-delay:6s;"></div>
+    <div class="mesh-orb" style="width:260px;height:260px;top:40%;left:40%;background:rgba(255,204,0,0.04);animation-delay:3s;"></div>
   </div>
 
   <div class="container" style="position:relative;z-index:1;">
 
-    <!-- Heading -->
-    <div style="text-align:center;margin-bottom:40px;" class="fade-in">
-      <div class="section-label" style="justify-content:center;">Self-Service</div>
-      <h2 class="section-title">Customer <span class="highlight">Portal</span></h2>
+    <!-- Section heading -->
+    <div style="text-align:center;margin-bottom:52px;" class="fade-in">
+      <div class="section-label" style="justify-content:center;">Customer Self-Service</div>
+      <h2 class="section-title">My <span class="highlight">Account</span></h2>
       <p class="section-sub" style="margin:0 auto;">
-        Log in with your username and PIN to manage your account, view bills, and get help instantly.
+        Log in to your dedicated portal to manage your subscription, view bills, and get instant support — all in one secure place.
       </p>
     </div>
 
-    <!-- ── LOGIN VIEW ─── -->
-    <div class="portal-login-wrap fade-in" id="portalLoginWrap">
-      <div class="portal-card">
-        <div class="portal-card-header">
-          <div class="portal-header-icon">🔐</div>
-          <div class="portal-header-title">Customer Login</div>
-          <div class="portal-header-sub">Enter the username &amp; PIN given by Satellite Vision</div>
+    <!-- Big CTA card -->
+    <div class="acct-cta-card fade-in">
+      <!-- Icon -->
+      <div class="acct-icon-wrap">🔐</div>
+
+      <!-- Body -->
+      <div class="acct-cta-body">
+        <div class="acct-live-badge">
+          <div class="acct-live-dot"></div>
+          Portal Live — Secure Access
         </div>
-        <div class="portal-card-body">
-          <label class="portal-input-label">Username</label>
-          <input class="portal-input" id="portalUser" type="text"
-            placeholder="e.g. SVCN-0042"
-            onkeydown="if(event.key==='Enter')portalLogin()">
-
-          <label class="portal-input-label">PIN</label>
-          <input class="portal-input" id="portalPin" type="password"
-            placeholder="Your 4-digit PIN"
-            onkeydown="if(event.key==='Enter')portalLogin()">
-
-          <button class="portal-login-btn" id="loginBtn" onclick="portalLogin()">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
-              <polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/>
-            </svg>
-            Login to My Account
-          </button>
-
-          <div class="portal-loading" id="portalLoading">
-            <span class="portal-spinner"></span>Checking your account…
-          </div>
-          <div class="portal-error" id="portalError"></div>
-        </div>
+        <h3 class="acct-cta-title">Customer Portal</h3>
+        <p class="acct-cta-desc">
+          Check your current bill, view payment history, manage your package, report connection issues, and access instant WhatsApp support — everything in your own secure dashboard.
+        </p>
+        <a href="portal.html" class="acct-cta-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+          Open My Account →
+        </a>
+        <p style="margin-top:14px;font-size:12.5px;color:var(--text-dim);">
+          Don't have a username?
+          <a href="tel:01842292646" style="color:var(--green-glow);">Call 01842-292646</a> to get one.
+        </p>
       </div>
-      <p style="text-align:center;font-size:12px;color:var(--text-dim);margin-top:12px;">
-        Don't have a username? Call <a href="tel:01842292646" style="color:var(--green-glow)">01842-292646</a> to get one.
-      </p>
     </div>
 
-    <!-- ── DASHBOARD VIEW ─── -->
-    <div class="portal-dashboard" id="portalDashboard">
-
-      <!-- Header row -->
-      <div class="portal-dash-top">
-        <div class="portal-welcome">Welcome back, <span id="dashName">—</span> 👋</div>
-        <button class="portal-logout-btn" onclick="portalLogout()">← Logout</button>
+    <!-- 4 feature cards -->
+    <div class="acct-features fade-in fade-delay-2">
+      <div class="acct-feat">
+        <div class="acct-feat-icon">💳</div>
+        <div class="acct-feat-title">Bill &amp; Payments</div>
+        <div class="acct-feat-desc">View your current due amount, payment due date, and confirm payments via WhatsApp.</div>
       </div>
-
-      <!-- Network status -->
-      <div class="net-status-bar" id="netStatusBar">
-        <div class="net-status-dot" id="netStatusDot"></div>
-        <div class="net-status-text" id="netStatusText">
-          <strong>Network Online</strong> — All systems operational
-        </div>
-        <span style="font-size:11px;color:var(--text-muted);" id="netStatusTime"></span>
+      <div class="acct-feat">
+        <div class="acct-feat-icon">📜</div>
+        <div class="acct-feat-title">Payment History</div>
+        <div class="acct-feat-desc">Full month-by-month record of your payments with Paid, Due, and Pending status badges.</div>
       </div>
-
-      <!-- Summary cards -->
-      <div class="portal-summary">
-        <div class="summary-card s-bill">
-          <div class="s-icon">💳</div>
-          <div class="s-label">Amount Due</div>
-          <div class="s-val red" id="dashDue">—</div>
-          <div class="s-sub" id="dashDueDate">—</div>
-        </div>
-        <div class="summary-card s-speed">
-          <div class="s-icon">⚡</div>
-          <div class="s-label">Your Speed</div>
-          <div class="s-val green" id="dashSpeed">—</div>
-          <div class="s-sub" id="dashPkg">—</div>
-        </div>
-        <div class="summary-card s-status">
-          <div class="s-icon">📋</div>
-          <div class="s-label">Account Status</div>
-          <div class="s-val" id="dashStatus">—</div>
-          <div class="s-sub" id="dashBill">—</div>
-        </div>
-        <div class="summary-card s-since">
-          <div class="s-icon">🏅</div>
-          <div class="s-label">Member Since</div>
-          <div class="s-val" id="dashSince">—</div>
-          <div class="s-sub">Loyal Customer</div>
-        </div>
+      <div class="acct-feat">
+        <div class="acct-feat-icon">📦</div>
+        <div class="acct-feat-title">Package Details</div>
+        <div class="acct-feat-desc">See your current speed, plan name, and upgrade your package directly from the portal.</div>
       </div>
-
-      <!-- Quick Action Buttons -->
-      <div class="portal-quick-actions">
-        <a class="qa-btn qa-call" href="tel:01842292646">
-          <div class="qa-icon">📞</div>
-          <div class="qa-label">Call Support</div>
-        </a>
-        <a class="qa-btn qa-wa" href="https://wa.me/8801634348602" target="_blank">
-          <div class="qa-icon">💬</div>
-          <div class="qa-label">WhatsApp Us</div>
-        </a>
-        <button class="qa-btn qa-report" onclick="portalComplaint()">
-          <div class="qa-icon">🚨</div>
-          <div class="qa-label">Report Issue</div>
-        </button>
-        <a class="qa-btn qa-speed" href="https://www.speedtest.net" target="_blank">
-          <div class="qa-icon">🚀</div>
-          <div class="qa-label">Speed Test</div>
-        </a>
+      <div class="acct-feat">
+        <div class="acct-feat-icon">🚨</div>
+        <div class="acct-feat-title">Report &amp; Support</div>
+        <div class="acct-feat-desc">One-tap complaint via WhatsApp with your details pre-filled. Get resolved in 45–80 min.</div>
       </div>
+    </div>
 
-      <!-- Main panels row -->
-      <div class="portal-panels">
-
-        <!-- Payment History -->
-        <div class="portal-panel">
-          <div class="panel-head">💰 Payment History</div>
-          <div class="panel-body">
-            <div id="dashHistory">
-              <div style="text-align:center;color:var(--text-muted);font-size:13px;padding:20px 0;">No history available.</div>
-            </div>
-            <button class="portal-action-btn btn-wa" onclick="portalPayWA()" style="background:#25D366;">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/>
-              </svg>
-              Confirm Payment via WhatsApp
-            </button>
-
-            <!-- Complaint quick bar -->
-            <div class="complaint-quick">
-              <div class="complaint-quick-text">
-                <strong>🚨 Issue with your connection?</strong>
-                <span>We resolve complaints in 45–80 minutes</span>
-              </div>
-              <div class="complaint-quick-btns">
-                <button class="cq-btn cq-btn-call" onclick="window.location.href='tel:01842292646'">📞 Call</button>
-                <button class="cq-btn cq-btn-wa" onclick="portalComplaint()">💬 WhatsApp</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Package Details -->
-        <div class="portal-panel">
-          <div class="panel-head">📦 Package Details</div>
-          <div class="panel-body">
-            <div id="dashPkgDetails">
-              <div style="text-align:center;color:var(--text-muted);font-size:13px;padding:20px 0;">Loading…</div>
-            </div>
-            <button class="portal-action-btn btn-upg" onclick="portalUpgrade()" style="background:var(--green);box-shadow:var(--shadow-green);">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-              Upgrade My Package
-            </button>
-          </div>
-        </div>
-
-      </div><!-- end portal-panels -->
-
-      <!-- Tips & Help Section -->
-      <div class="portal-tips">
-        <div class="tips-head">💡 Tips &amp; Help for Customers</div>
-
-        <div class="tip-item">
-          <div class="tip-icon">🔄</div>
-          <div class="tip-text">
-            <strong>Internet slow? Try restarting your router</strong>
-            <span>Turn the router off, wait 30 seconds, then turn it back on. This fixes most speed issues instantly.</span>
-          </div>
-        </div>
-
-        <div class="tip-item">
-          <div class="tip-icon">📍</div>
-          <div class="tip-text">
-            <strong>Best router placement for strong WiFi</strong>
-            <span>Place your router in the center of your home, off the floor, away from thick walls and microwaves for best coverage.</span>
-          </div>
-        </div>
-
-        <div class="tip-item">
-          <div class="tip-icon">📅</div>
-          <div class="tip-text">
-            <strong>When is my bill due?</strong>
-            <span>Your bill is due on the same date each month as your connection start date. Check your "Amount Due" card above.</span>
-          </div>
-        </div>
-
-        <div class="tip-item">
-          <div class="tip-icon">💳</div>
-          <div class="tip-text">
-            <strong>How to pay your bill</strong>
-            <span>Pay in cash to our collection agent, or click "Confirm Payment via WhatsApp" above to notify us of bKash/Nagad payments.</span>
-          </div>
-        </div>
-
-        <div class="tip-item">
-          <div class="tip-icon">📶</div>
-          <div class="tip-text">
-            <strong>How to check your actual speed</strong>
-            <span>Click the "Speed Test 🚀" button above — connect your phone directly to the router via cable or sit right next to it for the most accurate result.</span>
-          </div>
-        </div>
-
-        <div class="tip-item">
-          <div class="tip-icon">🛠️</div>
-          <div class="tip-text">
-            <strong>Complaint response time: 45–80 minutes</strong>
-            <span>We guarantee on-site resolution within 80 minutes of your complaint during service hours. Use the Report Issue button to contact us instantly.</span>
-          </div>
-        </div>
-
-      </div><!-- end tips -->
-
-    </div><!-- end portal-dashboard -->
   </div>
 </section>
 
@@ -2185,16 +1564,12 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
             </div>
           </a>
         </div>
-        <!-- Speed test -->
         <div style="margin-top:24px;padding:18px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);">
           <div style="font-family:var(--font-head);font-size:14px;font-weight:700;margin-bottom:10px;">⚡ Quick Speed Test</div>
           <p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;">Test your current internet speed from Ookla's network.</p>
-          <a href="https://www.speedtest.net" target="_blank" class="btn btn-outline" style="border-radius:10px;font-size:13px;">
-            Run Speed Test →
-          </a>
+          <a href="https://www.speedtest.net" target="_blank" class="btn btn-outline" style="border-radius:10px;font-size:13px;">Run Speed Test →</a>
         </div>
       </div>
-
       <!-- Contact Form -->
       <div class="contact-form fade-in fade-delay-2">
         <div class="form-title">Send Us a Message</div>
@@ -2233,9 +1608,7 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
           <textarea class="form-input" id="f-message" placeholder="Any additional message, complaint, or enquiry..."></textarea>
         </div>
         <button class="form-submit" onclick="submitForm()">Send Message →</button>
-        <div class="form-success" id="form-success">
-          ✅ Message sent! We'll contact you shortly.
-        </div>
+        <div class="form-success" id="form-success">✅ Message sent! We'll contact you shortly.</div>
         <p style="font-size:11px;color:var(--text-dim);margin-top:12px;text-align:center;">By submitting you agree to be contacted by our team.</p>
       </div>
     </div>
@@ -2247,82 +1620,52 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
      ============================================================ -->
 <div class="patenga-section">
   <div class="patenga-bg"></div>
-  <!-- SVG cityscape -->
   <svg style="position:absolute;bottom:0;left:0;width:100%;z-index:2;" viewBox="0 0 1200 280" preserveAspectRatio="xMidYMax meet" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <!-- Sun / sunset glow -->
     <ellipse cx="600" cy="320" rx="320" ry="120" fill="rgba(255,100,30,0.12)"/>
     <ellipse cx="600" cy="300" rx="180" ry="80" fill="rgba(255,120,40,0.1)"/>
-    <!-- Water -->
     <rect x="0" y="240" width="1200" height="40" fill="rgba(0,30,20,0.85)"/>
     <path d="M0,242 Q150,236 300,242 Q450,248 600,242 Q750,236 900,242 Q1050,248 1200,242 L1200,280 L0,280Z" fill="rgba(0,40,25,0.7)"/>
-    <!-- Water shimmer lines -->
-    <line x1="80" y1="255" x2="220" y2="255" stroke="rgba(0,150,90,0.15)" stroke-width="1"/>
-    <line x1="400" y1="260" x2="560" y2="260" stroke="rgba(0,150,90,0.1)" stroke-width="1"/>
-    <line x1="720" y1="255" x2="880" y2="255" stroke="rgba(0,150,90,0.12)" stroke-width="1"/>
-    <line x1="980" y1="260" x2="1100" y2="260" stroke="rgba(0,150,90,0.1)" stroke-width="1"/>
-    <!-- Buildings far left -->
-    <rect x="0" y="155" width="55" height="90" rx="2" fill="rgba(5,18,12,0.9)"/>
-    <rect x="8" y="140" width="35" height="20" rx="1" fill="rgba(5,18,12,0.9)"/>
-    <rect x="58" y="170" width="70" height="75" rx="2" fill="rgba(5,18,12,0.85)"/>
-    <rect x="68" y="158" width="50" height="16" rx="1" fill="rgba(5,18,12,0.85)"/>
-    <!-- Mid-left buildings -->
+    <line x1="80"   y1="255" x2="220"  y2="255" stroke="rgba(0,150,90,0.15)" stroke-width="1"/>
+    <line x1="400"  y1="260" x2="560"  y2="260" stroke="rgba(0,150,90,0.1)"  stroke-width="1"/>
+    <line x1="720"  y1="255" x2="880"  y2="255" stroke="rgba(0,150,90,0.12)" stroke-width="1"/>
+    <line x1="980"  y1="260" x2="1100" y2="260" stroke="rgba(0,150,90,0.1)"  stroke-width="1"/>
+    <rect x="0"   y="155" width="55" height="90" rx="2" fill="rgba(5,18,12,0.9)"/>
+    <rect x="8"   y="140" width="35" height="20" rx="1" fill="rgba(5,18,12,0.9)"/>
+    <rect x="58"  y="170" width="70" height="75" rx="2" fill="rgba(5,18,12,0.85)"/>
     <rect x="140" y="130" width="60" height="115" rx="2" fill="rgba(5,18,12,0.9)"/>
-    <rect x="148" y="118" width="44" height="16" rx="1" fill="rgba(5,18,12,0.9)"/>
-    <rect x="205" y="155" width="45" height="90" rx="2" fill="rgba(5,18,12,0.85)"/>
     <rect x="255" y="120" width="75" height="125" rx="2" fill="rgba(5,18,12,0.92)"/>
-    <rect x="263" y="108" width="59" height="16" rx="1" fill="rgba(5,18,12,0.92)"/>
-    <!-- Center tall buildings -->
-    <rect x="340" y="90" width="65" height="155" rx="2" fill="rgba(5,18,12,0.95)"/>
-    <rect x="350" y="78" width="45" height="16" rx="1" fill="rgba(5,18,12,0.95)"/>
+    <rect x="340" y="90"  width="65" height="155" rx="2" fill="rgba(5,18,12,0.95)"/>
     <rect x="412" y="110" width="55" height="135" rx="2" fill="rgba(5,18,12,0.9)"/>
-    <!-- Mosque silhouette center -->
     <rect x="480" y="128" width="60" height="117" rx="2" fill="rgba(5,18,12,0.95)"/>
     <polygon points="510,80 510,128 498,128 510,80 522,128 510,128" fill="rgba(5,18,12,0.95)"/>
     <ellipse cx="510" cy="79" rx="7" ry="9" fill="rgba(5,18,12,0.95)"/>
     <text x="509" y="72" font-size="11" fill="rgba(196,160,48,0.5)">☽</text>
-    <!-- Right buildings -->
     <rect x="550" y="100" width="70" height="145" rx="2" fill="rgba(5,18,12,0.92)"/>
     <rect x="627" y="135" width="55" height="110" rx="2" fill="rgba(5,18,12,0.88)"/>
     <rect x="688" y="118" width="65" height="127" rx="2" fill="rgba(5,18,12,0.92)"/>
     <rect x="760" y="145" width="50" height="100" rx="2" fill="rgba(5,18,12,0.85)"/>
     <rect x="818" y="125" width="70" height="120" rx="2" fill="rgba(5,18,12,0.9)"/>
-    <rect x="896" y="155" width="55" height="90" rx="2" fill="rgba(5,18,12,0.85)"/>
+    <rect x="896" y="155" width="55" height="90"  rx="2" fill="rgba(5,18,12,0.85)"/>
     <rect x="958" y="135" width="65" height="110" rx="2" fill="rgba(5,18,12,0.88)"/>
     <rect x="1030" y="160" width="50" height="85" rx="2" fill="rgba(5,18,12,0.8)"/>
     <rect x="1088" y="140" width="60" height="105" rx="2" fill="rgba(5,18,12,0.85)"/>
     <rect x="1155" y="165" width="45" height="80" rx="2" fill="rgba(5,18,12,0.8)"/>
-    <!-- Warm glowing windows -->
     <rect x="147" y="133" width="7" height="5" rx="1" fill="rgba(255,220,100,0.55)"/>
-    <rect x="159" y="133" width="7" height="5" rx="1" fill="rgba(255,220,100,0.35)"/>
-    <rect x="147" y="146" width="7" height="5" rx="1" fill="rgba(255,220,100,0.45)"/>
     <rect x="263" y="122" width="8" height="6" rx="1" fill="rgba(255,220,100,0.6)"/>
-    <rect x="276" y="122" width="8" height="6" rx="1" fill="rgba(255,220,100,0.4)"/>
-    <rect x="289" y="122" width="8" height="6" rx="1" fill="rgba(255,220,100,0.5)"/>
-    <rect x="263" y="136" width="8" height="6" rx="1" fill="rgba(255,220,100,0.35)"/>
-    <rect x="350" y="95" width="9" height="6" rx="1" fill="rgba(255,220,100,0.65)"/>
-    <rect x="363" y="95" width="9" height="6" rx="1" fill="rgba(255,220,100,0.45)"/>
-    <rect x="350" y="108" width="9" height="6" rx="1" fill="rgba(255,220,100,0.55)"/>
+    <rect x="350" y="95"  width="9" height="6" rx="1" fill="rgba(255,220,100,0.65)"/>
     <rect x="557" y="114" width="9" height="6" rx="1" fill="rgba(255,220,100,0.6)"/>
-    <rect x="571" y="114" width="9" height="6" rx="1" fill="rgba(255,220,100,0.4)"/>
-    <rect x="557" y="127" width="9" height="6" rx="1" fill="rgba(255,220,100,0.5)"/>
     <rect x="697" y="130" width="9" height="6" rx="1" fill="rgba(255,220,100,0.55)"/>
-    <rect x="711" y="130" width="9" height="6" rx="1" fill="rgba(255,220,100,0.35)"/>
     <rect x="828" y="138" width="9" height="6" rx="1" fill="rgba(255,220,100,0.5)"/>
-    <rect x="842" y="138" width="9" height="6" rx="1" fill="rgba(255,220,100,0.3)"/>
-    <!-- Palm trees -->
     <line x1="120" y1="245" x2="130" y2="175" stroke="rgba(0,35,18,0.85)" stroke-width="5" stroke-linecap="round"/>
     <ellipse cx="130" cy="175" rx="24" ry="13" fill="rgba(0,45,22,0.8)" transform="rotate(-8,130,175)"/>
     <line x1="1080" y1="245" x2="1070" y2="180" stroke="rgba(0,35,18,0.8)" stroke-width="4" stroke-linecap="round"/>
     <ellipse cx="1070" cy="180" rx="22" ry="12" fill="rgba(0,45,22,0.75)" transform="rotate(6,1070,180)"/>
-    <!-- Satellite dishes on rooftops -->
     <ellipse cx="378" cy="88" rx="14" ry="6" fill="none" stroke="rgba(0,150,90,0.4)" stroke-width="1.2" transform="rotate(-12,378,88)"/>
     <line x1="378" y1="94" x2="378" y2="102" stroke="rgba(0,150,90,0.4)" stroke-width="1.5"/>
     <circle cx="378" cy="87" r="2.5" fill="rgba(232,25,44,0.5)"><animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/></circle>
-    <ellipse cx="690" cy="116" rx="12" ry="5" fill="none" stroke="rgba(0,150,90,0.35)" stroke-width="1.2" transform="rotate(-15,690,116)"/>
-    <line x1="690" y1="121" x2="690" y2="128" stroke="rgba(0,150,90,0.35)" stroke-width="1.5"/>
-    <!-- WiFi arcs from center hub skyward -->
     <path d="M570,120 Q600,105 630,120" fill="none" stroke="rgba(0,200,130,0.3)" stroke-width="1.5"><animate attributeName="opacity" values="0.3;0.05;0.3" dur="2.5s" repeatCount="indefinite"/></path>
     <path d="M550,108 Q600,88 650,108" fill="none" stroke="rgba(0,200,130,0.2)" stroke-width="1.5"><animate attributeName="opacity" values="0.2;0.03;0.2" dur="2.5s" begin="0.5s" repeatCount="indefinite"/></path>
+    <rect x="0" y="185" width="1200" height="15"/>
   </svg>
   <div class="patenga-overlay"></div>
   <div class="patenga-content container">
@@ -2379,6 +1722,7 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
           <li><a href="#coverage">Coverage Area</a></li>
           <li><a href="#complaint">File Complaint</a></li>
           <li><a href="https://www.speedtest.net" target="_blank">Speed Test</a></li>
+          <li><a href="portal.html">My Account →</a></li>
         </ul>
       </div>
       <div>
@@ -2418,13 +1762,8 @@ body.banner-on .hero { padding-top: calc(var(--nav-h) + 38px); }
 </a>
 
 <!-- Toast -->
-<div class="toast" id="toast">
-  <span>✅</span><span id="toast-msg"></span>
-</div>
+<div class="toast" id="toast"><span>✅</span><span id="toast-msg"></span></div>
 
-<!-- ============================================================
-     JAVASCRIPT
-     ============================================================ -->
 <!-- ============================================================
      JAVASCRIPT
      ============================================================ -->
@@ -2438,15 +1777,10 @@ function setLang(lang) {
   document.querySelectorAll('[data-en]').forEach(el => {
     const val = el.getAttribute('data-' + lang);
     if (!val) return;
-    // If element contains child elements, set innerHTML safely
     if (el.children.length === 0) el.textContent = val;
     else el.innerHTML = val;
   });
-  // Update html lang attribute
   document.documentElement.lang = lang === 'bn' ? 'bn' : 'en';
-  // Update banner
-  const banner = document.querySelector('#notif-banner span[data-en]');
-  if (banner) banner.innerHTML = banner.getAttribute('data-' + lang);
 }
 
 // ---- NOTIFICATION BANNER ----
@@ -2456,16 +1790,15 @@ function closeBanner() {
 }
 
 // ---- POPUP ----
-function openPopup() { document.getElementById('popupOverlay').classList.add('open'); }
+function openPopup()  { document.getElementById('popupOverlay').classList.add('open'); }
 function closePopup() { document.getElementById('popupOverlay').classList.remove('open'); }
 document.getElementById('popupOverlay').addEventListener('click', function(e) {
   if (e.target === this) closePopup();
 });
-// Show popup after 4 seconds
 setTimeout(openPopup, 4000);
 
 // ---- MOBILE MENU ----
-const hamburger = document.getElementById('hamburger');
+const hamburger  = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 if (hamburger && mobileMenu) {
   hamburger.addEventListener('click', () => {
@@ -2474,7 +1807,7 @@ if (hamburger && mobileMenu) {
   });
 }
 function closeMobile() {
-  if (hamburger) hamburger.classList.remove('open');
+  if (hamburger)  hamburger.classList.remove('open');
   if (mobileMenu) mobileMenu.classList.remove('open');
 }
 document.addEventListener('keydown', e => {
@@ -2484,14 +1817,14 @@ document.addEventListener('keydown', e => {
 // ---- NAV SCROLL ----
 window.addEventListener('scroll', () => {
   const nav = document.getElementById('navbar');
-  if (nav) nav.style.background = window.scrollY > 50 ? 'rgba(4,13,9,0.97)' : 'rgba(4,13,9,0.85)';
-  // Active nav link
+  if (nav) nav.style.background = window.scrollY > 50 ? 'rgba(4,13,9,0.97)' : 'rgba(4,13,9,0.88)';
   let current = '';
   document.querySelectorAll('section[id]').forEach(s => {
     if (window.scrollY >= s.offsetTop - 110) current = s.id;
   });
   document.querySelectorAll('.nav-links a').forEach(a => {
-    a.style.color = a.getAttribute('href') === '#' + current ? 'var(--green-glow)' : '';
+    const href = a.getAttribute('href');
+    a.style.color = href === '#' + current ? 'var(--green-glow)' : '';
   });
 }, { passive: true });
 
@@ -2499,7 +1832,7 @@ window.addEventListener('scroll', () => {
 function switchTab(tab) {
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-  const idx = {internet:0, dish:1, combo:2};
+  const idx = { internet:0, dish:1, combo:2 };
   document.querySelectorAll('.tab-btn')[idx[tab]].classList.add('active');
   document.getElementById('tab-' + tab).classList.add('active');
 }
@@ -2512,11 +1845,11 @@ function orderPackage(pkg) {
 
 // ---- CONTACT FORM ----
 function submitForm() {
-  const name = (document.getElementById('f-name').value || '').trim();
-  const phone = (document.getElementById('f-phone').value || '').trim();
+  const name     = (document.getElementById('f-name').value     || '').trim();
+  const phone    = (document.getElementById('f-phone').value    || '').trim();
   const location = (document.getElementById('f-location').value || '').trim();
-  const pkg = document.getElementById('f-package').value;
-  const msg = (document.getElementById('f-message').value || '').trim();
+  const pkg      = document.getElementById('f-package').value;
+  const msg      = (document.getElementById('f-message').value  || '').trim();
   if (!name || !phone) { showToast(currentLang === 'bn' ? 'নাম ও ফোন নম্বর দিন।' : 'Please fill in your name and phone.'); return; }
   const waMsg = encodeURIComponent('New website enquiry:\n\nName: ' + name + '\nPhone: ' + phone + '\nLocation: ' + (location||'N/A') + '\nPackage: ' + (pkg||'N/A') + '\nMessage: ' + (msg||'None'));
   window.open('https://wa.me/8801634348602?text=' + waMsg, '_blank');
@@ -2534,8 +1867,6 @@ function showToast(msg) {
   setTimeout(() => toast.classList.remove('show'), 3200);
 }
 
-// ---- VIDEO LOAD ----
-
 // ---- SCROLL ANIMATIONS ----
 if ('IntersectionObserver' in window) {
   const observer = new IntersectionObserver((entries) => {
@@ -2547,239 +1878,61 @@ if ('IntersectionObserver' in window) {
 }
 
 // ============================================================
-// CUSTOMER PORTAL
-// ============================================================
-
-const SHEET_ID = '1T4Cqx6JSq0y_BpZPC3UoR8oH6l300V8edeh_KmjEza0';
-
-const DEMO = {
-  username:'demo', pin:'1234',
-  name:'Rahim Uddin', package:'Pro Plan', speed:'40 Mbps',
-  monthly_bill:'৳800', due_amount:'৳800', due_date:'Due: 1 Apr 2025',
-  status:'Active', member_since:'Jan 2023',
-  history:'Jan 2025:800:Paid|Feb 2025:800:Paid|Mar 2025:800:Due'
-};
-
-function sheetURL() {
-  if (!SHEET_ID || SHEET_ID === 'PASTE_SHEET_ID_HERE') return null;
-  return 'https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/gviz/tq?tqx=out:csv&sheet=Sheet1';
-}
-
-function parseCSV(text) {
-  const lines = text.trim().split('\n');
-  const headers = lines[0].split(',').map(h => h.replace(/"/g,'').trim());
-  return lines.slice(1).map(line => {
-    const vals = line.split(',').map(v => v.replace(/"/g,'').trim());
-    const obj = {};
-    headers.forEach((h,i) => { obj[h] = vals[i] || ''; });
-    return obj;
-  });
-}
-
-async function portalLogin() {
-  const username = (document.getElementById('portalUser').value||'').trim().toLowerCase();
-  const pin      = (document.getElementById('portalPin').value ||'').trim();
-  if (!username||!pin) { showPortalError('Please enter your username and PIN.'); return; }
-
-  const btn=document.getElementById('loginBtn');
-  const loading=document.getElementById('portalLoading');
-  hidePortalError();
-  btn.disabled=true; loading.style.display='block';
-
-  let customer=null;
-  try {
-    const url=sheetURL();
-    if (url) {
-      const resp=await fetch(url);
-      if (!resp.ok) throw new Error('HTTP '+resp.status);
-      const text=await resp.text();
-      const rows=parseCSV(text);
-      customer=rows.find(r=>
-        r.username && r.username.toLowerCase()===username && r.pin===pin
-      )||null;
-    }
-    if (!customer && DEMO.username===username && DEMO.pin===pin) customer=DEMO;
-
-    if (customer) showDashboard(customer);
-    else showPortalError('Username or PIN not found. Please check and try again, or call 01842-292646.');
-  } catch(err) {
-    console.error('Portal fetch error:', err);
-    if (DEMO.username===username && DEMO.pin===pin) showDashboard(DEMO);
-    else showPortalError('Connection error. Please check your internet and try again.');
-  } finally {
-    btn.disabled=false; loading.style.display='none';
-  }
-}
-
-function showDashboard(c) {
-  sessionStorage.setItem('svcnCustomer', JSON.stringify(c));
-
-  document.getElementById('dashName').textContent   = c.name||c.username;
-  document.getElementById('dashDue').textContent    = c.due_amount  ||'৳0';
-  document.getElementById('dashDueDate').textContent= c.due_date    ||'';
-  document.getElementById('dashSpeed').textContent  = c.speed       ||'—';
-  document.getElementById('dashPkg').textContent    = c.package     ||'—';
-  document.getElementById('dashBill').textContent   = 'Monthly: '+(c.monthly_bill||'—');
-  document.getElementById('dashSince').textContent  = c.member_since||'—';
-
-  const stEl=document.getElementById('dashStatus');
-  stEl.textContent=c.status||'Active';
-  const st=(c.status||'').toLowerCase();
-  stEl.className='s-val '+(st==='active'?'green':st==='suspended'?'red':'');
-
-  // Network status bar
-  const now=new Date();
-  document.getElementById('netStatusTime').textContent=
-    'Checked '+now.getHours().toString().padStart(2,'0')+':'+now.getMinutes().toString().padStart(2,'0');
-
-  // Payment history
-  const histEl=document.getElementById('dashHistory');
-  if (c.history) {
-    histEl.innerHTML=c.history.split('|').map(e=>{
-      const [month,amt,status]=e.split(':');
-      const cls=status==='Paid'?'pill-paid':status==='Due'?'pill-due':'pill-pending';
-      return '<div class="history-row">'+
-        '<span class="history-month">'+(month||'—')+'</span>'+
-        '<span class="history-amt">৳'+(amt||'—')+'</span>'+
-        '<span class="status-pill '+cls+'">'+(status||'—')+'</span>'+
-        '</div>';
-    }).join('');
-  } else {
-    histEl.innerHTML='<div style="text-align:center;color:var(--text-muted);font-size:13px;padding:20px 0;">No payment history found.</div>';
-  }
-
-  // Package details
-  document.getElementById('dashPkgDetails').innerHTML=
-    pkgRow('Package',       c.package     ||'—', '')+
-    pkgRow('Speed',         c.speed       ||'—', 'color:var(--green-glow)')+
-    pkgRow('Monthly Bill',  c.monthly_bill||'—', '')+
-    pkgRow('Account Status',c.status      ||'—', '')+
-    pkgRow('Username',      c.username    ||'—', 'color:var(--text-muted)');
-
-  document.getElementById('portalLoginWrap').style.display='none';
-  document.getElementById('portalDashboard').style.display='block';
-}
-
-function pkgRow(key,val,style){
-  return '<div class="pkg-row"><span class="pkg-row-key">'+key+'</span>'+
-         '<span class="pkg-row-val" style="'+style+'">'+val+'</span></div>';
-}
-
-function portalPayWA() {
-  const c=JSON.parse(sessionStorage.getItem('svcnCustomer')||'{}');
-  const msg=encodeURIComponent(
-    'Hello, I want to confirm my bill payment.\n\n'+
-    'Name: '+(c.name||'—')+'\nUsername: '+(c.username||'—')+
-    '\nAmount: '+(c.due_amount||'—')+'\nPackage: '+(c.package||'—')
-  );
-  window.open('https://wa.me/8801634348602?text='+msg,'_blank');
-}
-
-function portalUpgrade() {
-  const c=JSON.parse(sessionStorage.getItem('svcnCustomer')||'{}');
-  const msg=encodeURIComponent(
-    'Hello, I want to upgrade my internet package.\n\n'+
-    'Name: '+(c.name||'—')+'\nUsername: '+(c.username||'—')+
-    '\nCurrent Package: '+(c.package||'—')+'\nRequested Upgrade: '
-  );
-  window.open('https://wa.me/8801634348602?text='+msg,'_blank');
-}
-
-function portalComplaint() {
-  const c=JSON.parse(sessionStorage.getItem('svcnCustomer')||'{}');
-  const msg=encodeURIComponent(
-    'Hello, I have an issue with my connection.\n\n'+
-    'Name: '+(c.name||'—')+'\nUsername: '+(c.username||'—')+
-    '\nPackage: '+(c.package||'—')+'\nIssue Description: '
-  );
-  window.open('https://wa.me/8801634348602?text='+msg,'_blank');
-}
-
-function portalLogout() {
-  sessionStorage.removeItem('svcnCustomer');
-  document.getElementById('portalLoginWrap').style.display='block';
-  document.getElementById('portalDashboard').style.display='none';
-  document.getElementById('portalUser').value='';
-  document.getElementById('portalPin').value='';
-  hidePortalError();
-}
-
-function showPortalError(msg){
-  const el=document.getElementById('portalError');
-  el.textContent=msg; el.style.display='block';
-}
-function hidePortalError(){
-  document.getElementById('portalError').style.display='none';
-}
-
-// Restore session on page reload
-(function(){
-  try {
-    const saved=sessionStorage.getItem('svcnCustomer');
-    if (saved) showDashboard(JSON.parse(saved));
-  } catch(e){}
-})();
-
-// ============================================================
 // ANIMATED PARTICLE CANVAS (HERO)
 // ============================================================
 (function(){
-  const canvas=document.getElementById('heroCanvas');
+  const canvas = document.getElementById('heroCanvas');
   if (!canvas) return;
-  const ctx=canvas.getContext('2d');
-  let W,H,particles=[];
+  const ctx = canvas.getContext('2d');
+  let W, H, particles = [];
 
   function resize(){
-    W=canvas.width=canvas.offsetWidth;
-    H=canvas.height=canvas.offsetHeight;
+    W = canvas.width  = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
   }
-  window.addEventListener('resize',resize,{passive:true});
+  window.addEventListener('resize', resize, { passive: true });
   resize();
 
-  // Create particles
-  for(let i=0;i<70;i++) particles.push({
-    x: Math.random()*W, y: Math.random()*H,
-    vx:(Math.random()-0.5)*0.4, vy:(Math.random()-0.5)*0.4,
-    r: Math.random()*2+0.5,
-    a: Math.random()*0.6+0.1,
-    hue: Math.random()>0.7?'0,200,130':'0,200,130'
+  for(let i = 0; i < 70; i++) particles.push({
+    x:  Math.random() * W,
+    y:  Math.random() * H,
+    vx: (Math.random() - 0.5) * 0.4,
+    vy: (Math.random() - 0.5) * 0.4,
+    r:  Math.random() * 2 + 0.5,
+    a:  Math.random() * 0.6 + 0.1
   });
 
   function draw(){
-    ctx.clearRect(0,0,W,H);
-    // Draw connections
-    for(let i=0;i<particles.length;i++){
-      for(let j=i+1;j<particles.length;j++){
-        const dx=particles[i].x-particles[j].x;
-        const dy=particles[i].y-particles[j].y;
-        const dist=Math.sqrt(dx*dx+dy*dy);
-        if(dist<120){
+    ctx.clearRect(0, 0, W, H);
+    for(let i = 0; i < particles.length; i++){
+      for(let j = i + 1; j < particles.length; j++){
+        const dx   = particles[i].x - particles[j].x;
+        const dy   = particles[i].y - particles[j].y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if(dist < 120){
           ctx.beginPath();
-          ctx.strokeStyle='rgba(0,200,130,'+(0.15*(1-dist/120))+')';
-          ctx.lineWidth=0.8;
-          ctx.moveTo(particles[i].x,particles[i].y);
-          ctx.lineTo(particles[j].x,particles[j].y);
+          ctx.strokeStyle = 'rgba(0,200,130,' + (0.15 * (1 - dist/120)) + ')';
+          ctx.lineWidth   = 0.8;
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
           ctx.stroke();
         }
       }
     }
-    // Draw dots
-    particles.forEach(p=>{
+    particles.forEach(p => {
       ctx.beginPath();
-      ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-      ctx.fillStyle='rgba(0,200,130,'+p.a+')';
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(0,200,130,' + p.a + ')';
       ctx.fill();
-      p.x+=p.vx; p.y+=p.vy;
-      if(p.x<0||p.x>W) p.vx*=-1;
-      if(p.y<0||p.y>H) p.vy*=-1;
+      p.x += p.vx;  p.y += p.vy;
+      if(p.x < 0 || p.x > W) p.vx *= -1;
+      if(p.y < 0 || p.y > H) p.vy *= -1;
     });
     requestAnimationFrame(draw);
   }
   draw();
 })();
-
 </script>
-
 
 <!-- Tawk.to Live Chat -->
 <script type="text/javascript">
