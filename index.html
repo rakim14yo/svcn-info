@@ -664,128 +664,8 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);paddin
 #sticky-x:hover{background:var(--red);color:#fff}
 
 /* =========================================================
-   SECTION 05b — SVCN ADS (BLACK / GREY2)
-   ========================================================= */
-.s-ads{background:var(--black);border-top:1px solid rgba(255,255,255,.06);padding:0}
-.ads-header{display:flex;align-items:flex-end;justify-content:space-between;padding:56px 0 40px;flex-wrap:wrap;gap:20px;border-bottom:1px solid rgba(255,255,255,.07)}
-.ads-big-title{font-family:var(--fh);font-size:clamp(36px,5vw,72px);font-weight:700;letter-spacing:-1px;line-height:.95}
-.ads-big-title .cyan-t{color:var(--cyan)}
-.ads-big-title .red-t{color:var(--red)}
-.ads-header-desc{max-width:340px;font-size:13px;color:var(--muted);line-height:1.7}
-
-/* Featured image ad banner */
-.ads-feature-banner{position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.08);margin-bottom:1px;display:block}
-.ads-feature-banner img{width:100%;height:auto;display:block;transition:transform .6s cubic-bezier(.16,1,.3,1)}
-.ads-feature-banner:hover img{transform:scale(1.015)}
-.afb-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.45) 0%,transparent 45%,rgba(0,0,0,.25) 100%);display:flex;align-items:flex-end;justify-content:space-between;padding:28px 36px;transition:background .3s}
-.ads-feature-banner:hover .afb-overlay{background:linear-gradient(90deg,rgba(0,0,0,.58) 0%,transparent 45%,rgba(0,0,0,.4) 100%)}
-.afb-tag{font-family:var(--fh);font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:6px}
-.afb-title{font-family:var(--fh);font-size:clamp(13px,1.8vw,20px);font-weight:700;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.6)}
-.afb-right{display:flex;gap:10px;align-items:center;flex-shrink:0}
-.afb-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;font-family:var(--fh);font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;border:1px solid;transition:all .2s;cursor:pointer}
-.afb-btn-w{border-color:rgba(37,211,102,.5);color:#25D366;background:rgba(37,211,102,.08)}
-.afb-btn-w:hover{background:#25D366;color:#fff;border-color:#25D366}
-.afb-btn-c{border-color:rgba(0,212,255,.4);color:var(--cyan);background:rgba(0,212,255,.06)}
-.afb-btn-c:hover{background:var(--cyan);color:var(--black);border-color:var(--cyan)}
-
-/* Poster grid */
-.ads-poster-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06);margin-bottom:1px;overflow:hidden}
-.ad-poster{position:relative;overflow:hidden;cursor:pointer;aspect-ratio:1;display:flex;flex-direction:column;justify-content:flex-end;padding:28px;transition:transform .3s cubic-bezier(.16,1,.3,1)}
-.ad-poster:hover{transform:scale(.985)}
-.ad-poster:hover .ad-overlay{opacity:1}
-.ad-poster:hover .ad-cta{opacity:1;transform:translateY(0)}
-.ap-1{background:linear-gradient(135deg,#000 0%,#0d1a2e 100%)}
-.ap-2{background:linear-gradient(135deg,#0d0005 0%,#2d000d 100%)}
-.ap-3{background:linear-gradient(135deg,#0a0800 0%,#2d2200 100%)}
-.ap-4{background:linear-gradient(135deg,#000 0%,#0a0a0a 100%)}
-.ap-5{background:linear-gradient(135deg,#000 0%,#003020 100%)}
-.ap-6{background:linear-gradient(135deg,#08001a 0%,#1a0050 100%)}
-.ad-poster::before{content:'';position:absolute;width:220px;height:220px;border-radius:50%;top:-50px;right:-50px;pointer-events:none;transition:transform .5s}
-.ap-1::before{background:radial-gradient(circle,rgba(0,212,255,.18) 0%,transparent 70%)}
-.ap-2::before{background:radial-gradient(circle,rgba(232,25,44,.22) 0%,transparent 70%)}
-.ap-3::before{background:radial-gradient(circle,rgba(255,184,48,.18) 0%,transparent 70%)}
-.ap-4::before{background:radial-gradient(circle,rgba(0,212,255,.12) 0%,transparent 70%)}
-.ap-5::before{background:radial-gradient(circle,rgba(0,255,100,.14) 0%,transparent 70%)}
-.ap-6::before{background:radial-gradient(circle,rgba(180,100,255,.18) 0%,transparent 70%)}
-.ad-poster:hover::before{transform:scale(1.6)}
-.ad-poster-tag{font-family:var(--fh);font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;opacity:.45;margin-bottom:8px;position:relative;z-index:2}
-.ad-poster-title{font-family:var(--fh);font-size:clamp(18px,2.2vw,26px);font-weight:700;line-height:1.05;letter-spacing:-.3px;position:relative;z-index:2;margin-bottom:6px}
-.ad-poster-price{font-family:var(--fh);font-size:clamp(13px,1.5vw,16px);font-weight:700;opacity:.65;position:relative;z-index:2}
-.ad-overlay{position:absolute;inset:0;background:rgba(0,0,0,.6);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .25s}
-.ad-cta{padding:11px 28px;border:1.5px solid #fff;font-family:var(--fh);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#fff;opacity:0;transform:translateY(10px);transition:opacity .25s,transform .25s;cursor:pointer;background:none}
-.ad-cta:hover{background:#fff;color:#000}
-
-/* Banner strip */
-.ads-banner-strip{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06);margin-bottom:1px;overflow:hidden}
-.ad-banner{padding:44px 48px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;min-height:220px;cursor:default;transition:padding .3s}
-.ad-banner:hover{padding-left:58px}
-.ad-banner::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%}
-.ab-cyan{background:var(--grey2)}
-.ab-cyan::before{background:var(--cyan)}
-.ab-red{background:var(--grey)}
-.ab-red::before{background:var(--red)}
-.ab-tag{font-family:var(--fh);font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;opacity:.35;margin-bottom:16px}
-.ab-ghost{font-family:var(--fh);font-size:clamp(60px,8vw,100px);font-weight:700;opacity:.04;line-height:1;letter-spacing:-3px;position:absolute;right:24px;bottom:-10px;pointer-events:none}
-.ab-title{font-family:var(--fh);font-size:clamp(22px,2.8vw,38px);font-weight:700;letter-spacing:-.5px;line-height:1;margin-bottom:10px;position:relative;z-index:2}
-.ab-desc{font-size:13px;color:var(--muted);line-height:1.65;max-width:380px;margin-bottom:20px;position:relative;z-index:2}
-.ab-action{display:inline-flex;align-items:center;gap:10px;font-family:var(--fh);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:11px 26px;border:1px solid;transition:all .2s;cursor:pointer;position:relative;z-index:2;width:fit-content}
-.ab-cyan .ab-action{border-color:rgba(0,212,255,.3);color:var(--cyan);background:none}
-.ab-cyan .ab-action:hover{background:var(--cyan);color:var(--black);border-color:var(--cyan)}
-.ab-red .ab-action{border-color:rgba(232,25,44,.3);color:var(--red);background:none}
-.ab-red .ab-action:hover{background:var(--red);color:#fff;border-color:var(--red)}
-
-/* Caption generator */
-.ads-caption-strip{background:var(--grey2);border:1px solid rgba(255,255,255,.06);display:grid;grid-template-columns:1fr 1fr;gap:0;overflow:hidden;margin-bottom:1px}
-.caption-left{padding:48px;border-right:1px solid rgba(255,255,255,.07)}
-.caption-title{font-family:var(--fh);font-size:clamp(20px,2.5vw,32px);font-weight:700;letter-spacing:-.3px;margin-bottom:8px}
-.caption-sub{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:24px}
-.caption-types{display:flex;flex-direction:column;gap:0;border-top:1px solid rgba(255,255,255,.07)}
-.ctype{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.07);cursor:pointer;transition:padding .2s;border-left:3px solid transparent}
-.ctype:hover,.ctype.active{padding-left:10px}
-.ctype.active{border-left-color:var(--cyan)}
-.ctype-l{display:flex;align-items:center;gap:12px}
-.ctype-icon{font-size:18px;width:28px;text-align:center}
-.ctype-name{font-family:var(--fh);font-size:14px;font-weight:700}
-.ctype-sub{font-size:11px;color:var(--muted);margin-top:2px}
-.ctype-arr{font-size:13px;opacity:.2;transition:opacity .2s,color .2s}
-.ctype:hover .ctype-arr,.ctype.active .ctype-arr{opacity:.8;color:var(--cyan)}
-.caption-right{padding:48px;display:flex;flex-direction:column;gap:14px}
-.cap-out-lbl{font-family:var(--fh);font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
-.caption-box{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-left:3px solid var(--cyan);padding:20px 22px;font-size:13.5px;color:rgba(255,255,255,.8);line-height:1.8;white-space:pre-line;font-family:var(--fb);flex:1;min-height:180px}
-.cap-actions{display:flex;gap:10px;flex-wrap:wrap}
-.cap-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;font-family:var(--fh);font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;border:1px solid;cursor:pointer;transition:all .2s}
-.cap-btn-c{border-color:rgba(0,212,255,.3);color:var(--cyan);background:none}
-.cap-btn-c:hover{background:var(--cyan);color:var(--black);border-color:var(--cyan)}
-.cap-btn-w{border-color:rgba(37,211,102,.3);color:#25D366;background:none}
-.cap-btn-w:hover{background:#25D366;color:#fff;border-color:#25D366}
-
-/* Brand assets row */
-.ads-brand-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06);overflow:hidden}
-.brand-asset{background:var(--grey);padding:28px 24px;display:flex;flex-direction:column;gap:10px;cursor:pointer;transition:background .2s;position:relative;overflow:hidden}
-.brand-asset:hover{background:rgba(255,255,255,.04)}
-.brand-asset::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;transform:scaleX(0);transform-origin:left;transition:transform .3s}
-.ba-1::after{background:var(--cyan)}
-.ba-2::after{background:var(--red)}
-.ba-3::after{background:var(--gold)}
-.ba-4::after{background:rgba(255,255,255,.3)}
-.brand-asset:hover::after{transform:scaleX(1)}
-.ba-icon{font-size:26px}
-.ba-title{font-family:var(--fh);font-size:14px;font-weight:700;letter-spacing:.3px}
-.ba-desc{font-size:12px;color:var(--muted);line-height:1.6}
-.ba-size{font-family:var(--fh);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;opacity:.3;margin-top:auto}
-
-/* =========================================================
    RESPONSIVE
    ========================================================= */
-@media(max-width:600px){
-  .afb-overlay{flex-direction:column;align-items:flex-start;gap:14px;padding:18px 20px}
-  .afb-right{width:100%}
-  .afb-btn{flex:1;justify-content:center}
-}
-@media(max-width:1200px){
-  .ads-poster-grid{grid-template-columns:repeat(3,1fr)}
-  .ads-brand-row{grid-template-columns:repeat(2,1fr)}
-}
 @media(max-width:1024px){
   .numbers-grid{grid-template-columns:1fr 1fr}
   .offer-hero-grid,.portal-layout,.cov-layout,.complaint-layout,.contact-layout{grid-template-columns:1fr}
@@ -794,10 +674,6 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);paddin
   .pkg-row{grid-template-columns:60px 1fr auto}
   .pkg-feats-row{display:none}
   .foot-grid{grid-template-columns:1fr 1fr}
-  .ads-poster-grid{grid-template-columns:repeat(2,1fr)}
-  .ads-caption-strip{grid-template-columns:1fr}
-  .caption-left{border-right:none;border-bottom:1px solid rgba(255,255,255,.07)}
-  .ads-banner-strip{grid-template-columns:1fr}
 }
 @media(max-width:768px){
   nav{padding:0 20px}
@@ -819,11 +695,6 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);paddin
   .city-content{flex-direction:column;align-items:flex-start;gap:8px}
   .city-sub{text-align:left}
   #sticky{padding:12px 44px 12px 20px;flex-wrap:wrap}
-  .ads-header{padding:40px 0 28px}
-  .ads-poster-grid{grid-template-columns:1fr 1fr}
-  .ad-banner{padding:32px 28px}
-  .caption-left,.caption-right{padding:32px 24px}
-  .ads-brand-row{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:480px){
   .numbers-grid{grid-template-columns:1fr}
@@ -833,11 +704,6 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);paddin
   .pkg-num{display:none}
   .complaint-layout{grid-template-columns:1fr}
   .cov-layout{grid-template-columns:1fr}
-  .ads-poster-grid{grid-template-columns:1fr}
-  .ads-caption-strip{grid-template-columns:1fr}
-  .ads-brand-row{grid-template-columns:1fr 1fr}
-  .cap-actions{flex-direction:column}
-  .cap-btn{justify-content:center}
 }
 </style>
 </head>
@@ -886,7 +752,6 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);paddin
   <div class="nav-links">
     <a href="#packages">Packages</a>
     <a href="#offers">Offers</a>
-    <a href="#ads">Ads</a>
     <a href="#coverage">Coverage</a>
     <a href="#portal">My Account</a>
     <a href="#contact">Contact</a>
@@ -905,7 +770,6 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);paddin
 <div class="mob-menu" id="mobMenu">
   <a href="#packages" onclick="closeMob()">Packages</a>
   <a href="#offers" onclick="closeMob()">Offers</a>
-  <a href="#ads" onclick="closeMob()">Ads</a>
   <a href="#coverage" onclick="closeMob()">Coverage</a>
   <a href="#portal" onclick="closeMob()">My Account</a>
   <a href="#contact" onclick="closeMob()">Contact</a>
@@ -1230,242 +1094,6 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);paddin
       <a href="#contact" class="offer-sec-btn fade d3" style="border-color:rgba(255,184,48,.3);color:var(--gold)" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--gold)'" onmouseout="this.style.borderColor='rgba(255,184,48,.3)'">Apply Now →</a>
     </div>
   </div>
-</section>
-
-<!-- ═══════════════════════════════
-     05b SVCN ADS — BLACK
-     ═══════════════════════════════ -->
-<section class="s-ads" id="ads">
-  <div class="container">
-
-    <!-- Header -->
-    <div class="ads-header">
-      <div>
-        <div class="s-tag fade">Promotions & Branding</div>
-        <div class="ads-big-title fade d1">
-          SVCN <span class="cyan-t">Ad</span><br><span class="red-t">Creatives</span>
-        </div>
-      </div>
-      <div class="ads-header-desc fade d2">
-        Ready-made promotional posters, banner copy, social captions, and brand assets — all built for SVCN's look.
-      </div>
-    </div>
-
-  </div><!-- /container -->
-
-  <!-- ── Feature Ad: World Cup / Dish TV ── -->
-  <div class="container">
-    <div class="ads-feature-banner fade">
-      <img src="svcn_worldcup_ad.jpg"
-           alt="Watch the World Cup Live with SVCN — Chittagong's Own High-Speed Dish Service"
-           loading="lazy">
-      <div class="afb-overlay">
-        <div>
-          <div class="afb-tag">📺 Featured Campaign · Dish TV</div>
-          <div class="afb-title">Watch the World Cup Live with SVCN — 70+ Channels from ৳350/month</div>
-        </div>
-        <div class="afb-right">
-          <button class="afb-btn afb-btn-w" onclick="shareAdWA('📺 Watch the World Cup LIVE with SVCN!\n\n✅ Chittagong\'s own high-speed Dish service\n✅ 70+ Premium channels\n✅ Stunning HD Quality\n✅ Stadium-quality HD for every match\n💰 Starts at just ৳350/- BDT!\n\n📞 Contact: 01634348602\nSatellite Vision Cable Network — Nasirabad, Chattogram')">💬 Share on WhatsApp</button>
-          <button class="afb-btn afb-btn-c" onclick="copyAdText('📺 Watch the World Cup LIVE with SVCN!\n\n✅ Chittagong\'s own high-speed Dish service\n✅ 70+ Premium channels\n✅ Stunning HD Quality\n✅ Stadium-quality HD for every match\n💰 Starts at just ৳350/- BDT!\n\n📞 Contact: 01634348602\nSatellite Vision Cable Network — Nasirabad, Chattogram')">📋 Copy Caption</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Poster cards — full bleed grid -->
-  <div class="container">
-    <div class="ads-poster-grid" style="margin-top:1px">
-
-      <!-- Poster 1 — Speed -->
-      <div class="ad-poster ap-1 fade d1">
-        <div class="ad-poster-tag" style="color:var(--cyan)">Internet</div>
-        <div class="ad-poster-title">80 Mbps.<br>No throttle.<br>Ever.</div>
-        <div class="ad-poster-price">From ৳500 / month</div>
-        <div class="ad-overlay">
-          <button class="ad-cta" onclick="shareAdWA('80 Mbps. No throttle. Ever.\nFrom ৳500/month.\nSatellite Vision Cable Network — Nasirabad, Chattogram.\nCall/WhatsApp: 01842-292646')">Share on WhatsApp</button>
-        </div>
-      </div>
-
-      <!-- Poster 2 — Promo/Red -->
-      <div class="ad-poster ap-2 fade d1">
-        <div class="ad-poster-tag" style="color:var(--red)">Limited Offer</div>
-        <div class="ad-poster-title">First Month<br>On Us.</div>
-        <div class="ad-poster-price">New connections only</div>
-        <div class="ad-overlay">
-          <button class="ad-cta" onclick="shareAdWA('🔥 First Month FREE!\nNew connections at Satellite Vision Cable Network.\nHigh-speed internet from ৳500/month.\nCall/WhatsApp: 01842-292646 — Nasirabad, Chattogram.')">Share on WhatsApp</button>
-        </div>
-      </div>
-
-      <!-- Poster 3 — Gold/Combo -->
-      <div class="ad-poster ap-3 fade d1">
-        <div class="ad-poster-tag" style="color:var(--gold)">Combo Deal</div>
-        <div class="ad-poster-title">WiFi &<br>Dish TV.<br>One bill.</div>
-        <div class="ad-poster-price">৳1050 / month</div>
-        <div class="ad-overlay">
-          <button class="ad-cta" onclick="shareAdWA('📺 WiFi + Dish TV Combo — Only ৳1050/month!\nGet high-speed internet & cable TV together.\nSatellite Vision Cable Network — Nasirabad, Chattogram.\nOrder: 01842-292646')">Share on WhatsApp</button>
-        </div>
-      </div>
-
-      <!-- Poster 4 — Refer -->
-      <div class="ad-poster ap-4 fade d2">
-        <div class="ad-poster-tag" style="color:var(--cyan)">Referral</div>
-        <div class="ad-poster-title">Refer a friend.<br>Get rewarded.</div>
-        <div class="ad-poster-price">৳100 OFF + free speed boost</div>
-        <div class="ad-overlay">
-          <button class="ad-cta" onclick="shareAdWA('🤝 Refer a friend to SVCN & earn:\n→ ৳100 OFF your next bill\n→ FREE 10 Mbps speed upgrade\nSatellite Vision Cable Network — 01842-292646')">Share on WhatsApp</button>
-        </div>
-      </div>
-
-      <!-- Poster 5 — Uptime -->
-      <div class="ad-poster ap-5 fade d2">
-        <div class="ad-poster-tag" style="color:#00e87a">Reliability</div>
-        <div class="ad-poster-title">45–80 min<br>complaint<br>resolution.</div>
-        <div class="ad-poster-price">Chattogram's fastest support</div>
-        <div class="ad-overlay">
-          <button class="ad-cta" onclick="shareAdWA('⚡ Issue? Fixed in 45–80 minutes.\nSatellite Vision Cable Network — fastest ISP support in Nasirabad, Chattogram.\nContact: 01842-292646')">Share on WhatsApp</button>
-        </div>
-      </div>
-
-      <!-- Poster 6 — Brand -->
-      <div class="ad-poster ap-6 fade d2">
-        <div class="ad-poster-tag" style="color:#b464ff">Brand</div>
-        <div class="ad-poster-title">SVCN.<br>Signal you<br>can trust.</div>
-        <div class="ad-poster-price">Since 2010 · Nasirabad</div>
-        <div class="ad-overlay">
-          <button class="ad-cta" onclick="shareAdWA('📡 Satellite Vision Cable Network — Signal You Can Trust.\nFast internet & Dish TV in Nasirabad, Chattogram since 2010.\nFrom ৳500/month. Call: 01842-292646')">Share on WhatsApp</button>
-        </div>
-      </div>
-
-    </div><!-- /poster grid -->
-  </div>
-
-  <!-- Banner strip -->
-  <div class="container">
-    <div class="ads-banner-strip">
-
-      <!-- Banner 1 — Cyan -->
-      <div class="ad-banner ab-cyan fade">
-        <div>
-          <div class="ab-tag">Speed Campaign</div>
-          <div class="ab-title">Fast internet.<br>Fair price.<br>Real support.</div>
-          <div class="ab-desc">Up to 80 Mbps with unlimited BDIX, Facebook & YouTube — for as little as ৳500/month. No hidden charges.</div>
-          <button class="ab-action" onclick="shareAdWA('📡 SVCN — Fast Internet. Fair Price. Real Support.\nUp to 80 Mbps · Unlimited FB & YouTube · BDIX Free\nPlans from ৳500/month · Nasirabad, Chattogram\n📞 01842-292646 | 💬 01634-348602')">Copy for Facebook →</button>
-        </div>
-        <div class="ab-ghost">01</div>
-      </div>
-
-      <!-- Banner 2 — Red -->
-      <div class="ad-banner ab-red fade d1">
-        <div>
-          <div class="ab-tag">Urgency Campaign</div>
-          <div class="ab-title">Slow internet<br>is costing you<br>more than you think.</div>
-          <div class="ab-desc">Switch to SVCN — get free installation, a special first-month discount, and priority connection within 24 hours.</div>
-          <button class="ab-action" onclick="shareAdWA('🚨 Slow internet? Switch to SVCN today!\n✅ Free installation for switchers\n✅ Special first-month discount\n✅ Connected within 24 hours\n📍 Nasirabad, Chattogram · 📞 01842-292646')">Copy for Facebook →</button>
-        </div>
-        <div class="ab-ghost">02</div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- Caption generator -->
-  <div class="container">
-    <div class="ads-caption-strip fade">
-
-      <div class="caption-left">
-        <div class="s-tag" style="opacity:.5">Social Media</div>
-        <div class="caption-title">Caption<br>Generator</div>
-        <div class="caption-sub">Pick a post type — get a ready-made Bengali or English caption to copy and post instantly.</div>
-        <div class="caption-types">
-          <div class="ctype active" onclick="setCaption('speed')">
-            <div class="ctype-l">
-              <div class="ctype-icon">⚡</div>
-              <div><div class="ctype-name">Speed Promo</div><div class="ctype-sub">Highlight internet speed & price</div></div>
-            </div>
-            <div class="ctype-arr">→</div>
-          </div>
-          <div class="ctype" onclick="setCaption('offer')">
-            <div class="ctype-l">
-              <div class="ctype-icon">🔥</div>
-              <div><div class="ctype-name">Limited Offer</div><div class="ctype-sub">Free first month, referral bonus</div></div>
-            </div>
-            <div class="ctype-arr">→</div>
-          </div>
-          <div class="ctype" onclick="setCaption('combo')">
-            <div class="ctype-l">
-              <div class="ctype-icon">📺</div>
-              <div><div class="ctype-name">Combo Deal</div><div class="ctype-sub">WiFi + Dish TV bundle</div></div>
-            </div>
-            <div class="ctype-arr">→</div>
-          </div>
-          <div class="ctype" onclick="setCaption('support')">
-            <div class="ctype-l">
-              <div class="ctype-icon">🛠️</div>
-              <div><div class="ctype-name">Support Speed</div><div class="ctype-sub">45–80 min resolution promise</div></div>
-            </div>
-            <div class="ctype-arr">→</div>
-          </div>
-          <div class="ctype" onclick="setCaption('eid')">
-            <div class="ctype-l">
-              <div class="ctype-icon">🌙</div>
-              <div><div class="ctype-name">Seasonal / Eid</div><div class="ctype-sub">Festive greetings with offer</div></div>
-            </div>
-            <div class="ctype-arr">→</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="caption-right">
-        <div class="cap-out-lbl">Generated Caption</div>
-        <div class="caption-box" id="capBox">⚡ দ্রুত ইন্টারনেট। সাশ্রয়ী মূল্য। সত্যিকারের সেবা।
-
-🚀 Satellite Vision Cable Network-এ আপনাকে স্বাগতম!
-📶 মাত্র ৳৫০০/মাসে পান ২০ Mbps থেকে শুরু করে ৮০ Mbps পর্যন্ত হাই-স্পিড ইন্টারনেট।
-🌐 Unlimited Facebook · YouTube · BDIX · FTP সম্পূর্ণ বিনামূল্যে।
-
-📍 Nasirabad Housing Society, Chattogram
-📞 01842-292646 | 💬 01634-348602
-
-#SVCN #SatelliteVision #Chattogram #Nasirabad #Internet #HighSpeed #WiFi</div>
-        <div class="cap-actions">
-          <button class="cap-btn cap-btn-c" onclick="copyCaption()">📋 Copy Caption</button>
-          <button class="cap-btn cap-btn-w" onclick="waCaption()">💬 Share via WhatsApp</button>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- Brand assets row -->
-  <div class="container">
-    <div class="ads-brand-row" style="margin-bottom:1px">
-      <div class="brand-asset ba-1 fade" onclick="shareAdWA('📡 Satellite Vision Cable Network\n🏠 Nasirabad Housing Society, Chattogram\n📞 01842-292646\n💬 01634-348602\n✉️ satellitevisioncablenetwork@gmail.com\n🌐 rakim14yo.github.io/svcn-info')">
-        <div class="ba-icon">📋</div>
-        <div class="ba-title">Business Info Card</div>
-        <div class="ba-desc">Full contact details formatted for sharing — address, phone, email, website.</div>
-        <div class="ba-size">Tap to share via WhatsApp</div>
-      </div>
-      <div class="brand-asset ba-2 fade d1" onclick="shareAdWA('🆕 নতুন সংযোগ নিন আজই!\n\nSatellite Vision Cable Network\n📶 20 Mbps — ৳500/month\n📶 35 Mbps — ৳650/month\n📶 50 Mbps — ৳800/month\n📶 65 Mbps — ৳950/month\n📶 80 Mbps — ৳1100/month\n📺 Cable Dish TV — ৳350/month\n📺 WiFi + Dish Combo — ৳1050/month\n\n📞 01842-292646 | Nasirabad, Chattogram')">
-        <div class="ba-icon">📶</div>
-        <div class="ba-title">Full Price List</div>
-        <div class="ba-desc">Complete package lineup with speeds and prices — ready to forward to anyone.</div>
-        <div class="ba-size">Tap to share via WhatsApp</div>
-      </div>
-      <div class="brand-asset ba-3 fade d2" onclick="shareAdWA('🤝 আপনার বন্ধু বা প্রতিবেশীকে SVCN-এ রেফার করুন!\n\n✅ আপনি পাবেন: পরের মাসে ৳১০০ ছাড় + FREE 10 Mbps আপগ্রেড\n✅ আপনার বন্ধু পাবে: প্রথম মাসে বিশেষ ছাড়\n\nযোগাযোগ করুন:\n📞 01842-292646 | 💬 01634-348602\nNasirabad Housing Society, Chattogram')">
-        <div class="ba-icon">🤝</div>
-        <div class="ba-title">Referral Message</div>
-        <div class="ba-desc">Bengali referral post explaining both parties' rewards — forward-ready.</div>
-        <div class="ba-size">Tap to share via WhatsApp</div>
-      </div>
-      <div class="brand-asset ba-4 fade d3" onclick="shareAdWA('📡 Satellite Vision Cable Network\n"Signal You Can Trust"\n\n⚡ Up to 80 Mbps · 24/7 Uptime\n🕒 45–80 min complaint resolution\n🌐 Free BDIX & FTP access\n📺 Cable & HD Dish TV available\n📍 Nasirabad, Chattogram · Est. 2010\n\n📞 01842-292646 | 💬 01634-348602')">
-        <div class="ba-icon">🛰️</div>
-        <div class="ba-title">Brand Tagline Block</div>
-        <div class="ba-desc">"Signal You Can Trust" — full brand statement with all key facts.</div>
-        <div class="ba-size">Tap to share via WhatsApp</div>
-      </div>
-    </div>
-  </div>
-
 </section>
 
 <!-- ═══════════════════════════════
@@ -1927,88 +1555,6 @@ document.querySelectorAll('.pkg-row').forEach(row=>{
     if(link)window.open(link.href,'_blank');
   });
 });
-
-/* ─── SVCN ADS ─── */
-const captions={
-  speed:`⚡ দ্রুত ইন্টারনেট। সাশ্রয়ী মূল্য। সত্যিকারের সেবা।
-
-🚀 Satellite Vision Cable Network-এ আপনাকে স্বাগতম!
-📶 মাত্র ৳৫০০/মাসে পান ২০ Mbps থেকে শুরু করে ৮০ Mbps পর্যন্ত হাই-স্পিড ইন্টারনেট।
-🌐 Unlimited Facebook · YouTube · BDIX · FTP সম্পূর্ণ বিনামূল্যে।
-
-📍 Nasirabad Housing Society, Chattogram
-📞 01842-292646 | 💬 01634-348602
-
-#SVCN #SatelliteVision #Chattogram #Nasirabad #Internet #HighSpeed #WiFi`,
-
-  offer:`🔥 সীমিত সময়ের অফার — এখনই সুযোগ নিন!
-
-🎁 নতুন সংযোগে প্রথম মাস সম্পূর্ণ বিনামূল্যে!
-👥 বন্ধুকে রেফার করুন → ৳১০০ বিল ছাড় + ফ্রি ১০ Mbps আপগ্রেড।
-
-Satellite Vision Cable Network
-📶 Plans from ৳500/month · Up to 80 Mbps
-📍 Nasirabad, Chattogram
-📞 01842-292646 | 💬 01634-348602
-
-#FreeMath #SVCN #InternetOffer #Chattogram`,
-
-  combo:`📺 WiFi + ডিশ TV — একসাথে, একটি বিলে!
-
-🌐 High-speed Internet (40 Mbps)
-📺 Cable Dish TV (70+ channels)
-💰 মাত্র ৳১০৫০/মাস — আলাদা নেওয়ার চেয়ে সাশ্রয়!
-
-Satellite Vision Cable Network
-📍 Nasirabad Housing Society, Chattogram
-📞 01842-292646 | 💬 01634-348602
-
-#ComboOffer #WiFiPlusDishTV #SVCN #Chattogram`,
-
-  support:`🛠️ সমস্যা হলে — ৪৫ থেকে ৮০ মিনিটে সমাধান!
-
-আমাদের টেকনিশিয়ান টিম সবসময় প্রস্তুত।
-✅ কল করুন → টেকনিশিয়ান পাঠানো হবে
-✅ ৫–১০ মিনিটে ডিসপ্যাচ
-✅ ৪৫–৮০ মিনিটে আপনার দরজায়
-
-Satellite Vision Cable Network — Chattogram-এর দ্রুততম ISP সাপোর্ট।
-📞 01842-292646 | 💬 01634-348602
-
-#FastSupport #SVCN #ISP #Chattogram`,
-
-  eid:`🌙✨ ঈদ মোবারক — Satellite Vision Cable Network-এর পক্ষ থেকে!
-
-এই আনন্দের মুহূর্তে প্রিয়জনদের সাথে HD স্ট্রিমিং উপভোগ করুন।
-🎁 ঈদ স্পেশাল: নতুন সংযোগে বিশেষ ছাড়!
-
-📍 Nasirabad Housing Society, Chattogram
-📞 01842-292646 | 💬 01634-348602
-
-#EidMubarak #SVCN #SatelliteVision #Chattogram`
-};
-
-function setCaption(type){
-  document.getElementById('capBox').textContent=captions[type]||captions.speed;
-  document.querySelectorAll('.ctype').forEach(el=>el.classList.remove('active'));
-  event.currentTarget.classList.add('active');
-}
-function copyCaption(){
-  const txt=document.getElementById('capBox').textContent;
-  navigator.clipboard.writeText(txt).then(()=>showToast('Caption copied!')).catch(()=>showToast('Select and copy the text manually.'));
-}
-function waCaption(){
-  const txt=document.getElementById('capBox').textContent;
-  window.open('https://wa.me/?text='+encodeURIComponent(txt),'_blank');
-}
-function shareAdWA(txt){
-  window.open('https://wa.me/?text='+encodeURIComponent(txt),'_blank');
-}
-function copyAdText(txt){
-  navigator.clipboard.writeText(txt)
-    .then(()=>showToast('Ad caption copied!'))
-    .catch(()=>showToast('Copy failed — try manually.'));
-}
 </script>
 
 
