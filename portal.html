@@ -157,6 +157,7 @@ nav.scrolled{background:rgba(0,0,0,.92);border-color:rgba(255,255,255,.07);backd
 .dash-panel::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%}
 .dash-panel.panel-cyan::before{background:var(--cyan)}
 .dash-panel.panel-white::before{background:rgba(255,255,255,.3)}
+.dash-panel.panel-gold::before{background:var(--gold)}
 .panel-hd{padding:20px 28px;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:space-between}
 .panel-hd-l{font-family:var(--fh);font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase}
 .panel-hd-tag{font-size:9px;letter-spacing:2px;text-transform:uppercase;font-family:var(--fh);color:var(--muted)}
@@ -464,9 +465,10 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);paddin
 
     <div class="stats-grid fade d2">
       <div class="stat-cell red-cell">
-        <div class="stat-label">বকেয়া বিল</div>
+        <div class="stat-label">মোট বকেয়া বিল</div>
         <div class="stat-val" id="dDue">—</div>
         <div class="stat-sub" id="dDueDate"></div>
+        <div class="stat-sub" id="dDishDueLine" style="display:none;color:var(--gold);margin-top:6px;font-size:11px"></div>
         <div class="stat-arrow">↗</div>
       </div>
       <div class="stat-cell">
@@ -540,6 +542,35 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);paddin
         <a class="speed-btn" href="https://speedtest.net" target="_blank">⚡ স্পিড টেস্ট করুন →</a>
       </div>
     </div>
+
+    <!-- ══ DISH TV SECTION — shown only when customer has a dish connection ══ -->
+    <div class="panels-row fade d4" id="dish-sec" style="display:none;margin-top:1px">
+      <div class="dash-panel panel-gold">
+        <div class="panel-hd">
+          <div class="panel-hd-l">📺 ডিশ টিভি — পেমেন্ট ইতিহাস</div>
+          <div class="panel-hd-tag">Dish TV History</div>
+        </div>
+        <div class="panel-bd">
+          <div id="dDishHistory"></div>
+          <div class="panel-action wa-a" onclick="sendDishPayWA()">
+            <span>💬 WhatsApp এ ডিশ বিল পরিশোধ করুন</span><span>→</span>
+          </div>
+        </div>
+      </div>
+      <div class="dash-panel panel-gold">
+        <div class="panel-hd">
+          <div class="panel-hd-l">📡 ডিশ সংযোগ বিবরণ</div>
+          <div class="panel-hd-tag">Dish Connection Details</div>
+        </div>
+        <div class="panel-bd">
+          <div id="dDishDet"></div>
+          <div class="panel-action" onclick="sendDishUpgrade()" style="color:var(--gold)">
+            <span>📺 ডিশ প্যাকেজ পরিবর্তন করুন</span><span>→</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -664,7 +695,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);paddin
 'use strict';
 const SHEET_ID='1T4Cqx6JSq0y_BpZPC3UoR8oH6l300V8edeh_KmjEza0';
 const WA='8801634348602';
-const DEMO={username:'demo',pin:'1234',name:'রহিম উদ্দিন',package:'50 Mbps Pro',speed:'50 Mbps',monthly_bill:'৳৮০০',due_amount:'৳৮০০',due_date:'৫ জুন ২০২৫',status:'Active',member_since:'জানুয়ারি ২০২৩',history:'মার্চ ২০২৫:800:Paid|এপ্রিল ২০২৫:800:Paid|মে ২০২৫:800:Due'};
+const DEMO={username:'demo',pin:'1234',name:'রহিম উদ্দিন',package:'50 Mbps Pro',speed:'50 Mbps',monthly_bill:'৳৮০০',due_amount:'৳৮০০',due_date:'৫ জুন ২০২৫',status:'Active',member_since:'জানুয়ারি ২০২৩',history:'মার্চ ২০২৫:800:Paid|এপ্রিল ২০২৫:800:Paid|মে ২০২৫:800:Due',dish_type:'Combo',dish_bill:'৳১০৫০',dish_due_amount:'৳১০৫০',dish_due_date:'৫ জুন ২০২৫',dish_history:'মার্চ ২০২৫:1050:Paid|এপ্রিল ২০২৫:1050:Paid|মে ২০২৫:1050:Due'};
 
 /* NAV */
 const hbg=document.getElementById('hbg'),mob=document.getElementById('mobMenu');
@@ -726,22 +757,44 @@ function hideErr(){document.getElementById('errBox').style.display='none'}
 function showDash(c){
   sessionStorage.setItem('svcnPortalV2',JSON.stringify(c));
   document.getElementById('dName').textContent=c.name||c.username;
-  document.getElementById('dDue').textContent=c.due_amount||'৳০';
-  document.getElementById('dDueDate').textContent=c.due_date?'শেষ তারিখ: '+c.due_date:'';
+
+  /* ── Total due: WiFi + Dish ── */
+  const wDue=parseInt((c.due_amount||'0').replace(/[^\d]/g,''))||0;
+  const dDue=c.dish_type?(parseInt((c.dish_due_amount||'0').replace(/[^\d]/g,''))||0):0;
+  const total=wDue+dDue;
+  document.getElementById('dDue').textContent=total>0?'৳'+total.toLocaleString():'৳০';
+  document.getElementById('dDueDate').textContent=c.due_date?'WiFi শেষ তারিখ: '+c.due_date:'';
+  const ddl=document.getElementById('dDishDueLine');
+  if(c.dish_type&&dDue>0){ddl.textContent='📺 ডিশ বকেয়া: ৳'+dDue.toLocaleString()+(c.dish_due_date?' ('+c.dish_due_date+')':'');ddl.style.display='block'}
+  else{ddl.style.display='none'}
+
   document.getElementById('dSpeed').textContent=c.speed||'—';
   document.getElementById('dSpeedMini').textContent=c.speed||'—';
   document.getElementById('dPkg').textContent=c.package||'—';
   document.getElementById('dBill').textContent='মাসিক: '+(c.monthly_bill||'—');
   document.getElementById('dSince').textContent=c.member_since||'—';
   document.getElementById('dStatus').textContent=c.status||'Active';
+
+  /* ── WiFi history ── */
   const hEl=document.getElementById('dHistory');
   if(c.history){hEl.innerHTML=c.history.split('|').map(e=>{const[m,a,s]=e.split(':');const cls=s==='Paid'?'pill-paid':s==='Due'?'pill-due':'pill-pend';return`<div class="h-row"><span class="h-mon">${m||'—'}</span><span class="h-amt">৳${a||'—'}</span><span class="h-pill ${cls}">${s||'—'}</span></div>`}).join('')}
   else hEl.innerHTML='<div style="padding:20px 0;color:var(--muted);font-family:var(--fb);font-size:13px">ইতিহাস নেই</div>';
+
+  /* ── WiFi package details ── */
   document.getElementById('dPkgDet').innerHTML=pr('প্যাকেজ',c.package||'—','')+pr('গতি',c.speed||'—','color:var(--cyan)')+pr('মাসিক বিল',c.monthly_bill||'—','')+pr('স্ট্যাটাস',c.status||'Active','')+pr('ইউজারনেম',c.username||'—','color:var(--muted)');
+
+  /* ── Dish TV section ── */
+  const dishSec=document.getElementById('dish-sec');
+  if(c.dish_type){
+    dishSec.style.display='';
+    const dhEl=document.getElementById('dDishHistory');
+    if(c.dish_history){dhEl.innerHTML=c.dish_history.split('|').map(e=>{const[m,a,s]=e.split(':');const cls=s==='Paid'?'pill-paid':s==='Due'?'pill-due':'pill-pend';return`<div class="h-row"><span class="h-mon">${m||'—'}</span><span class="h-amt">৳${a||'—'}</span><span class="h-pill ${cls}">${s||'—'}</span></div>`}).join('')}
+    else dhEl.innerHTML='<div style="padding:20px 0;color:var(--muted);font-family:var(--fb);font-size:13px">ইতিহাস নেই</div>';
+    document.getElementById('dDishDet').innerHTML=pr('সংযোগ ধরন',c.dish_type,'color:var(--gold)')+pr('মাসিক বিল',c.dish_bill||'—','')+pr('বকেয়া পরিমাণ',c.dish_due_amount||'৳০','color:#ff6070')+pr('শেষ তারিখ',c.dish_due_date||'—','')+pr('স্ট্যাটাস',c.status||'Active','');
+  }else{dishSec.style.display='none'}
+
   document.getElementById('loginView').style.display='none';
-  ['dashView','packages-sec','complaint-sec','tips-sec'].forEach(id=>{
-    const el=document.getElementById(id);el.style.display='block';
-  });
+  ['dashView','packages-sec','complaint-sec','tips-sec'].forEach(id=>{const el=document.getElementById(id);el.style.display='block'});
   setTimeout(()=>{document.querySelectorAll('.fade:not(.in)').forEach(el=>obs.observe(el))},60);
 }
 function pr(k,v,s){return`<div class="p-row"><span class="p-key">${k}</span><span class="p-val" style="${s}">${v}</span></div>`}
@@ -749,7 +802,7 @@ function pr(k,v,s){return`<div class="p-row"><span class="p-key">${k}</span><spa
 /* LOGOUT */
 function doLogout(){
   sessionStorage.removeItem('svcnPortalV2');
-  ['dashView','packages-sec','complaint-sec','tips-sec'].forEach(id=>document.getElementById(id).style.display='none');
+  ['dashView','packages-sec','complaint-sec','tips-sec','dish-sec'].forEach(id=>document.getElementById(id).style.display='none');
   document.getElementById('loginView').style.display='flex';
   document.getElementById('inUser').value='';document.getElementById('inPin').value='';
   hideErr();window.scrollTo(0,0);
@@ -762,6 +815,8 @@ function getC(){return JSON.parse(sessionStorage.getItem('svcnPortalV2')||'{}')}
 function sendPayWA(){const c=getC();wa(`আসসালামু আলাইকুম, আমি আমার বিল পরিশোধ নিশ্চিত করতে চাই।\n\nনাম: ${c.name||'—'}\nইউজারনেম: ${c.username||'—'}\nপরিমাণ: ${c.due_amount||'—'}\nপ্যাকেজ: ${c.package||'—'}`)}
 function sendUpgrade(){const c=getC();wa(`আসসালামু আলাইকুম, আমি প্যাকেজ আপগ্রেড করতে চাই।\n\nনাম: ${c.name||'—'}\nইউজারনেম: ${c.username||'—'}\nবর্তমান প্যাকেজ: ${c.package||'—'}\nনতুন প্যাকেজ: `)}
 function sendComplaint(){const c=getC();wa(`আসসালামু আলাইকুম, আমার সংযোগে সমস্যা হচ্ছে।\n\nনাম: ${c.name||'—'}\nইউজারনেম: ${c.username||'—'}\nপ্যাকেজ: ${c.package||'—'}\nসমস্যা: `)}
+function sendDishPayWA(){const c=getC();wa(`আসসালামু আলাইকুম, আমি আমার ডিশ টিভি বিল পরিশোধ নিশ্চিত করতে চাই।\n\nনাম: ${c.name||'—'}\nইউজারনেম: ${c.username||'—'}\nডিশ ধরন: ${c.dish_type||'—'}\nবকেয়া: ${c.dish_due_amount||'—'}`)}
+function sendDishUpgrade(){const c=getC();wa(`আসসালামু আলাইকুম, আমি ডিশ টিভি প্যাকেজ পরিবর্তন করতে চাই।\n\nনাম: ${c.name||'—'}\nইউজারনেম: ${c.username||'—'}\nবর্তমান ডিশ: ${c.dish_type||'—'}\nনতুন প্যাকেজ: `)}
 
 /* SESSION RESTORE */
 (function(){try{const s=sessionStorage.getItem('svcnPortalV2');if(s)showDash(JSON.parse(s));else setTimeout(()=>document.querySelectorAll('.s-login .fade').forEach(el=>el.classList.add('in')),100)}catch(e){}})();
