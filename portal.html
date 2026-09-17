@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Inter:wght@300;400;500&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --black:#000000;--white:#FFFFFF;--cyan:#00D4FF;--red:#E8192C;
+  --black:#000000;--white:#FFFFFF;--cyan:#00D4FF;--blue:#2F7DE1;--red:#E8192C;
   --gold:#FFB830;--grey:#111111;--grey2:#1A1A1A;--grey3:#2A2A2A;
   --muted:rgba(255,255,255,0.45);--dim:rgba(255,255,255,0.18);
   --fh:'Rajdhani',sans-serif;--fb:'Inter',sans-serif;--fbn:'Hind Siliguri',sans-serif;
@@ -39,6 +39,7 @@ body:has(a:hover) #cur-ring,body:has(button:hover) #cur-ring{width:64px;height:6
 nav{position:fixed;top:0;left:0;right:0;z-index:8000;padding:0 40px;height:60px;display:flex;align-items:center;justify-content:space-between;transition:background .4s,border-color .4s;border-bottom:1px solid transparent}
 nav.scrolled{background:rgba(0,0,0,.92);border-color:rgba(255,255,255,.07);backdrop-filter:blur(20px)}
 .nav-logo{display:flex;align-items:center;gap:12px}
+.nav-logo img{filter:drop-shadow(0 0 6px rgba(0,212,255,.55)) drop-shadow(0 0 14px rgba(47,125,225,.35))}
 .nav-logo img{height:38px;width:auto;object-fit:contain}
 .nav-logo-text{display:flex;flex-direction:column;line-height:1.15}
 .nav-logo-text span:first-child{font-family:var(--fh);font-weight:700;font-size:14px;letter-spacing:.5px}
@@ -83,6 +84,7 @@ nav.scrolled{background:rgba(0,0,0,.92);border-color:rgba(255,255,255,.07);backd
 .login-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--cyan)}
 .login-top{padding:40px 48px 32px;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:center;gap:20px}
 .login-logo-wrap{width:56px;height:56px;background:rgba(0,212,255,.06);border:1px solid rgba(0,212,255,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.login-logo-wrap img{filter:drop-shadow(0 0 6px rgba(0,212,255,.55)) drop-shadow(0 0 14px rgba(47,125,225,.35))}
 .login-logo-wrap img{width:42px;height:42px;object-fit:contain}
 .login-title{font-family:var(--fh);font-size:28px;font-weight:700;letter-spacing:.5px;line-height:1;margin-bottom:4px}
 .login-sub{font-size:12px;color:var(--muted);font-family:var(--fb);letter-spacing:.3px}
@@ -228,6 +230,7 @@ nav.scrolled{background:rgba(0,0,0,.92);border-color:rgba(255,255,255,.07);backd
 footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);padding:60px 0 0}
 .foot-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:40px;margin-bottom:52px}
 .foot-logo{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.foot-logo img{filter:drop-shadow(0 0 6px rgba(0,212,255,.5)) drop-shadow(0 0 14px rgba(47,125,225,.3))}
 .foot-logo img{height:44px;width:auto;object-fit:contain}
 .foot-brand-text span:first-child{font-family:var(--fh);font-weight:700;font-size:15px;display:block}
 .foot-brand-text span:last-child{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--cyan)}
