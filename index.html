@@ -91,7 +91,7 @@ nav{
 }
 nav.scrolled{background:rgba(0,0,0,.92);border-color:rgba(255,255,255,.07);backdrop-filter:blur(20px)}
 .nav-logo{display:flex;align-items:center;gap:12px}
-.nav-logo img{height:38px;width:auto;object-fit:contain;filter:drop-shadow(0 0 6px rgba(0,212,255,.55)) drop-shadow(0 0 14px rgba(47,125,225,.35))}
+.nav-logo img{height:38px;width:38px;object-fit:contain;background:radial-gradient(circle,#0d1730 55%,#050608);border-radius:50%;padding:5px;box-shadow:0 0 0 1px rgba(0,212,255,.35),0 4px 14px rgba(0,212,255,.22);}
 .nav-logo-text{display:flex;flex-direction:column;line-height:1.15}
 .nav-logo-text span:first-child{font-family:var(--fh);font-weight:700;font-size:14px;letter-spacing:.5px}
 .nav-logo-text span:last-child{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--cyan)}
@@ -154,10 +154,10 @@ nav.scrolled{background:rgba(0,0,0,.92);border-color:rgba(255,255,255,.07);backd
 .lang-b.on{background:var(--white);color:var(--black)}
 .nav-cta{
   font-family:var(--fh);font-size:11px;font-weight:700;letter-spacing:2px;
-  text-transform:uppercase;padding:9px 20px;border:1px solid var(--red);
+  text-transform:uppercase;padding:9px 20px;border:1px solid var(--gold);
   color:var(--white);transition:all .25s;background:transparent;
 }
-.nav-cta:hover{background:var(--red)}
+.nav-cta:hover{background:var(--gold)}
 .hbg{display:none;flex-direction:column;gap:5px;padding:8px;cursor:none}
 .hbg span{display:block;width:22px;height:1.5px;background:#fff;transition:all .3s}
 .hbg.open span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
@@ -220,11 +220,11 @@ nav.scrolled{background:rgba(0,0,0,.92);border-color:rgba(255,255,255,.07);backd
 .pop-item{display:flex;align-items:center;gap:10px;font-size:14px}
 .pop-item::before{content:'→';color:var(--cyan);font-size:12px}
 .pop-btn{
-  display:block;width:100%;padding:15px;background:var(--red);color:#fff;
+  display:block;width:100%;padding:15px;background:var(--gold);color:#fff;
   font-family:var(--fh);font-weight:700;font-size:13px;letter-spacing:2px;
   text-transform:uppercase;text-align:center;transition:background .25s;
 }
-.pop-btn:hover{background:#c41020}
+.pop-btn:hover{background:#d99e1f}
 
 /* =========================================================
    SECTION REVEAL
@@ -279,7 +279,7 @@ nav.scrolled{background:rgba(0,0,0,.92);border-color:rgba(255,255,255,.07);backd
 @keyframes glowPulse{0%,100%{opacity:.7}50%{opacity:1}}
 .hero-logo-center img{
   width:clamp(200px,25vw,320px);height:auto;object-fit:contain;
-  filter:drop-shadow(0 0 60px rgba(0,212,255,.4)) drop-shadow(0 0 130px rgba(47,125,225,.3));
+  filter:drop-shadow(0 0 22px rgba(0,212,255,.35)) drop-shadow(0 0 48px rgba(47,125,225,.22));
   animation:logoHover 7s ease-in-out infinite;
 }
 @keyframes logoHover{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-14px) scale(1.02)}}
@@ -369,7 +369,7 @@ nav.scrolled{background:rgba(0,0,0,.92);border-color:rgba(255,255,255,.07);backd
 .num-cell:hover{background:rgba(0,0,0,.03)}
 .num-cell.accent{background:var(--black);color:var(--white)}
 .num-cell.accent:hover{background:#111}
-.num-cell.red-cell{background:var(--red);color:#fff}
+.num-cell.red-cell{background:var(--gold);color:#fff}
 .num-big{
   font-family:var(--fh);font-size:clamp(52px,6vw,88px);font-weight:700;
   line-height:.9;letter-spacing:-2px;margin-bottom:10px;
@@ -407,7 +407,7 @@ nav.scrolled{background:rgba(0,0,0,.92);border-color:rgba(255,255,255,.07);backd
   margin-bottom:60px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.07);
 }
 .pkg-header-l .pkg-big-title{font-family:var(--fh);font-size:clamp(40px,6vw,80px);font-weight:700;letter-spacing:-1px;line-height:.95}
-.pkg-header-l .pkg-big-title .red-t{color:var(--red)}
+.pkg-header-l .pkg-big-title .red-t{color:var(--gold)}
 .pkg-tabs{display:flex;gap:0;border:1px solid rgba(255,255,255,.1)}
 .pkg-tab{
   padding:10px 22px;font-family:var(--fh);font-size:11px;font-weight:700;
@@ -429,7 +429,7 @@ nav.scrolled{background:rgba(0,0,0,.92);border-color:rgba(255,255,255,.07);backd
 .pkg-row:hover{background:rgba(255,255,255,.03);padding-left:16px;padding-right:16px;margin:0 -16px}
 .pkg-row.feat-row::before{
   content:'POPULAR';position:absolute;left:0;top:50%;transform:translateY(-50%);
-  background:var(--red);color:#fff;font-family:var(--fh);font-size:8px;font-weight:700;
+  background:var(--gold);color:#fff;font-family:var(--fh);font-size:8px;font-weight:700;
   letter-spacing:2px;padding:3px 8px;writing-mode:vertical-rl;text-orientation:mixed;
 }
 .pkg-num{font-family:var(--fh);font-size:11px;color:var(--muted);letter-spacing:1px}
@@ -502,7 +502,7 @@ nav.scrolled{background:rgba(0,0,0,.92);border-color:rgba(255,255,255,.07);backd
    ========================================================= */
 .s-offers{padding:0;position:relative}
 .offer-hero{
-  background:var(--red);color:var(--white);
+  background:var(--gold);color:var(--white);
   padding:80px 40px;position:relative;overflow:hidden;
 }
 .offer-hero::before{
@@ -519,7 +519,7 @@ nav.scrolled{background:rgba(0,0,0,.92);border-color:rgba(255,255,255,.07);backd
 .offer-icon-num{font-family:var(--fh);font-size:28px;font-weight:700;color:rgba(255,255,255,.3);flex-shrink:0;min-width:40px}
 .offer-item-text strong{display:block;font-size:16px;font-weight:600;margin-bottom:3px}
 .offer-item-text span{font-size:13px;opacity:.7}
-.offer-cta{display:inline-flex;align-items:center;gap:10px;margin-top:28px;padding:14px 32px;background:var(--white);color:var(--red);font-family:var(--fh);font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;transition:all .25s}
+.offer-cta{display:inline-flex;align-items:center;gap:10px;margin-top:28px;padding:14px 32px;background:var(--white);color:var(--gold);font-family:var(--fh);font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;transition:all .25s}
 .offer-cta:hover{background:var(--black);color:#fff}
 
 /* Switch & Building offers — side by side */
@@ -630,19 +630,19 @@ nav.scrolled{background:rgba(0,0,0,.92);border-color:rgba(255,255,255,.07);backd
 }
 .complaint-time-display{
   font-family:var(--fh);font-size:clamp(80px,12vw,160px);font-weight:700;
-  color:var(--red);line-height:.85;letter-spacing:-3px;
+  color:var(--gold);line-height:.85;letter-spacing:-3px;
   display:flex;align-items:baseline;gap:8px;margin-bottom:16px;
 }
 .complaint-time-display .unit{font-size:clamp(24px,4vw,44px);color:rgba(255,255,255,.4)}
 .complaint-label{font-size:14px;color:var(--muted);margin-bottom:36px;letter-spacing:.3px}
 .complaint-steps{display:flex;flex-direction:column;gap:0;border-top:1px solid rgba(255,255,255,.07)}
 .cs{display:flex;align-items:flex-start;gap:16px;padding:20px 0;border-bottom:1px solid rgba(255,255,255,.07)}
-.cs-num{font-family:var(--fh);font-size:11px;font-weight:700;color:var(--red);letter-spacing:1px;flex-shrink:0;margin-top:2px}
+.cs-num{font-family:var(--fh);font-size:11px;font-weight:700;color:var(--gold);letter-spacing:1px;flex-shrink:0;margin-top:2px}
 .cs-text{font-size:14px;color:var(--muted);line-height:1.6}
 .cs-text strong{color:#fff}
 .complaint-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
-.c-btn-r{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;background:var(--red);color:#fff;font-family:var(--fh);font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;transition:background .2s}
-.c-btn-r:hover{background:#c41020}
+.c-btn-r{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;background:var(--gold);color:#fff;font-family:var(--fh);font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;transition:background .2s}
+.c-btn-r:hover{background:#d99e1f}
 .c-btn-o{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border:1px solid rgba(255,255,255,.15);color:var(--muted);font-family:var(--fh);font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;transition:all .2s}
 .c-btn-o:hover{border-color:#fff;color:#fff}
 /* SLA visual */
@@ -650,7 +650,7 @@ nav.scrolled{background:rgba(0,0,0,.92);border-color:rgba(255,255,255,.07);backd
 .sla-bar-wrap{display:flex;flex-direction:column;gap:8px}
 .sla-bar-label{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);font-family:var(--fh);font-weight:700;display:flex;justify-content:space-between}
 .sla-bar-bg{height:4px;background:rgba(255,255,255,.08);position:relative;overflow:hidden}
-.sla-bar-fill{height:100%;background:var(--red);width:0;transition:width 1.4s cubic-bezier(.22,1,.36,1)}
+.sla-bar-fill{height:100%;background:var(--gold);width:0;transition:width 1.4s cubic-bezier(.22,1,.36,1)}
 .sla-stat{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.07)}
 .sla-stat-num{font-family:var(--fh);font-size:28px;font-weight:700}
 .sla-stat-label{font-size:12px;color:var(--muted)}
@@ -702,7 +702,7 @@ select.fm option{background:var(--grey)}
 footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);padding:60px 0 0}
 .foot-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:40px;margin-bottom:52px}
 .foot-logo{display:flex;align-items:center;gap:12px;margin-bottom:16px}
-.foot-logo img{height:44px;width:auto;object-fit:contain;filter:drop-shadow(0 0 8px rgba(0,212,255,.4)) drop-shadow(0 0 18px rgba(47,125,225,.25))}
+.foot-logo img{height:44px;width:44px;object-fit:contain;background:radial-gradient(circle,#0d1730 55%,#050608);border-radius:50%;padding:6px;box-shadow:0 0 0 1px rgba(0,212,255,.3),0 4px 16px rgba(0,212,255,.2);}
 .foot-brand-text span:first-child{font-family:var(--fh);font-weight:700;font-size:15px;display:block}
 .foot-brand-text span:last-child{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--cyan)}
 .foot-desc{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:20px}
@@ -731,7 +731,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);paddin
 #sticky span{font-family:var(--fh);font-size:13px;color:var(--muted);letter-spacing:.3px}
 #sticky strong{color:#fff}
 #sticky-x{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.06);border:none;color:var(--muted);width:24px;height:24px;display:flex;align-items:center;justify-content:center;cursor:none;font-size:13px;transition:all .2s}
-#sticky-x:hover{background:var(--red);color:#fff}
+#sticky-x:hover{background:var(--gold);color:#fff}
 
 /* =========================================================
    RESPONSIVE
@@ -824,11 +824,9 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);paddin
     <span data-en="All Systems Operational" data-bn="সব সিস্টেম সচল">All Systems Operational</span>
   </div>
   <div class="nav-links">
-    <a href="#announcements" data-en="Updates" data-bn="আপডেট">Updates</a>
-    <a href="#compare" data-en="Why Us" data-bn="কেন আমরা">Why Us</a>
     <a href="#packages" data-en="Packages" data-bn="প্যাকেজ">Packages</a>
-    <a href="#offers" data-en="Offers" data-bn="অফার">Offers</a>
     <a href="#coverage" data-en="Coverage" data-bn="কভারেজ">Coverage</a>
+    <a href="#offers" data-en="Offers" data-bn="অফার">Offers</a>
     <a href="#portal" data-en="My Account" data-bn="আমার অ্যাকাউন্ট">My Account</a>
     <a href="#contact" data-en="Contact" data-bn="যোগাযোগ">Contact</a>
   </div>
@@ -987,75 +985,6 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);paddin
 <!-- ═══════════════════════════════
      03B ANNOUNCEMENTS — NAVY
      ═══════════════════════════════ -->
-<section class="s-announce" id="announcements">
-  <div class="container">
-    <div class="ann-header">
-      <div class="ann-title fade" data-en="What's New<br>at SVCN" data-bn="SVCN-এ<br>নতুন কী আছে">What's New<br>at SVCN</div>
-    </div>
-    <div class="ann-grid">
-      <div class="ann-card fade">
-        <span class="ann-new" data-en="NEW" data-bn="নতুন">NEW</span>
-        <div class="ann-date" data-en="SEPTEMBER 2026" data-bn="সেপ্টেম্বর ২০২৬">SEPTEMBER 2026</div>
-        <h3 data-en="Network upgraded on Road 4" data-bn="রোড ৪-এ নেটওয়ার্ক আপগ্রেড হয়েছে">Network upgraded on Road 4</h3>
-        <p data-en="Fiber capacity increased for faster, more stable speeds during peak hours." data-bn="ব্যস্ত সময়ে দ্রুত ও স্থিতিশীল গতির জন্য ফাইবার সক্ষমতা বাড়ানো হয়েছে।">Fiber capacity increased for faster, more stable speeds during peak hours.</p>
-      </div>
-      <div class="ann-card fade d1">
-        <div class="ann-date" data-en="AUGUST 2026" data-bn="আগস্ট ২০২৬">AUGUST 2026</div>
-        <h3 data-en="New customer portal launched" data-bn="নতুন কাস্টমার পোর্টাল চালু হয়েছে">New customer portal launched</h3>
-        <p data-en="Check your bill, connection status, and run a speed test — all in one place." data-bn="এক জায়গায় আপনার বিল, সংযোগের অবস্থা এবং স্পিড টেস্ট দেখুন।">Check your bill, connection status, and run a speed test — all in one place.</p>
-      </div>
-      <div class="ann-card fade d2">
-        <div class="ann-date" data-en="JULY 2026" data-bn="জুলাই ২০২৬">JULY 2026</div>
-        <h3 data-en="Extended support hours" data-bn="সাপোর্ট সময় বাড়ানো হয়েছে">Extended support hours</h3>
-        <p data-en="Our technical support team is now reachable on WhatsApp every day." data-bn="আমাদের টেকনিক্যাল সাপোর্ট টিম এখন প্রতিদিন হোয়াটসঅ্যাপে পাওয়া যাবে।">Our technical support team is now reachable on WhatsApp every day.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════
-     04 PACKAGES — DARK GREY
-     ═══════════════════════════════ -->
-<section class="s-compare" id="compare">
-  <div class="container">
-    <div class="ann-header">
-      <div class="ann-title fade" data-en="Why We're<br>Different" data-bn="আমরা কেন<br>ভিন্ন">Why We're<br>Different</div>
-    </div>
-    <div class="cmp-table fade">
-      <div class="cmp-row head">
-        <div class="cmp-cell" data-en="" data-bn=""></div>
-        <div class="cmp-cell" data-en="SVCN" data-bn="SVCN">SVCN</div>
-        <div class="cmp-cell" data-en="Typical National ISP" data-bn="সাধারণ জাতীয় আইএসপি">Typical National ISP</div>
-      </div>
-      <div class="cmp-row">
-        <div class="cmp-cell" data-en="Complaint resolution" data-bn="অভিযোগ সমাধান">Complaint resolution</div>
-        <div class="cmp-cell yes" data-en="45–80 minutes" data-bn="৪৫–৮০ মিনিট">45–80 minutes</div>
-        <div class="cmp-cell no" data-en="1–3 days" data-bn="১–৩ দিন">1–3 days</div>
-      </div>
-      <div class="cmp-row">
-        <div class="cmp-cell" data-en="Who answers your call" data-bn="আপনার কল কে ধরে">Who answers your call</div>
-        <div class="cmp-cell yes" data-en="A real neighbor, by name" data-bn="একজন প্রতিবেশী, নাম ধরে">A real neighbor, by name</div>
-        <div class="cmp-cell no" data-en="A call center queue" data-bn="একটি কল সেন্টার লাইন">A call center queue</div>
-      </div>
-      <div class="cmp-row">
-        <div class="cmp-cell" data-en="Service area" data-bn="সেবা এলাকা">Service area</div>
-        <div class="cmp-cell yes" data-en="Nasirabad only — by design" data-bn="শুধু নাসিরাবাদ — উদ্দেশ্যমূলকভাবে">Nasirabad only — by design</div>
-        <div class="cmp-cell no" data-en="Entire city, spread thin" data-bn="পুরো শহর, বিস্তৃত">Entire city, spread thin</div>
-      </div>
-      <div class="cmp-row">
-        <div class="cmp-cell" data-en="Hidden fees" data-bn="লুকানো ফি">Hidden fees</div>
-        <div class="cmp-cell yes" data-en="None — ever" data-bn="কোনোটাই না — কখনো না">None — ever</div>
-        <div class="cmp-cell no" data-en="Common" data-bn="সাধারণ">Common</div>
-      </div>
-      <div class="cmp-row">
-        <div class="cmp-cell" data-en="Self-service portal" data-bn="সেলফ-সার্ভিস পোর্টাল">Self-service portal</div>
-        <div class="cmp-cell yes" data-en="Yes — bill, speed test, support" data-bn="হ্যাঁ — বিল, স্পিড টেস্ট, সাপোর্ট">Yes — bill, speed test, support</div>
-        <div class="cmp-cell no" data-en="Rare at this scale" data-bn="এই স্কেলে বিরল">Rare at this scale</div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="s-pkg" id="packages">
   <div class="container">
     <div class="pkg-header">
@@ -1126,9 +1055,9 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);paddin
     <div class="tab-pane" id="tab-dish">
       <div class="dish-grid">
         <div class="dish-card">
-          <div class="dish-top-bar" style="background:var(--red)"></div>
+          <div class="dish-top-bar" style="background:var(--gold)"></div>
           <div class="dish-title-big" data-en="Cable<br>Dish TV" data-bn="ক্যাবল<br>ডিশ টিভি">Cable<br>Dish TV</div>
-          <div class="dish-price-big" style="color:var(--red)">৳350 <span style="font-size:14px;color:var(--muted);font-weight:400">/ month</span></div>
+          <div class="dish-price-big" style="color:var(--gold)">৳350 <span style="font-size:14px;color:var(--muted);font-weight:400">/ month</span></div>
           <div class="dish-feats">
             <div class="dish-feat">70+ channels</div>
             <div class="dish-feat">News, sports & entertainment</div>
@@ -1173,6 +1102,98 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);paddin
 
 <!-- ═══════════════════════════════
      05 OFFERS — RED + SPLIT
+     ═══════════════════════════════ -->
+<section class="s-compare" id="compare">
+  <div class="container">
+    <div class="ann-header">
+      <div class="ann-title fade" data-en="Why We're<br>Different" data-bn="আমরা কেন<br>ভিন্ন">Why We're<br>Different</div>
+    </div>
+    <div class="cmp-table fade">
+      <div class="cmp-row head">
+        <div class="cmp-cell" data-en="" data-bn=""></div>
+        <div class="cmp-cell" data-en="SVCN" data-bn="SVCN">SVCN</div>
+        <div class="cmp-cell" data-en="Typical National ISP" data-bn="সাধারণ জাতীয় আইএসপি">Typical National ISP</div>
+      </div>
+      <div class="cmp-row">
+        <div class="cmp-cell" data-en="Complaint resolution" data-bn="অভিযোগ সমাধান">Complaint resolution</div>
+        <div class="cmp-cell yes" data-en="45–80 minutes" data-bn="৪৫–৮০ মিনিট">45–80 minutes</div>
+        <div class="cmp-cell no" data-en="1–3 days" data-bn="১–৩ দিন">1–3 days</div>
+      </div>
+      <div class="cmp-row">
+        <div class="cmp-cell" data-en="Who answers your call" data-bn="আপনার কল কে ধরে">Who answers your call</div>
+        <div class="cmp-cell yes" data-en="A real neighbor, by name" data-bn="একজন প্রতিবেশী, নাম ধরে">A real neighbor, by name</div>
+        <div class="cmp-cell no" data-en="A call center queue" data-bn="একটি কল সেন্টার লাইন">A call center queue</div>
+      </div>
+      <div class="cmp-row">
+        <div class="cmp-cell" data-en="Service area" data-bn="সেবা এলাকা">Service area</div>
+        <div class="cmp-cell yes" data-en="Nasirabad only — by design" data-bn="শুধু নাসিরাবাদ — উদ্দেশ্যমূলকভাবে">Nasirabad only — by design</div>
+        <div class="cmp-cell no" data-en="Entire city, spread thin" data-bn="পুরো শহর, বিস্তৃত">Entire city, spread thin</div>
+      </div>
+      <div class="cmp-row">
+        <div class="cmp-cell" data-en="Hidden fees" data-bn="লুকানো ফি">Hidden fees</div>
+        <div class="cmp-cell yes" data-en="None — ever" data-bn="কোনোটাই না — কখনো না">None — ever</div>
+        <div class="cmp-cell no" data-en="Common" data-bn="সাধারণ">Common</div>
+      </div>
+      <div class="cmp-row">
+        <div class="cmp-cell" data-en="Self-service portal" data-bn="সেলফ-সার্ভিস পোর্টাল">Self-service portal</div>
+        <div class="cmp-cell yes" data-en="Yes — bill, speed test, support" data-bn="হ্যাঁ — বিল, স্পিড টেস্ট, সাপোর্ট">Yes — bill, speed test, support</div>
+        <div class="cmp-cell no" data-en="Rare at this scale" data-bn="এই স্কেলে বিরল">Rare at this scale</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s-coverage" id="coverage">
+  <div class="container">
+    <div class="cov-layout">
+      <div>
+        <div class="s-tag" style="color:rgba(0,0,0,.4)" data-en="Where We Are" data-bn="আমরা কোথায় আছি">Where We Are</div>
+        <h2 class="cov-title fade">
+          <span class="black-t" data-en="We Cover" data-bn="আমরা কভার করি">We Cover</span>
+          <span class="cyan-block" data-en="Nasirabad." data-bn="নাসিরাবাদ।">Nasirabad.</span>
+          <span class="black-t" style="font-size:60%" data-en="And Growing." data-bn="এবং ক্রমবর্ধমান।">And Growing.</span>
+        </h2>
+        <div class="cov-areas">
+          <div class="cov-area fade d1">
+            <div class="cov-area-left"><div class="cov-dot on"></div><div><div class="cov-name" data-en="Nasirabad Housing Society" data-bn="নাসিরাবাদ হাউজিং সোসাইটি">Nasirabad Housing Society</div><div class="cov-status" data-en="Primary service area · All roads" data-bn="প্রধান সেবা এলাকা · সকল রোড">Primary service area · All roads</div></div></div>
+            <div class="cov-status-badge on" data-en="Full Coverage" data-bn="সম্পূর্ণ কভারেজ">Full Coverage</div>
+          </div>
+          <div class="cov-area fade d2">
+            <div class="cov-area-left"><div class="cov-dot on"></div><div><div class="cov-name" data-en="Nasirabad I/A" data-bn="নাসিরাবাদ আই/এ">Nasirabad I/A</div><div class="cov-status" data-en="All sectors covered" data-bn="সকল সেক্টর কভার করা হয়েছে">All sectors covered</div></div></div>
+            <div class="cov-status-badge on" data-en="Full Coverage" data-bn="সম্পূর্ণ কভারেজ">Full Coverage</div>
+          </div>
+          <div class="cov-area fade d3">
+            <div class="cov-area-left"><div class="cov-dot pt"></div><div><div class="cov-name" data-en="Surrounding Chattogram Areas" data-bn="চট্টগ্রামের আশেপাশের এলাকা">Surrounding Chattogram Areas</div><div class="cov-status" data-en="Contact us to confirm availability" data-bn="উপলব্ধতা নিশ্চিত করতে যোগাযোগ করুন">Contact us to confirm availability</div></div></div>
+            <div class="cov-status-badge pt" data-en="Expanding" data-bn="সম্প্রসারিত হচ্ছে">Expanding</div>
+          </div>
+        </div>
+        <a href="tel:01842292646" class="cov-call fade d4" data-en="Check Your Area →" data-bn="আপনার এলাকা যাচাই করুন →">Check Your Area →</a>
+      </div>
+      <div class="cov-map fade right">
+        <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+          <defs><pattern id="g2" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0L0 0 0 40" fill="none" stroke="rgba(255,255,255,.05)" stroke-width="1"/></pattern></defs>
+          <rect width="400" height="400" fill="url(#g2)"/>
+          <circle cx="200" cy="200" r="130" stroke="rgba(0,212,255,.08)" stroke-width="1"/>
+          <circle cx="200" cy="200" r="90"  stroke="rgba(0,212,255,.12)" stroke-width="1"/>
+          <circle cx="200" cy="200" r="55"  stroke="rgba(0,212,255,.2)"  stroke-width="1"/>
+          <circle cx="200" cy="200" r="10"  fill="rgba(0,212,255,.9)"/>
+          <circle cx="200" cy="200" r="10"  fill="none" stroke="rgba(0,212,255,.5)" stroke-width="2"><animate attributeName="r" values="10;60;10" dur="3s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0;1" dur="3s" repeatCount="indefinite"/></circle>
+          <text x="200" y="226" text-anchor="middle" font-family="Rajdhani,sans-serif" font-weight="700" font-size="11" fill="rgba(0,212,255,.7)">NASIRABAD</text>
+          <circle cx="140" cy="140" r="5" fill="rgba(0,212,255,.7)"/>
+          <text x="140" y="128" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="8" fill="rgba(255,255,255,.5)">I/A</text>
+          <circle cx="300" cy="110" r="5" fill="rgba(255,184,48,.5)"><animate attributeName="r" values="5;12;5" dur="2.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;.2;1" dur="2.5s" repeatCount="indefinite"/></circle>
+          <text x="300" y="98" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="8" fill="rgba(255,184,48,.6)">EXPANDING</text>
+          <text x="380" y="20" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="9" font-weight="700" fill="rgba(232,25,44,.7)">N↑</text>
+          <line x1="0" y1="200" x2="400" y2="200" stroke="rgba(255,255,255,.04)" stroke-width="1"/>
+          <line x1="200" y1="0" x2="200" y2="400" stroke="rgba(255,255,255,.04)" stroke-width="1"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════
+     07 PORTAL — DARK GREY2
      ═══════════════════════════════ -->
 <section class="s-offers" id="offers">
   <!-- Hero offer — Red -->
@@ -1246,57 +1267,34 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);paddin
 <!-- ═══════════════════════════════
      06 COVERAGE — WHITE
      ═══════════════════════════════ -->
-<section class="s-coverage" id="coverage">
+<section class="s-announce" id="announcements">
   <div class="container">
-    <div class="cov-layout">
-      <div>
-        <div class="s-tag" style="color:rgba(0,0,0,.4)" data-en="Where We Are" data-bn="আমরা কোথায় আছি">Where We Are</div>
-        <h2 class="cov-title fade">
-          <span class="black-t" data-en="We Cover" data-bn="আমরা কভার করি">We Cover</span>
-          <span class="cyan-block" data-en="Nasirabad." data-bn="নাসিরাবাদ।">Nasirabad.</span>
-          <span class="black-t" style="font-size:60%" data-en="And Growing." data-bn="এবং ক্রমবর্ধমান।">And Growing.</span>
-        </h2>
-        <div class="cov-areas">
-          <div class="cov-area fade d1">
-            <div class="cov-area-left"><div class="cov-dot on"></div><div><div class="cov-name" data-en="Nasirabad Housing Society" data-bn="নাসিরাবাদ হাউজিং সোসাইটি">Nasirabad Housing Society</div><div class="cov-status" data-en="Primary service area · All roads" data-bn="প্রধান সেবা এলাকা · সকল রোড">Primary service area · All roads</div></div></div>
-            <div class="cov-status-badge on" data-en="Full Coverage" data-bn="সম্পূর্ণ কভারেজ">Full Coverage</div>
-          </div>
-          <div class="cov-area fade d2">
-            <div class="cov-area-left"><div class="cov-dot on"></div><div><div class="cov-name" data-en="Nasirabad I/A" data-bn="নাসিরাবাদ আই/এ">Nasirabad I/A</div><div class="cov-status" data-en="All sectors covered" data-bn="সকল সেক্টর কভার করা হয়েছে">All sectors covered</div></div></div>
-            <div class="cov-status-badge on" data-en="Full Coverage" data-bn="সম্পূর্ণ কভারেজ">Full Coverage</div>
-          </div>
-          <div class="cov-area fade d3">
-            <div class="cov-area-left"><div class="cov-dot pt"></div><div><div class="cov-name" data-en="Surrounding Chattogram Areas" data-bn="চট্টগ্রামের আশেপাশের এলাকা">Surrounding Chattogram Areas</div><div class="cov-status" data-en="Contact us to confirm availability" data-bn="উপলব্ধতা নিশ্চিত করতে যোগাযোগ করুন">Contact us to confirm availability</div></div></div>
-            <div class="cov-status-badge pt" data-en="Expanding" data-bn="সম্প্রসারিত হচ্ছে">Expanding</div>
-          </div>
-        </div>
-        <a href="tel:01842292646" class="cov-call fade d4" data-en="Check Your Area →" data-bn="আপনার এলাকা যাচাই করুন →">Check Your Area →</a>
+    <div class="ann-header">
+      <div class="ann-title fade" data-en="What's New<br>at SVCN" data-bn="SVCN-এ<br>নতুন কী আছে">What's New<br>at SVCN</div>
+    </div>
+    <div class="ann-grid">
+      <div class="ann-card fade">
+        <span class="ann-new" data-en="NEW" data-bn="নতুন">NEW</span>
+        <div class="ann-date" data-en="SEPTEMBER 2026" data-bn="সেপ্টেম্বর ২০২৬">SEPTEMBER 2026</div>
+        <h3 data-en="Network upgraded on Road 4" data-bn="রোড ৪-এ নেটওয়ার্ক আপগ্রেড হয়েছে">Network upgraded on Road 4</h3>
+        <p data-en="Fiber capacity increased for faster, more stable speeds during peak hours." data-bn="ব্যস্ত সময়ে দ্রুত ও স্থিতিশীল গতির জন্য ফাইবার সক্ষমতা বাড়ানো হয়েছে।">Fiber capacity increased for faster, more stable speeds during peak hours.</p>
       </div>
-      <div class="cov-map fade right">
-        <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
-          <defs><pattern id="g2" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0L0 0 0 40" fill="none" stroke="rgba(255,255,255,.05)" stroke-width="1"/></pattern></defs>
-          <rect width="400" height="400" fill="url(#g2)"/>
-          <circle cx="200" cy="200" r="130" stroke="rgba(0,212,255,.08)" stroke-width="1"/>
-          <circle cx="200" cy="200" r="90"  stroke="rgba(0,212,255,.12)" stroke-width="1"/>
-          <circle cx="200" cy="200" r="55"  stroke="rgba(0,212,255,.2)"  stroke-width="1"/>
-          <circle cx="200" cy="200" r="10"  fill="rgba(0,212,255,.9)"/>
-          <circle cx="200" cy="200" r="10"  fill="none" stroke="rgba(0,212,255,.5)" stroke-width="2"><animate attributeName="r" values="10;60;10" dur="3s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0;1" dur="3s" repeatCount="indefinite"/></circle>
-          <text x="200" y="226" text-anchor="middle" font-family="Rajdhani,sans-serif" font-weight="700" font-size="11" fill="rgba(0,212,255,.7)">NASIRABAD</text>
-          <circle cx="140" cy="140" r="5" fill="rgba(0,212,255,.7)"/>
-          <text x="140" y="128" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="8" fill="rgba(255,255,255,.5)">I/A</text>
-          <circle cx="300" cy="110" r="5" fill="rgba(255,184,48,.5)"><animate attributeName="r" values="5;12;5" dur="2.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;.2;1" dur="2.5s" repeatCount="indefinite"/></circle>
-          <text x="300" y="98" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="8" fill="rgba(255,184,48,.6)">EXPANDING</text>
-          <text x="380" y="20" text-anchor="middle" font-family="Rajdhani,sans-serif" font-size="9" font-weight="700" fill="rgba(232,25,44,.7)">N↑</text>
-          <line x1="0" y1="200" x2="400" y2="200" stroke="rgba(255,255,255,.04)" stroke-width="1"/>
-          <line x1="200" y1="0" x2="200" y2="400" stroke="rgba(255,255,255,.04)" stroke-width="1"/>
-        </svg>
+      <div class="ann-card fade d1">
+        <div class="ann-date" data-en="AUGUST 2026" data-bn="আগস্ট ২০২৬">AUGUST 2026</div>
+        <h3 data-en="New customer portal launched" data-bn="নতুন কাস্টমার পোর্টাল চালু হয়েছে">New customer portal launched</h3>
+        <p data-en="Check your bill, connection status, and run a speed test — all in one place." data-bn="এক জায়গায় আপনার বিল, সংযোগের অবস্থা এবং স্পিড টেস্ট দেখুন।">Check your bill, connection status, and run a speed test — all in one place.</p>
+      </div>
+      <div class="ann-card fade d2">
+        <div class="ann-date" data-en="JULY 2026" data-bn="জুলাই ২০২৬">JULY 2026</div>
+        <h3 data-en="Extended support hours" data-bn="সাপোর্ট সময় বাড়ানো হয়েছে">Extended support hours</h3>
+        <p data-en="Our technical support team is now reachable on WhatsApp every day." data-bn="আমাদের টেকনিক্যাল সাপোর্ট টিম এখন প্রতিদিন হোয়াটসঅ্যাপে পাওয়া যাবে।">Our technical support team is now reachable on WhatsApp every day.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ═══════════════════════════════
-     07 PORTAL — DARK GREY2
+     04 PACKAGES — DARK GREY
      ═══════════════════════════════ -->
 <section class="s-portal" id="portal">
   <div class="container" style="position:relative;z-index:1">
@@ -1361,19 +1359,19 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);paddin
       <div class="s-tag" style="opacity:.35" data-en="How It Works" data-bn="যেভাবে কাজ করে">How It Works</div>
       <div class="sla-visual fade d1">
         <div class="sla-bar-wrap">
-          <div class="sla-bar-label"><span>Call received</span><span style="color:var(--red)">0 min</span></div>
+          <div class="sla-bar-label"><span>Call received</span><span style="color:var(--gold)">0 min</span></div>
           <div class="sla-bar-bg"><div class="sla-bar-fill" data-w="100" style="background:rgba(255,255,255,.15)"></div></div>
         </div>
         <div class="sla-bar-wrap">
-          <div class="sla-bar-label"><span>Technician dispatched</span><span style="color:var(--red)">5–10 min</span></div>
+          <div class="sla-bar-label"><span>Technician dispatched</span><span style="color:var(--gold)">5–10 min</span></div>
           <div class="sla-bar-bg"><div class="sla-bar-fill" data-w="80"></div></div>
         </div>
         <div class="sla-bar-wrap">
-          <div class="sla-bar-label"><span>On-site arrival</span><span style="color:var(--red)">20–40 min</span></div>
+          <div class="sla-bar-label"><span>On-site arrival</span><span style="color:var(--gold)">20–40 min</span></div>
           <div class="sla-bar-bg"><div class="sla-bar-fill" data-w="55"></div></div>
         </div>
         <div class="sla-bar-wrap">
-          <div class="sla-bar-label"><span>Issue resolved</span><span style="color:var(--red)">45–80 min</span></div>
+          <div class="sla-bar-label"><span>Issue resolved</span><span style="color:var(--gold)">45–80 min</span></div>
           <div class="sla-bar-bg"><div class="sla-bar-fill" data-w="35"></div></div>
         </div>
       </div>
@@ -1555,7 +1553,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);paddin
 <!-- STICKY BAR -->
 <div id="sticky">
   <span>Most Popular: <strong>50 Mbps — ৳800/month</strong></span>
-  <a href="https://wa.me/8801634348602?text=I+want+50+Mbps+%E2%80%93+%E0%A7%B3800%2Fmonth%0AName%3A%0ALocation%3A" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:10px 22px;background:var(--red);color:#fff;font-family:var(--fh);font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;transition:background .2s" onmouseover="this.style.background='#c41020'" onmouseout="this.style.background='var(--red)'">Order Now →</a>
+  <a href="https://wa.me/8801634348602?text=I+want+50+Mbps+%E2%80%93+%E0%A7%B3800%2Fmonth%0AName%3A%0ALocation%3A" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:10px 22px;background:var(--gold);color:#fff;font-family:var(--fh);font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;transition:background .2s" onmouseover="this.style.background='#d99e1f'" onmouseout="this.style.background='var(--gold)'">Order Now →</a>
   <button id="sticky-x" onclick="document.getElementById('sticky').style.display='none'">✕</button>
 </div>
 
