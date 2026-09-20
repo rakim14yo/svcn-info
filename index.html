@@ -95,11 +95,56 @@ nav.scrolled{background:rgba(0,0,0,.92);border-color:rgba(255,255,255,.07);backd
 .nav-logo-text{display:flex;flex-direction:column;line-height:1.15}
 .nav-logo-text span:first-child{font-family:var(--fh);font-weight:700;font-size:14px;letter-spacing:.5px}
 .nav-logo-text span:last-child{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--cyan)}
+
+/* NETWORK STATUS BADGE */
+.net-status{display:flex;align-items:center;gap:8px;font-family:var(--fh);font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.55);padding:6px 14px;border:1px solid rgba(0,212,255,.2);border-radius:20px;background:rgba(0,212,255,.04)}
+.net-dot{width:7px;height:7px;border-radius:50%;background:#3ddc7a;box-shadow:0 0 8px #3ddc7a;animation:netblink 2s ease-in-out infinite}
+@keyframes netblink{0%,100%{opacity:1}50%{opacity:.35}}
+@media (max-width:900px){.net-status{display:none}}
+
+/* GRADIENT TEXT */
+.grad-t{background:linear-gradient(90deg,var(--cyan),var(--blue) 60%,var(--cyan));background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:gradFlow 6s linear infinite}
+@keyframes gradFlow{0%{background-position:0% 0}100%{background-position:200% 0}}
+
+/* FLOATING QUICK-ACTION BUTTON */
+#fab{position:fixed;bottom:26px;right:26px;z-index:900;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+#fab-menu{display:flex;flex-direction:column;gap:10px;margin-bottom:4px;opacity:0;transform:translateY(12px);pointer-events:none;transition:all .3s cubic-bezier(.16,1,.3,1)}
+#fab.open #fab-menu{opacity:1;transform:translateY(0);pointer-events:auto}
+.fab-item{display:flex;align-items:center;gap:10px;background:var(--grey2);border:1px solid rgba(0,212,255,.25);border-radius:30px;padding:10px 18px 10px 14px;font-family:var(--fh);font-size:12px;font-weight:700;letter-spacing:.5px;color:#fff;white-space:nowrap;box-shadow:0 8px 24px rgba(0,0,0,.5);transition:transform .2s ease,border-color .2s ease}
+.fab-item:hover{transform:translateX(-4px);border-color:var(--cyan)}
+.fab-item .ic{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
+.fab-item.wa .ic{background:#25D366;color:#04220f}
+.fab-item.portal .ic{background:var(--cyan);color:#000}
+.fab-item.call .ic{background:var(--blue);color:#fff}
+#fab-toggle{width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--blue));border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 0 rgba(0,212,255,.5),0 10px 30px rgba(0,0,0,.5);animation:fabPulse 2.4s ease-in-out infinite}
+#fab-toggle svg{width:26px;height:26px;transition:transform .3s ease}
+#fab.open #fab-toggle svg{transform:rotate(135deg)}
+@keyframes fabPulse{0%{box-shadow:0 0 0 0 rgba(0,212,255,.45),0 10px 30px rgba(0,0,0,.5)}70%{box-shadow:0 0 0 16px rgba(0,212,255,0),0 10px 30px rgba(0,0,0,.5)}100%{box-shadow:0 0 0 0 rgba(0,212,255,0),0 10px 30px rgba(0,0,0,.5)}}
+@media (max-width:600px){#fab{bottom:18px;right:18px}#fab-toggle{width:52px;height:52px}}
+
+/* WHY SVCN COMPARISON */
+.s-compare{background:var(--black);padding:110px 0}
+.cmp-table{border:1px solid rgba(255,255,255,.08);border-radius:2px;overflow:hidden}
+.cmp-row{display:grid;grid-template-columns:1.4fr 1fr 1fr;align-items:center}
+.cmp-row.head{background:rgba(255,255,255,.03)}
+.cmp-row:not(.head){border-top:1px solid rgba(255,255,255,.06)}
+.cmp-cell{padding:18px 22px;font-size:13.5px;color:var(--muted)}
+.cmp-row.head .cmp-cell{font-family:var(--fh);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#fff;font-weight:700}
+.cmp-row .cmp-cell:first-child{color:#fff;font-weight:500}
+.cmp-cell.yes{color:var(--cyan);font-weight:700}
+.cmp-cell.no{color:rgba(255,255,255,.25)}
+@media (max-width:700px){.cmp-cell{padding:14px 12px;font-size:12px}}
+
 .nav-links{display:flex;gap:0}
 .nav-links a{
   font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;
   color:var(--muted);padding:8px 16px;border-left:1px solid rgba(255,255,255,.07);
   transition:color .2s;
+}
+@media (max-width:1180px){
+  .nav-links a{padding:8px 10px;letter-spacing:1px;font-size:10px;}
+  nav{padding:0 24px;}
+  .nav-cta{padding:8px 14px;letter-spacing:1px;}
 }
 .nav-links a:first-child{border-left:none}
 .nav-links a:hover{color:var(--white)}
@@ -257,7 +302,7 @@ nav.scrolled{background:rgba(0,0,0,.92);border-color:rgba(255,255,255,.07);backd
 .hero-tagline .w{overflow:hidden;display:inline-block}
 .hero-tagline .w span{display:inline-block;transform:translateY(105%);transition:transform 1s cubic-bezier(.16,1,.3,1)}
 .hero-tagline .w span.in{transform:none}
-.hero-tagline .cyan-t{color:var(--cyan)}
+.hero-tagline .cyan-t{background:linear-gradient(90deg,var(--cyan),var(--blue) 55%,var(--cyan));background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:gradFlow 5s linear infinite}
 .hero-meta{
   display:flex;align-items:flex-end;justify-content:space-between;
   margin-top:28px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);
@@ -302,7 +347,7 @@ nav.scrolled{background:rgba(0,0,0,.92);border-color:rgba(255,255,255,.07);backd
 /* ANNOUNCEMENTS */
 .s-announce{background:linear-gradient(160deg,#060b1c,var(--navy) 60%,#060b1c);padding:110px 0;}
 .ann-header{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;margin-bottom:56px;}
-.ann-title{font-family:var(--fh);font-size:clamp(30px,4.5vw,52px);font-weight:700;line-height:1;letter-spacing:-.5px;}
+.ann-title{font-family:var(--fh);font-size:clamp(30px,4.5vw,52px);font-weight:700;line-height:1;letter-spacing:-.5px;background:linear-gradient(90deg,var(--cyan),var(--blue) 55%,var(--cyan));background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:gradFlow 6s linear infinite;}
 .ann-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
 @media (max-width:900px){.ann-grid{grid-template-columns:1fr;}}
 .ann-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:2px;padding:30px 26px;position:relative;transition:transform .3s cubic-bezier(.16,1,.3,1),border-color .3s ease;}
@@ -540,7 +585,7 @@ nav.scrolled{background:rgba(0,0,0,.92);border-color:rgba(255,255,255,.07);backd
 .portal-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
 .portal-left .s-tag{opacity:.5}
 .portal-title{font-family:var(--fh);font-size:clamp(36px,5vw,70px);font-weight:700;line-height:.95;letter-spacing:-1px;margin-bottom:20px}
-.portal-title .cyan-t{color:var(--cyan)}
+.portal-title .cyan-t{background:linear-gradient(90deg,var(--cyan),var(--blue) 55%,var(--cyan));background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:gradFlow 5s linear infinite}
 .portal-desc{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:36px;max-width:380px}
 .portal-btn{
   display:inline-flex;align-items:center;gap:12px;padding:16px 36px;
@@ -774,8 +819,13 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);paddin
       <span>Cable Network</span>
     </div>
   </div>
+  <div class="net-status" id="netStatus">
+    <span class="net-dot"></span>
+    <span data-en="All Systems Operational" data-bn="সব সিস্টেম সচল">All Systems Operational</span>
+  </div>
   <div class="nav-links">
     <a href="#announcements" data-en="Updates" data-bn="আপডেট">Updates</a>
+    <a href="#compare" data-en="Why Us" data-bn="কেন আমরা">Why Us</a>
     <a href="#packages" data-en="Packages" data-bn="প্যাকেজ">Packages</a>
     <a href="#offers" data-en="Offers" data-bn="অফার">Offers</a>
     <a href="#coverage" data-en="Coverage" data-bn="কভারেজ">Coverage</a>
@@ -795,6 +845,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);paddin
 <!-- MOBILE MENU -->
 <div class="mob-menu" id="mobMenu">
   <a href="#announcements" onclick="closeMob()" data-en="Updates" data-bn="আপডেট">Updates</a>
+  <a href="#compare" onclick="closeMob()" data-en="Why Us" data-bn="কেন আমরা">Why Us</a>
   <a href="#packages" onclick="closeMob()" data-en="Packages" data-bn="প্যাকেজ">Packages</a>
   <a href="#offers" onclick="closeMob()" data-en="Offers" data-bn="অফার">Offers</a>
   <a href="#coverage" onclick="closeMob()" data-en="Coverage" data-bn="কভারেজ">Coverage</a>
@@ -965,6 +1016,46 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);paddin
 <!-- ═══════════════════════════════
      04 PACKAGES — DARK GREY
      ═══════════════════════════════ -->
+<section class="s-compare" id="compare">
+  <div class="container">
+    <div class="ann-header">
+      <div class="ann-title fade" data-en="Why We're<br>Different" data-bn="আমরা কেন<br>ভিন্ন">Why We're<br>Different</div>
+    </div>
+    <div class="cmp-table fade">
+      <div class="cmp-row head">
+        <div class="cmp-cell" data-en="" data-bn=""></div>
+        <div class="cmp-cell" data-en="SVCN" data-bn="SVCN">SVCN</div>
+        <div class="cmp-cell" data-en="Typical National ISP" data-bn="সাধারণ জাতীয় আইএসপি">Typical National ISP</div>
+      </div>
+      <div class="cmp-row">
+        <div class="cmp-cell" data-en="Complaint resolution" data-bn="অভিযোগ সমাধান">Complaint resolution</div>
+        <div class="cmp-cell yes" data-en="45–80 minutes" data-bn="৪৫–৮০ মিনিট">45–80 minutes</div>
+        <div class="cmp-cell no" data-en="1–3 days" data-bn="১–৩ দিন">1–3 days</div>
+      </div>
+      <div class="cmp-row">
+        <div class="cmp-cell" data-en="Who answers your call" data-bn="আপনার কল কে ধরে">Who answers your call</div>
+        <div class="cmp-cell yes" data-en="A real neighbor, by name" data-bn="একজন প্রতিবেশী, নাম ধরে">A real neighbor, by name</div>
+        <div class="cmp-cell no" data-en="A call center queue" data-bn="একটি কল সেন্টার লাইন">A call center queue</div>
+      </div>
+      <div class="cmp-row">
+        <div class="cmp-cell" data-en="Service area" data-bn="সেবা এলাকা">Service area</div>
+        <div class="cmp-cell yes" data-en="Nasirabad only — by design" data-bn="শুধু নাসিরাবাদ — উদ্দেশ্যমূলকভাবে">Nasirabad only — by design</div>
+        <div class="cmp-cell no" data-en="Entire city, spread thin" data-bn="পুরো শহর, বিস্তৃত">Entire city, spread thin</div>
+      </div>
+      <div class="cmp-row">
+        <div class="cmp-cell" data-en="Hidden fees" data-bn="লুকানো ফি">Hidden fees</div>
+        <div class="cmp-cell yes" data-en="None — ever" data-bn="কোনোটাই না — কখনো না">None — ever</div>
+        <div class="cmp-cell no" data-en="Common" data-bn="সাধারণ">Common</div>
+      </div>
+      <div class="cmp-row">
+        <div class="cmp-cell" data-en="Self-service portal" data-bn="সেলফ-সার্ভিস পোর্টাল">Self-service portal</div>
+        <div class="cmp-cell yes" data-en="Yes — bill, speed test, support" data-bn="হ্যাঁ — বিল, স্পিড টেস্ট, সাপোর্ট">Yes — bill, speed test, support</div>
+        <div class="cmp-cell no" data-en="Rare at this scale" data-bn="এই স্কেলে বিরল">Rare at this scale</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="s-pkg" id="packages">
   <div class="container">
     <div class="pkg-header">
@@ -1471,6 +1562,18 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.06);paddin
 <!-- TOAST -->
 <div class="toast" id="toast"><span>✅</span><span id="toast-msg"></span></div>
 
+<!-- FLOATING QUICK ACTIONS -->
+<div id="fab">
+  <div id="fab-menu">
+    <a class="fab-item wa" id="fabWhatsapp" href="#" target="_blank"><span class="ic">💬</span><span data-en="WhatsApp" data-bn="হোয়াটসঅ্যাপ">WhatsApp</span></a>
+    <a class="fab-item portal" href="/portal"><span class="ic">👤</span><span data-en="Customer Portal" data-bn="কাস্টমার পোর্টাল">Customer Portal</span></a>
+    <a class="fab-item call" id="fabCall" href="#"><span class="ic">📞</span><span data-en="Call Us" data-bn="কল করুন">Call Us</span></a>
+  </div>
+  <button id="fab-toggle" onclick="document.getElementById('fab').classList.toggle('open')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+  </button>
+</div>
+
 <script>
 /* ─── LANGUAGE ─── */
 let lang='en';
@@ -1610,6 +1713,14 @@ document.querySelectorAll('.pkg-row').forEach(row=>{
     const link=row.querySelector('.pkg-order-link');
     if(link)window.open(link.href,'_blank');
   });
+});
+
+/* ─── FLOATING QUICK ACTIONS ─── */
+document.getElementById('fabWhatsapp').href = 'https://wa.me/8801634348602?text=' + encodeURIComponent(lang==='bn' ? 'হ্যালো, আমি SVCN সম্পর্কে জানতে চাই।' : "Hi, I'd like to know more about SVCN.");
+document.getElementById('fabCall').href = 'tel:01842292646';
+document.addEventListener('click', function(e){
+  const fab = document.getElementById('fab');
+  if (fab.classList.contains('open') && !fab.contains(e.target)) fab.classList.remove('open');
 });
 </script>
 
